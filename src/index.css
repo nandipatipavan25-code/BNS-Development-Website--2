@@ -1,0 +1,680 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-black: #07080A;
+  --color-graphite: #151515;
+  --color-red: #D71920;
+  --color-heading: #E6E6E6;
+  --color-subheading: #D8D8D2;
+  --color-body: #CCCCCC; /* 80% white for general regular text */
+  --color-subtext: #A8A8A0; /* #A8A8A0 for all subtext and text below section headings */
+  --color-stat-text: rgba(255, 255, 255, 0.60); /* 60% white for stats supporting text */
+  --color-muted: #8A8A82;
+  --color-surface-light: #FFFFFF;
+  --color-stone: #F2F2EE;
+  --color-border-light: rgba(0, 0, 0, 0.08);
+  --color-steel: #71717A;
+}
+
+/* ==========================================================================
+   GT Super Font Family (Locally Installed & Web Font Fallback)
+   ========================================================================== */
+@font-face {
+  font-family: 'GT Super';
+  src: local('GT Super Display Bold'),
+       local('GT Super Bold'),
+       local('GT-Super-Display-Bold-Trial'),
+       url('/fonts/gt-super/GT-Super-Display-Bold-Trial.otf') format('opentype');
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Super';
+  src: local('GT Super Display Bold Italic'),
+       local('GT-Super-Display-Bold-Italic-Trial'),
+       url('/fonts/gt-super/GT-Super-Display-Bold-Italic-Trial.otf') format('opentype');
+  font-weight: 600 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Super';
+  src: local('GT Super Display Medium'),
+       local('GT Super Medium'),
+       local('GT-Super-Display-Medium-Trial'),
+       url('/fonts/gt-super/GT-Super-Display-Medium-Trial.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Super';
+  src: local('GT Super Display Regular'),
+       local('GT Super Regular'),
+       local('GT Super'),
+       local('GT-Super-Display-Regular-Trial'),
+       url('/fonts/gt-super/GT-Super-Display-Regular-Trial.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Super';
+  src: local('GT Super Display Super'),
+       local('GT Super Super'),
+       local('GT-Super-Display-Super-Trial'),
+       url('/fonts/gt-super/GT-Super-Display-Super-Trial.otf') format('opentype');
+  font-weight: 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  *, *::before, *::after {
+    font-optical-sizing: auto;
+    text-transform: none !important;
+  }
+
+  body {
+    background-color: #07080A;
+    color: #CCCCCC;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: none !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #E6E6E6;
+    font-family: 'GT Super', Georgia, serif;
+    font-weight: 600;
+    text-transform: none !important;
+  }
+
+  p {
+    color: #CCCCCC;
+    font-family: 'Lato', sans-serif;
+    text-transform: none !important;
+  }
+}
+
+/* Headings font enforcement: GT Super exclusively for all headings/display text and their children */
+h1, h2, h3, h4, h5, h6, .font-heading, .font-display,
+h1 > *, h2 > *, h3 > *, h4 > *, h5 > *, h6 > *,
+.font-heading > *, .font-display > * {
+  font-family: 'GT Super', Georgia, serif !important;
+  text-transform: none !important;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading, .font-display {
+  font-weight: 600;
+}
+
+/* Lato font enforcement for all body, navigation, buttons, labels, descriptions, forms, and supporting text */
+body, p, li, button, input, textarea, select, label, .font-sans, .font-body, .font-subheading, .font-manrope, .font-mono {
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Base span/a inherit from parent or default to Lato */
+span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *),
+a:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *) {
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ==========================================================================
+   About Us Page Scoped Typography Presets (Visual Distinction System)
+   ========================================================================== */
+
+/* --- About Us - 1: Elegant & Professional (Playfair Display + Albert Sans) --- */
+.font-preset-1 h1, .font-preset-1 h2, .font-preset-1 h3, .font-preset-1 h4, .font-preset-1 h5, .font-preset-1 h6,
+.font-preset-1 .font-heading, .font-preset-1 .font-display,
+.font-preset-1 h1 *, .font-preset-1 h2 *, .font-preset-1 h3 *, .font-preset-1 h4 *, .font-preset-1 h5 *, .font-preset-1 h6 *,
+.font-preset-1 .font-heading *, .font-preset-1 .font-display *,
+.about-preset-1 h1, .about-preset-1 h2, .about-preset-1 h3, .about-preset-1 h4, .about-preset-1 h5, .about-preset-1 h6,
+.about-preset-1 .font-heading, .about-preset-1 .font-display,
+.about-preset-1 h1 *, .about-preset-1 h2 *, .about-preset-1 h3 *, .about-preset-1 h4 *, .about-preset-1 h5 *, .about-preset-1 h6 *,
+.about-preset-1 .font-heading *, .about-preset-1 .font-display * {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  letter-spacing: -0.015em !important;
+  line-height: 1.18 !important;
+}
+
+.font-preset-1, .font-preset-1 p, .font-preset-1 li, .font-preset-1 button, .font-preset-1 a,
+.font-preset-1 input, .font-preset-1 textarea, .font-preset-1 select, .font-preset-1 label,
+.font-preset-1 .font-sans, .font-preset-1 .font-body, .font-preset-1 .font-subheading,
+.font-preset-1 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *),
+.about-preset-1, .about-preset-1 p, .about-preset-1 li, .about-preset-1 button, .about-preset-1 a,
+.about-preset-1 input, .about-preset-1 textarea, .about-preset-1 select, .about-preset-1 label,
+.about-preset-1 .font-sans, .about-preset-1 .font-body, .about-preset-1 .font-subheading,
+.about-preset-1 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *) {
+  font-family: 'Albert Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  letter-spacing: 0.008em !important;
+}
+
+.font-preset-1 p, .about-preset-1 p {
+  line-height: 1.65 !important;
+}
+
+.font-preset-1 button, .about-preset-1 button,
+.font-preset-1 a, .about-preset-1 a {
+  letter-spacing: 0.025em !important;
+}
+
+/* --- About Us - 2: Premium Architecture (Bank Gothic Bold + Michroma) --- */
+.font-preset-2 h1, .font-preset-2 h2, .font-preset-2 h3, .font-preset-2 h4, .font-preset-2 h5, .font-preset-2 h6,
+.font-preset-2 .font-heading, .font-preset-2 .font-display,
+.font-preset-2 h1 *, .font-preset-2 h2 *, .font-preset-2 h3 *, .font-preset-2 h4 *, .font-preset-2 h5 *, .font-preset-2 h6 *,
+.font-preset-2 .font-heading *, .font-preset-2 .font-display *,
+.about-preset-2 h1, .about-preset-2 h2, .about-preset-2 h3, .about-preset-2 h4, .about-preset-2 h5, .about-preset-2 h6,
+.about-preset-2 .font-heading, .about-preset-2 .font-display,
+.about-preset-2 h1 *, .about-preset-2 h2 *, .about-preset-2 h3 *, .about-preset-2 h4 *, .about-preset-2 h5 *, .about-preset-2 h6 *,
+.about-preset-2 .font-heading *, .about-preset-2 .font-display * {
+  font-family: 'Bank Gothic Bold', 'Bank Gothic', 'BankGothic Md BT', 'BankGothic Lt BT', 'Michroma', 'Square721 BT', 'Eurostile Bold', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* Reduced Section Heading line height for About Us - 2 to eliminate vertical gap */
+.font-preset-2 h2, .about-preset-2 h2,
+.font-preset-2 h1, .about-preset-2 h1,
+.font-preset-2 .text-brand-heading, .about-preset-2 .text-brand-heading {
+  line-height: 0.9 !important;
+}
+
+.about-preset-2 h2 span.block,
+.font-preset-2 h2 span.block {
+  line-height: 0.9 !important;
+}
+
+.about-preset-2 h2 span.block + span.block,
+.font-preset-2 h2 span.block + span.block,
+.about-preset-2 h2 .text-brand-red,
+.font-preset-2 h2 .text-brand-red {
+  display: block;
+  margin-top: 0.04em !important;
+  line-height: 0.9 !important;
+}
+
+@media (max-width: 768px) {
+  .font-preset-2 h2, .about-preset-2 h2,
+  .font-preset-2 h1, .about-preset-2 h1,
+  .font-preset-2 .text-brand-heading, .about-preset-2 .text-brand-heading {
+    line-height: 0.95 !important;
+  }
+}
+
+.font-preset-2 h3, .about-preset-2 h3 {
+  line-height: 1.25 !important;
+}
+.font-preset-2 h4, .about-preset-2 h4 {
+  line-height: 1.3 !important;
+}
+
+.font-preset-2, .font-preset-2 p, .font-preset-2 li, .font-preset-2 button, .font-preset-2 a,
+.font-preset-2 input, .font-preset-2 textarea, .font-preset-2 select, .font-preset-2 label,
+.font-preset-2 .font-sans, .font-preset-2 .font-body, .font-preset-2 .font-subheading,
+.font-preset-2 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *),
+.about-preset-2, .about-preset-2 p, .about-preset-2 li, .about-preset-2 button, .about-preset-2 a,
+.about-preset-2 input, .about-preset-2 textarea, .about-preset-2 select, .about-preset-2 label,
+.about-preset-2 .font-sans, .about-preset-2 .font-body, .about-preset-2 .font-subheading,
+.about-preset-2 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *) {
+  font-family: 'Michroma', 'Eurostile', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  letter-spacing: 0.025em !important;
+}
+
+.font-preset-2 p, .about-preset-2 p {
+  line-height: 1.75 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.font-preset-2 button, .about-preset-2 button,
+.font-preset-2 a, .about-preset-2 a {
+  letter-spacing: 0.05em !important;
+  font-weight: 600 !important;
+}
+
+/* --- About Us - 3: League Spartan (Headings) + Libre Baskerville (Body Text) --- */
+.font-preset-3 h1, .font-preset-3 h2, .font-preset-3 h3, .font-preset-3 h4, .font-preset-3 h5, .font-preset-3 h6,
+.font-preset-3 .font-heading, .font-preset-3 .font-display,
+.font-preset-3 h1 *, .font-preset-3 h2 *, .font-preset-3 h3 *, .font-preset-3 h4 *, .font-preset-3 h5 *, .font-preset-3 h6 *,
+.font-preset-3 .font-heading *, .font-preset-3 .font-display *,
+.about-preset-3 h1, .about-preset-3 h2, .about-preset-3 h3, .about-preset-3 h4, .about-preset-3 h5, .about-preset-3 h6,
+.about-preset-3 .font-heading, .about-preset-3 .font-display,
+.about-preset-3 h1 *, .about-preset-3 h2 *, .about-preset-3 h3 *, .about-preset-3 h4 *, .about-preset-3 h5 *, .about-preset-3 h6 *,
+.about-preset-3 .font-heading *, .about-preset-3 .font-display * {
+  font-family: 'League Spartan', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.15 !important;
+}
+
+.font-preset-3, .font-preset-3 p, .font-preset-3 li, .font-preset-3 button, .font-preset-3 a,
+.font-preset-3 input, .font-preset-3 textarea, .font-preset-3 select, .font-preset-3 label,
+.font-preset-3 .font-sans, .font-preset-3 .font-body, .font-preset-3 .font-subheading,
+.font-preset-3 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *),
+.about-preset-3, .about-preset-3 p, .about-preset-3 li, .about-preset-3 button, .about-preset-3 a,
+.about-preset-3 input, .about-preset-3 textarea, .about-preset-3 select, .about-preset-3 label,
+.about-preset-3 .font-sans, .about-preset-3 .font-body, .about-preset-3 .font-subheading,
+.about-preset-3 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *) {
+  font-family: 'Libre Baskerville', 'Georgia', serif !important;
+  letter-spacing: 0.01em !important;
+}
+
+.font-preset-3 p, .about-preset-3 p {
+  line-height: 1.75 !important;
+}
+
+.font-preset-3 button, .about-preset-3 button,
+.font-preset-3 a, .about-preset-3 a {
+  font-family: 'League Spartan', sans-serif !important;
+  letter-spacing: 0.04em !important;
+  font-weight: 600 !important;
+}
+
+/* Universal Font-Size & Line-Height System:
+   14px → 22px
+   16px → 24px
+   18px → 28px
+   20px → 30px */
+.text-sm, .text-\[14px\] {
+  font-size: 14px !important;
+  line-height: 22px !important;
+}
+
+.text-base, .text-\[16px\] {
+  font-size: 16px !important;
+  line-height: 24px !important;
+}
+
+.text-lg, .text-\[18px\] {
+  font-size: 18px !important;
+  line-height: 28px !important;
+}
+
+.text-xl, .text-\[20px\] {
+  font-size: 20px !important;
+  line-height: 30px !important;
+}
+
+
+
+/* ==========================================================================
+   Architectural Surface & Card Hover System
+   Refined tactile feedback, subtle border highlights, and natural depth
+   ========================================================================== */
+.hover-beam-card {
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease,
+              background-color 0.35s ease;
+}
+
+.hover-beam-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.75),
+              0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Compact Subtle Hover Elevation for Tabs & Small Cards */
+.hover-beam-glow {
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.hover-beam-glow:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   3D Flip Card System for Team / Leadership Showcase
+   ========================================================================== */
+.flip-card-container {
+  perspective: 1200px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.flip-card-front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .flip-card-container:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+.flip-card-container.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Custom Minimalist Dark Scrollbar */
+html {
+  scrollbar-color: #27272a #07080a;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07080a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D71920;
+}
+
+::-webkit-scrollbar-corner {
+  background: #07080a;
+}
+
+/* Architectural Grid Patterns */
+.blueprint-grid-light {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+.blueprint-grid-dark {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Architectural Dot Grid Patterns for Specific Sections */
+.blueprint-dots-light {
+  background-size: 28px 28px;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.12) 1.2px, transparent 1.2px);
+}
+
+.blueprint-dots-dark {
+  background-size: 28px 28px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1.2px, transparent 1.2px);
+}
+
+/* Card Surface Utilities */
+.card-light {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 25px -5px rgba(0, 0, 0, 0.04);
+}
+
+.card-light-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-light-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(215, 25, 32, 0.4);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(215, 25, 32, 0.15);
+}
+
+.card-dark {
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-dark-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-dark-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(215, 25, 32, 0.5);
+  box-shadow: 0 16px 35px -10px rgba(0, 0, 0, 0.6), 0 0 20px -5px rgba(215, 25, 32, 0.2);
+}
+
+/* Technical Crosshairs */
+.crosshair-corner {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+}
+.crosshair-tl { top: -1px; left: -1px; border-top: 1.5px solid #D71920; border-left: 1.5px solid #D71920; }
+.crosshair-tr { top: -1px; right: -1px; border-top: 1.5px solid #D71920; border-right: 1.5px solid #D71920; }
+.crosshair-bl { bottom: -1px; left: -1px; border-bottom: 1.5px solid #D71920; border-left: 1.5px solid #D71920; }
+.crosshair-br { bottom: -1px; right: -1px; border-bottom: 1.5px solid #D71920; border-right: 1.5px solid #D71920; }
+
+/* Text Selection */
+::selection {
+  background: #D71920;
+  color: #E6E6E6;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Marquee Ticker Animations ── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+@keyframes marquee-reverse {
+  0%   { transform: translateX(-33.333%); }
+  100% { transform: translateX(0); }
+}
+.animate-marquee {
+  animation: marquee linear infinite;
+}
+.animate-marquee-reverse {
+  animation: marquee-reverse linear infinite;
+}
+
+/* ── Hide scrollbar utility ── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Ambient Background Video Subtle Motion ── */
+@keyframes subtleVideoDrift {
+  0% {
+    transform: scale(1.05) translate(0%, 0%);
+  }
+  33% {
+    transform: scale(1.08) translate(-1.2%, -0.8%);
+  }
+  66% {
+    transform: scale(1.06) translate(1.2%, -0.4%);
+  }
+  100% {
+    transform: scale(1.05) translate(0%, 0%);
+  }
+}
+.animate-video-drift {
+  animation: subtleVideoDrift 22s ease-in-out infinite alternate;
+}
+
+/* ── Approach Animated Laser Paths ── */
+@keyframes laserTraceDash {
+  0% {
+    stroke-dashoffset: 1200;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes laserPulseGlow {
+  0%, 100% {
+    opacity: 0.45;
+    filter: drop-shadow(0 0 4px rgba(215, 25, 32, 0.4));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(215, 25, 32, 0.95)) drop-shadow(0 0 22px rgba(255, 77, 85, 0.7));
+  }
+}
+
+.approach-laser-trace-1 {
+  stroke-dasharray: 700;
+  animation: laserPulseGlow 3.5s ease-in-out infinite alternate;
+}
+
+.approach-laser-head-1 {
+  stroke-dasharray: 90 450;
+  animation: laserTraceDash 4.5s linear infinite;
+}
+
+.approach-laser-trace-2 {
+  stroke-dasharray: 600;
+  animation: laserPulseGlow 4.2s ease-in-out infinite alternate-reverse;
+}
+
+.approach-laser-head-2 {
+  stroke-dasharray: 70 400;
+  animation: laserTraceDash 5.2s linear infinite;
+}
+
+.approach-laser-trace-3 {
+  stroke-dasharray: 400;
+  animation: laserPulseGlow 3s ease-in-out infinite alternate;
+}
+
+/* ==========================================================================
+   About Us Distinct Typography Presets System (About Us 1, 2, 3)
+   ========================================================================== */
+
+/* ── About Us – 1 (Classic Elegance: Playfair Display + Albert Sans) ── */
+.about-preset-1 h1,
+.about-preset-1 h2,
+.about-preset-1 h3,
+.about-preset-1 h4,
+.about-preset-1 .font-display {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.about-preset-1 p,
+.about-preset-1 span,
+.about-preset-1 li,
+.about-preset-1 a,
+.about-preset-1 button,
+.about-preset-1 .font-sans {
+  font-family: 'Albert Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* ── About Us – 2 (Modern Tech Development: Bank Gothic Bold + Michroma) ── */
+.about-preset-2 h1,
+.about-preset-2 h2,
+.about-preset-2 h3,
+.about-preset-2 h4,
+.about-preset-2 .font-display {
+  font-family: 'Bank Gothic Bold', 'Bank Gothic', 'Michroma', sans-serif !important;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.about-preset-2 h2 {
+  font-size: 38px !important;
+  line-height: 0.9 !important;
+}
+
+.about-preset-2 p,
+.about-preset-2 span,
+.about-preset-2 li,
+.about-preset-2 a,
+.about-preset-2 button,
+.about-preset-2 .font-sans {
+  font-family: 'Michroma', sans-serif !important;
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+}
+
+/* ── About Us – 3 (League Spartan Headings + Libre Baskerville Body) ── */
+.about-preset-3 h1,
+.about-preset-3 h2,
+.about-preset-3 h3,
+.about-preset-3 h4,
+.about-preset-3 h5,
+.about-preset-3 h6,
+.about-preset-3 .font-display {
+  font-family: 'League Spartan', 'Montserrat', sans-serif !important;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.about-preset-3 .text-brand-subtext,
+.about-preset-3 .text-\[\#A8A8A0\],
+.about-preset-3 .subtext,
+.about-preset-3 [class*="text-[#A8A8A0]"],
+.about-preset-3 [class*="text-brand-subtext"],
+.about-preset-3 p.text-sm,
+.about-preset-3 p.text-base {
+  font-family: 'Libre Baskerville', 'Georgia', serif !important;
+  letter-spacing: 0.01em;
+}
+
+.about-preset-3 p,
+.about-preset-3 span,
+.about-preset-3 li,
+.about-preset-3 a,
+.about-preset-3 button,
+.about-preset-3 input,
+.about-preset-3 textarea,
+.about-preset-3 .font-sans {
+  font-family: 'Libre Baskerville', 'Georgia', serif !important;
+}
+
+/* ==========================================================================
+   Global Button System - Consistent Smooth Rounded Edges Across Entire Website
+   ========================================================================== */
+button,
+.btn,
+[role="button"] {
+  border-radius: 9999px;
+}
+
