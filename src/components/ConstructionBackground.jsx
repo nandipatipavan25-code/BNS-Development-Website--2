@@ -10,7 +10,8 @@ import React, { useRef, useEffect } from 'react';
 export default function ConstructionBackground({
   showVideo = true,
   videoSrc = '/videos/home-page-background-video-2.mp4',
-  videoOpacity = null
+  videoOpacity = null,
+  playbackRate = null
 }) {
   const videoRef = useRef(null);
 
@@ -19,12 +20,14 @@ export default function ConstructionBackground({
     if (!video || !showVideo) return;
 
     let isMounted = true;
+    const targetPlaybackRate = playbackRate ?? (videoSrc.includes('home-page-background-video-2') ? 1.4 : 1.0);
 
     // Strict DOM properties for reliable mobile/desktop autoplay & continuous looping
     video.muted = true;
     video.defaultMuted = true;
     video.loop = true;
     video.playsInline = true;
+    video.playbackRate = targetPlaybackRate;
     video.setAttribute('muted', '');
     video.setAttribute('playsinline', '');
     video.setAttribute('webkit-playsinline', 'true');
@@ -34,6 +37,7 @@ export default function ConstructionBackground({
     const safePlay = () => {
       if (!video || !isMounted) return;
       video.muted = true;
+      video.playbackRate = targetPlaybackRate;
       const promise = video.play();
       if (promise !== undefined) {
         promise.catch(() => {
@@ -41,6 +45,7 @@ export default function ConstructionBackground({
           const resumeOnInteraction = () => {
             if (video && isMounted && video.paused) {
               video.muted = true;
+              video.playbackRate = targetPlaybackRate;
               video.play().catch(() => {});
             }
           };

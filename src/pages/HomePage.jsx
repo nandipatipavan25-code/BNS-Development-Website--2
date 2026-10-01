@@ -173,9 +173,11 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
     video.defaultMuted = true;
     video.loop = true;
     video.playsInline = true;
+    video.playbackRate = 1.35;
 
     const playVideo = () => {
       if (!video || !isMounted) return;
+      video.playbackRate = 1.35;
       const promise = video.play();
       if (promise !== undefined) {
         promise.catch(() => {
@@ -183,6 +185,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
           const resumeOnInteraction = () => {
             if (video && isMounted && video.paused) {
               video.muted = true;
+              video.playbackRate = 1.35;
               video.play().then(() => setIsPlaying(true)).catch(() => {});
             }
           };
