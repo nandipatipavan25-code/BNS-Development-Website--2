@@ -6,7 +6,7 @@ export const teamData = [
     title: "Managing Partner",
     experience: "35+ Years Industry Experience",
     portfolioVolume: "$800M+ Delivered",
-    image: "/team/brad-smith.jpg",
+    image: "/team/brad-smith.png",
     email: "brad@bns-development.com",
     phone: "(786) 368-3009",
     linkedin: "https://www.linkedin.com/",
