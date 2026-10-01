@@ -31,10 +31,10 @@ export default function ContactPage() {
             ======================================================== */}
         <section className="mb-8 sm:mb-12">
           <SectionHeading
-            tag="Initiate Project Inquiry"
-            title="Let's Build What's Next,"
-            highlight="Together."
-            description="Whether you are assessing land acquisition feasibility, seeking a single-source Design-Build partner, or preparing a commercial GMP tender in Florida or Texas, our Managing Partners are directly accessible."
+            tag="Contact BNS Development"
+            title={<span className="block">Have a Project in Mind?</span>}
+            highlight={<span className="block">Let's Talk.</span>}
+            description="Connect with BNS Development to explore your project, understand your needs, and identify the right path from planning to completion."
             theme="dark"
             scaleColor="red"
           />
