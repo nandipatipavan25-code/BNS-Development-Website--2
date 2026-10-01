@@ -293,7 +293,8 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
               }}
             >
               <source src="/videos/hero-video.mp4" type="video/mp4" />
-              <source src="/videos/home page.mp4" type="video/mp4" />
+              <source src="/videos/home-page-hero-section-video.mp4" type="video/mp4" />
+              <source src="/videos/Home page hero section video.mp4" type="video/mp4" />
             </video>
 
             {/* Cinematic Transparent Gradient Overlay for Clean Text Legibility */}
