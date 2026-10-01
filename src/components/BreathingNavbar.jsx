@@ -77,7 +77,7 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
                     return (
                       <span
                         key={item.id}
-                        className="relative px-2 xl:px-2.5 py-1 text-[14px] font-medium text-white/40 select-none cursor-default"
+                        className="relative px-2 xl:px-2.5 py-1 text-[14px] font-normal text-white/40 select-none cursor-default font-sans"
                       >
                         {item.label}
                       </span>
@@ -94,10 +94,10 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
                       >
                         <button
                           onClick={() => handleNavClick(item.id)}
-                          className={`relative px-2 xl:px-2.5 py-1.5 text-[14px] font-medium transition-all duration-300 rounded-full focus:outline-none cursor-pointer border ${
+                          className={`relative px-2 xl:px-2.5 py-1.5 text-[14px] font-sans transition-all duration-300 rounded-full focus:outline-none cursor-pointer border ${
                             isItemActive
-                              ? 'text-brand-heading border-white/10'
-                              : 'text-white/60 hover:text-white border-transparent hover:border-brand-red/30 hover:bg-brand-red/[0.08] hover:shadow-[0_0_16px_rgba(215,25,32,0.22)]'
+                              ? 'text-brand-heading border-white/10 font-bold'
+                              : 'text-white/60 hover:text-white border-transparent hover:border-brand-red/30 hover:bg-brand-red/[0.08] hover:shadow-[0_0_16px_rgba(215,25,32,0.22)] font-normal hover:font-bold'
                           }`}
                         >
                           {isItemActive && (
@@ -122,15 +122,17 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
                               animate={{ opacity: 1, y: 0, scale: 1 }}
                               exit={{ opacity: 0, y: 8, scale: 0.98 }}
                               transition={{ duration: 0.18 }}
-                              className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 p-2 rounded-2xl bg-[#07080A]/95 backdrop-blur-2xl border border-white/15 shadow-2xl space-y-1 z-50 text-left"
+                              className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 p-2 rounded-2xl bg-[#07080A]/95 backdrop-blur-2xl border border-white/15 shadow-2xl space-y-1 z-50 text-left font-sans"
                             >
                               <button
                                 onClick={() => {
                                   handleNavClick('services');
                                   setServicesMenuOpen(false);
                                 }}
-                                className={`w-full text-left px-3 py-2 rounded-xl text-[14px] font-medium transition-colors flex items-center justify-between cursor-pointer ${
-                                  activePage === 'services' ? 'bg-brand-red text-white font-semibold' : 'text-neutral-300 hover:text-white hover:bg-white/[0.08]'
+                                className={`w-full text-left px-3 py-2 rounded-xl text-[14px] font-sans transition-colors flex items-center justify-between cursor-pointer ${
+                                  activePage === 'services'
+                                    ? 'bg-brand-red text-white font-bold'
+                                    : 'text-neutral-300 hover:text-white hover:bg-white/[0.08] font-normal hover:font-bold'
                                 }`}
                               >
                                 <span>All Services</span>
@@ -141,8 +143,10 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
                                   handleNavClick('design-build');
                                   setServicesMenuOpen(false);
                                 }}
-                                className={`w-full text-left px-3 py-2 rounded-xl text-[14px] font-medium transition-colors flex items-center justify-between cursor-pointer ${
-                                  activePage === 'design-build' ? 'bg-brand-red text-white font-semibold' : 'text-neutral-300 hover:text-white hover:bg-white/[0.08]'
+                                className={`w-full text-left px-3 py-2 rounded-xl text-[14px] font-sans transition-colors flex items-center justify-between cursor-pointer ${
+                                  activePage === 'design-build'
+                                    ? 'bg-brand-red text-white font-bold'
+                                    : 'text-neutral-300 hover:text-white hover:bg-white/[0.08] font-normal hover:font-bold'
                                 }`}
                               >
                                 <span>Design-Build</span>
@@ -153,8 +157,10 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
                                   handleNavClick('predevelopment');
                                   setServicesMenuOpen(false);
                                 }}
-                                className={`w-full text-left px-3 py-2 rounded-xl text-[14px] font-medium transition-colors flex items-center justify-between cursor-pointer ${
-                                  (activePage === 'predevelopment' || activePage === 'preconstruction') ? 'bg-brand-red text-white font-semibold' : 'text-neutral-300 hover:text-white hover:bg-white/[0.08]'
+                                className={`w-full text-left px-3 py-2 rounded-xl text-[14px] font-sans transition-colors flex items-center justify-between cursor-pointer ${
+                                  (activePage === 'predevelopment' || activePage === 'preconstruction')
+                                    ? 'bg-brand-red text-white font-bold'
+                                    : 'text-neutral-300 hover:text-white hover:bg-white/[0.08] font-normal hover:font-bold'
                                 }`}
                               >
                                 <span>Pre Development Services</span>
@@ -165,8 +171,10 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
                                   handleNavClick('residential');
                                   setServicesMenuOpen(false);
                                 }}
-                                className={`w-full text-left px-3 py-2 rounded-xl text-[14px] font-medium transition-colors flex items-center justify-between cursor-pointer ${
-                                  activePage === 'residential' ? 'bg-brand-red text-white font-semibold' : 'text-neutral-300 hover:text-white hover:bg-white/[0.08]'
+                                className={`w-full text-left px-3 py-2 rounded-xl text-[14px] font-sans transition-colors flex items-center justify-between cursor-pointer ${
+                                  activePage === 'residential'
+                                    ? 'bg-brand-red text-white font-bold'
+                                    : 'text-neutral-300 hover:text-white hover:bg-white/[0.08] font-normal hover:font-bold'
                                 }`}
                               >
                                 <span>Residential Services</span>
@@ -177,8 +185,10 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
                                   handleNavClick('tenant-improvements');
                                   setServicesMenuOpen(false);
                                 }}
-                                className={`w-full text-left px-3 py-2 rounded-xl text-[14px] font-medium transition-colors flex items-center justify-between cursor-pointer ${
-                                  activePage === 'tenant-improvements' ? 'bg-brand-red text-white font-semibold' : 'text-neutral-300 hover:text-white hover:bg-white/[0.08]'
+                                className={`w-full text-left px-3 py-2 rounded-xl text-[14px] font-sans transition-colors flex items-center justify-between cursor-pointer ${
+                                  activePage === 'tenant-improvements'
+                                    ? 'bg-brand-red text-white font-bold'
+                                    : 'text-neutral-300 hover:text-white hover:bg-white/[0.08] font-normal hover:font-bold'
                                 }`}
                               >
                                 <span>Tenant Improvements</span>
@@ -189,8 +199,10 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
                                   handleNavClick('ground-up');
                                   setServicesMenuOpen(false);
                                 }}
-                                className={`w-full text-left px-3 py-2 rounded-xl text-[14px] font-medium transition-colors flex items-center justify-between cursor-pointer ${
-                                  activePage === 'ground-up' ? 'bg-brand-red text-white font-semibold' : 'text-neutral-300 hover:text-white hover:bg-white/[0.08]'
+                                className={`w-full text-left px-3 py-2 rounded-xl text-[14px] font-sans transition-colors flex items-center justify-between cursor-pointer ${
+                                  activePage === 'ground-up'
+                                    ? 'bg-brand-red text-white font-bold'
+                                    : 'text-neutral-300 hover:text-white hover:bg-white/[0.08] font-normal hover:font-bold'
                                 }`}
                               >
                                 <span>Ground-Up Construction</span>
@@ -207,10 +219,10 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
                     <button
                       key={item.id}
                       onClick={() => handleNavClick(item.id)}
-                      className={`relative px-2 xl:px-2.5 py-1.5 text-[14px] font-medium transition-all duration-300 rounded-full focus:outline-none cursor-pointer border ${
+                      className={`relative px-2 xl:px-2.5 py-1.5 text-[14px] font-sans transition-all duration-300 rounded-full focus:outline-none cursor-pointer border ${
                         isItemActive
-                          ? 'text-brand-heading border-white/10'
-                          : 'text-white/60 hover:text-white border-transparent hover:border-brand-red/30 hover:bg-brand-red/[0.08] hover:shadow-[0_0_16px_rgba(215,25,32,0.22)]'
+                          ? 'text-brand-heading border-white/10 font-bold'
+                          : 'text-white/60 hover:text-white border-transparent hover:border-brand-red/30 hover:bg-brand-red/[0.08] hover:shadow-[0_0_16px_rgba(215,25,32,0.22)] font-normal hover:font-bold'
                       }`}
                     >
                       {isItemActive && (
@@ -236,7 +248,7 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
             <div className="flex items-center lg:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-white hover:text-brand-red focus:outline-none transition-colors cursor-pointer"
+                className="p-2 text-white hover:text-brand-red focus:outline-none transition-colors cursor-pointer font-sans"
                 aria-label="Toggle navigation menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -255,17 +267,17 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="fixed inset-0 top-[65px] z-40 bg-[#07080A]/95 backdrop-blur-2xl border-b border-white/10 lg:hidden flex flex-col justify-between p-6 overflow-y-auto text-white"
+            className="fixed inset-0 top-[65px] z-40 bg-[#07080A]/95 backdrop-blur-2xl border-b border-white/10 lg:hidden flex flex-col justify-between p-6 overflow-y-auto text-white font-sans"
           >
             <div className="space-y-2 pt-2">
-              <div className="text-xs font-semibold text-brand-red tracking-wider mb-3">Architectural Navigation</div>
+              <div className="text-xs font-semibold text-brand-red tracking-wider mb-3 font-sans">Architectural Navigation</div>
               {navItems.map((item) => {
                 const isActive = activePage === item.id;
                 if (!item.hasLink) {
                   return (
                     <div
                       key={item.id}
-                      className="w-full flex items-center justify-between p-3.5 rounded-xl text-base font-medium text-white/40 cursor-default select-none"
+                      className="w-full flex items-center justify-between p-3.5 rounded-xl text-base font-normal text-white/40 cursor-default select-none font-sans"
                     >
                       <span>{item.label}</span>
                     </div>
@@ -275,10 +287,10 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
                   <div key={item.id} className="space-y-1">
                     <button
                       onClick={() => handleNavClick(item.id)}
-                      className={`w-full flex items-center justify-between p-3.5 rounded-xl text-base font-medium transition-all duration-300 border ${
+                      className={`w-full flex items-center justify-between p-3.5 rounded-xl text-base font-sans transition-all duration-300 border ${
                         isActive
-                          ? 'bg-white/[0.08] text-brand-heading border-brand-red/40 shadow-[0_0_16px_rgba(215,25,32,0.2)]'
-                          : 'text-white/60 hover:text-white border-transparent hover:border-brand-red/30 hover:bg-brand-red/[0.08] hover:shadow-[0_0_16px_rgba(215,25,32,0.2)]'
+                          ? 'bg-white/[0.08] text-brand-heading border-brand-red/40 shadow-[0_0_16px_rgba(215,25,32,0.2)] font-bold'
+                          : 'text-white/60 hover:text-white border-transparent hover:border-brand-red/30 hover:bg-brand-red/[0.08] hover:shadow-[0_0_16px_rgba(215,25,32,0.2)] font-normal hover:font-bold'
                       }`}
                     >
                       <span>{item.label}</span>
@@ -290,53 +302,53 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
                     </button>
 
                     {item.id === 'services' && (
-                      <div className="pl-4 pr-1 py-1 space-y-1">
+                      <div className="pl-4 pr-1 py-1 space-y-1 font-sans">
                         <button
                           onClick={() => handleNavClick('design-build')}
-                          className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                          className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-sans transition-colors ${
                             activePage === 'design-build'
                               ? 'bg-brand-red text-white font-bold'
-                              : 'text-white/60 hover:text-white hover:bg-white/[0.04]'
+                              : 'text-white/60 hover:text-white hover:bg-white/[0.04] font-normal hover:font-bold'
                           }`}
                         >
                           <span>→ Design-Build Services</span>
                         </button>
                         <button
                           onClick={() => handleNavClick('predevelopment')}
-                          className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                          className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-sans transition-colors ${
                             activePage === 'predevelopment' || activePage === 'preconstruction'
                               ? 'bg-brand-red text-white font-bold'
-                              : 'text-white/60 hover:text-white hover:bg-white/[0.04]'
+                              : 'text-white/60 hover:text-white hover:bg-white/[0.04] font-normal hover:font-bold'
                           }`}
                         >
                           <span>→ Pre Development Services</span>
                         </button>
                         <button
                           onClick={() => handleNavClick('residential')}
-                          className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                          className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-sans transition-colors ${
                             activePage === 'residential'
                               ? 'bg-brand-red text-white font-bold'
-                              : 'text-white/60 hover:text-white hover:bg-white/[0.04]'
+                              : 'text-white/60 hover:text-white hover:bg-white/[0.04] font-normal hover:font-bold'
                           }`}
                         >
                           <span>→ Residential Services</span>
                         </button>
                         <button
                           onClick={() => handleNavClick('tenant-improvements')}
-                          className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                          className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-sans transition-colors ${
                             activePage === 'tenant-improvements'
                               ? 'bg-brand-red text-white font-bold'
-                              : 'text-white/60 hover:text-white hover:bg-white/[0.04]'
+                              : 'text-white/60 hover:text-white hover:bg-white/[0.04] font-normal hover:font-bold'
                           }`}
                         >
                           <span>→ Tenant Improvements</span>
                         </button>
                         <button
                           onClick={() => handleNavClick('ground-up')}
-                          className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                          className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-sans transition-colors ${
                             activePage === 'ground-up'
                               ? 'bg-brand-red text-white font-bold'
-                              : 'text-white/60 hover:text-white hover:bg-white/[0.04]'
+                              : 'text-white/60 hover:text-white hover:bg-white/[0.04] font-normal hover:font-bold'
                           }`}
                         >
                           <span>→ Ground-Up Construction</span>

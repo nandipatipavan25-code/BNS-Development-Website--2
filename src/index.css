@@ -143,6 +143,32 @@ button *,
 }
 
 /* ==========================================================================
+   Header / Navigation Scoped Typography (Lato font exclusively)
+   - Default: Lato Regular (400)
+   - Hover: Lato Bold (500/700)
+   - Active: Lato Bold (500/700)
+   ========================================================================== */
+header,
+header nav,
+header button,
+header a,
+header span,
+header div,
+header li,
+header ul,
+header button *,
+header a *,
+header nav * {
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+header nav button,
+header nav a,
+header nav span {
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+/* ==========================================================================
    About Us Page Scoped Typography Presets (Visual Distinction System)
    ========================================================================== */
 
