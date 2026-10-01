@@ -246,8 +246,8 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
       {/* ========================================================
           1. HERO SECTION (Previous Hero Background + Previous Hero Video + Content)
           ======================================================== */}
-      <section className="relative w-full pt-0 pb-0 bg-transparent">
-        <div className="relative w-full h-[78vh] min-h-[540px] sm:min-h-[620px] md:h-[88vh] overflow-hidden bg-[#0A0B0E] shadow-2xl flex items-center justify-center group">
+      <section className="relative w-full h-screen min-h-[100dvh] pt-0 pb-0 bg-transparent">
+        <div className="relative w-full h-full min-h-screen min-h-[100dvh] overflow-hidden bg-[#0A0B0E] shadow-2xl flex items-center justify-center group">
           
           {/* ── LAYER 1: PREVIOUS HERO BACKGROUND TREATMENT (Atmospheric Red Glassmorphic Arcs & Ambient Depth) ── */}
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
@@ -300,7 +300,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
           </div>
 
           {/* ── LAYER 3: EXISTING HERO CONTENT OVERLAY ── */}
-          <div className="absolute inset-0 z-10 flex flex-col justify-end p-5 sm:p-8 md:p-12 lg:p-14 max-w-7xl mx-auto w-full pointer-events-none">
+          <div className="absolute inset-0 z-10 flex flex-col justify-end p-5 sm:p-8 md:p-12 lg:p-14 pb-10 sm:pb-14 md:pb-16 lg:pb-20 max-w-7xl mx-auto w-full pointer-events-none">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
