@@ -173,10 +173,12 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
     video.defaultMuted = true;
     video.loop = true;
     video.playsInline = true;
+    video.defaultPlaybackRate = 1.35;
     video.playbackRate = 1.35;
 
     const playVideo = () => {
       if (!video || !isMounted) return;
+      video.defaultPlaybackRate = 1.35;
       video.playbackRate = 1.35;
       const promise = video.play();
       if (promise !== undefined) {

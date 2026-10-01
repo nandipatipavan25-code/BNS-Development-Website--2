@@ -27,6 +27,7 @@ export default function ConstructionBackground({
     video.defaultMuted = true;
     video.loop = true;
     video.playsInline = true;
+    video.defaultPlaybackRate = targetPlaybackRate;
     video.playbackRate = targetPlaybackRate;
     video.setAttribute('muted', '');
     video.setAttribute('playsinline', '');
@@ -37,6 +38,7 @@ export default function ConstructionBackground({
     const safePlay = () => {
       if (!video || !isMounted) return;
       video.muted = true;
+      video.defaultPlaybackRate = targetPlaybackRate;
       video.playbackRate = targetPlaybackRate;
       const promise = video.play();
       if (promise !== undefined) {
@@ -45,6 +47,7 @@ export default function ConstructionBackground({
           const resumeOnInteraction = () => {
             if (video && isMounted && video.paused) {
               video.muted = true;
+              video.defaultPlaybackRate = targetPlaybackRate;
               video.playbackRate = targetPlaybackRate;
               video.play().catch(() => {});
             }
@@ -82,17 +85,29 @@ export default function ConstructionBackground({
       }
     };
 
+    const handleRateChange = () => {
+      if (video && isMounted && video.playbackRate !== targetPlaybackRate) {
+        video.playbackRate = targetPlaybackRate;
+      }
+    };
+
     video.addEventListener('ended', handleEnded);
     video.addEventListener('pause', handlePause);
+    video.addEventListener('playing', handleRateChange);
+    video.addEventListener('ratechange', handleRateChange);
     document.addEventListener('visibilitychange', handleVisibility);
     window.addEventListener('focus', safePlay);
 
     // Heartbeat check to guarantee uninterrupted playback across scrolling and interaction
     const heartbeatTimer = setInterval(() => {
-      if (isMounted && showVideo && video && video.paused) {
-        safePlay();
+      if (isMounted && showVideo && video) {
+        if (video.paused) {
+          safePlay();
+        } else if (video.playbackRate !== targetPlaybackRate) {
+          video.playbackRate = targetPlaybackRate;
+        }
       }
-    }, 1500);
+    }, 1200);
 
     safePlay();
 
@@ -101,10 +116,12 @@ export default function ConstructionBackground({
       clearInterval(heartbeatTimer);
       video.removeEventListener('ended', handleEnded);
       video.removeEventListener('pause', handlePause);
+      video.removeEventListener('playing', handleRateChange);
+      video.removeEventListener('ratechange', handleRateChange);
       document.removeEventListener('visibilitychange', handleVisibility);
       window.removeEventListener('focus', safePlay);
     };
-  }, [showVideo, videoSrc]);
+  }, [showVideo, videoSrc, playbackRate]);
 
   return (
     <div
