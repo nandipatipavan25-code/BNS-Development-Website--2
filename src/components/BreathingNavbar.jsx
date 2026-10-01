@@ -10,8 +10,9 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 20);
     };
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -40,7 +41,7 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
             ? 'py-2 sm:py-2.5 bg-[#07080A]/40 backdrop-blur-2xl border-b border-white/10 shadow-2xl shadow-black/50'
-            : 'py-3 sm:py-3.5 bg-[#07080A]/20 backdrop-blur-xl border-b border-white/[0.06]'
+            : 'py-3 sm:py-3.5 bg-transparent backdrop-blur-none border-b border-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
