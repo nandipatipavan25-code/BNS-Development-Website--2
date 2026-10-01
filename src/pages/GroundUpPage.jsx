@@ -8,8 +8,7 @@ import {
 import SectionHeading, { ConstructionScaleSVG } from '../components/SectionHeading';
 import ScrollReveal from '../components/ScrollReveal';
 import ScrollWordReveal from '../components/ScrollWordReveal';
-import EyeFollowButton from '../components/EyeFollowButton';
-import HouseCTA from '../components/HouseCTA';
+import ServiceCTASection from '../components/ServiceCTASection';
 import ServiceBreadcrumb from '../components/ServiceBreadcrumb';
 
 export default function GroundUpPage({ setActivePage }) {
@@ -380,10 +379,13 @@ export default function GroundUpPage({ setActivePage }) {
         </section>
 
         {/* ========================================================
-            6. ARCHITECTURAL CTA SECTION
+            6. PLANNING A GROUND-UP PROJECT? (Closing CTA)
             ======================================================== */}
-        <HouseCTA
-          onStartProject={handleContactNav}
+        <ServiceCTASection
+          titlePrefix="Planning a"
+          titleHighlight="Ground-Up Project?"
+          buttonText="Let's Talk About Your Project"
+          onContact={handleContactNav}
         />
 
       </div>

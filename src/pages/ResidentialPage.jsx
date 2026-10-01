@@ -9,6 +9,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import ScrollWordReveal from '../components/ScrollWordReveal';
 import EyeFollowButton from '../components/EyeFollowButton';
 import ServiceBreadcrumb from '../components/ServiceBreadcrumb';
+import ServiceCTASection from '../components/ServiceCTASection';
 
 export default function ResidentialPage({ setActivePage }) {
   useEffect(() => {
@@ -385,52 +386,12 @@ export default function ResidentialPage({ setActivePage }) {
         {/* ========================================================
             6. PLANNING A RESIDENTIAL PROJECT? (Closing CTA)
             ======================================================== */}
-        <section className="relative p-10 sm:p-14 lg:p-16 rounded-3xl border border-brand-red/20 hover:border-brand-red/45 shadow-[0_0_30px_-8px_rgba(215,25,32,0.20)] hover:shadow-[0_0_45px_-5px_rgba(215,25,32,0.35)] backdrop-blur-2xl text-center space-y-6 overflow-hidden group transition-all duration-700">
-          {/* Luminous Red Ambient Border Glow Effect - Refined */}
-          <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-r from-brand-red/35 via-brand-red/15 to-brand-red/35 opacity-40 group-hover:opacity-65 blur-[2px] transition-all duration-700 pointer-events-none" />
-          <div className="absolute -inset-[2px] rounded-3xl bg-brand-red/20 blur-xl opacity-25 group-hover:opacity-45 transition-all duration-700 pointer-events-none" />
-
-          {/* Background Video (cta-bg.mp4) */}
-          <div className="absolute inset-0 z-0 overflow-hidden bg-[#07080A]">
-            <video
-              src="/videos/cta-bg.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              webkit-playsinline="true"
-              preload="auto"
-              disablePictureInPicture
-              disableRemotePlayback
-              className="w-full h-full object-cover object-center pointer-events-none transition-transform duration-1000 ease-out scale-105 group-hover:scale-110 brightness-105 contrast-100"
-              style={{ opacity: 1 }}
-              onEnded={(e) => {
-                e.currentTarget.play().catch(() => {});
-              }}
-            >
-              <source src="/videos/cta-bg.mp4" type="video/mp4" />
-            </video>
-            {/* Soft, minimal vignette for text contrast without black shade */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/25 pointer-events-none" />
-          </div>
-
-          <div className="max-w-2xl mx-auto space-y-5 relative z-10">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-semibold tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
-              <span className="text-white">Planning a</span>{' '}
-              <span className="text-brand-red">Residential Project?</span>
-            </h2>
-
-            <div className="pt-2 flex justify-center">
-              <EyeFollowButton
-                onClick={handleContactNav}
-                size="md"
-                icon="none"
-              >
-                Let's Talk About Your Project
-              </EyeFollowButton>
-            </div>
-          </div>
-        </section>
+        <ServiceCTASection
+          titlePrefix="Planning a"
+          titleHighlight="Residential Project?"
+          buttonText="Let's Talk About Your Project"
+          onContact={handleContactNav}
+        />
 
       </div>
     </div>
