@@ -20,26 +20,6 @@ export const teamData = [
     sectors: ["Ground-Up", "Multifamily", "Hospitality", "Mixed-Use", "Commercial"]
   },
   {
-    id: "manizha-buribekova",
-    name: "Manizha Buribekova",
-    role: "Business Development",
-    title: "Business Development",
-    experience: "Commercial Real Estate & Land Development",
-    portfolioVolume: "Florida & Texas Markets",
-    image: "/team/manizha-buribekova.jpg",
-    email: "manizha@bns-development.com",
-    phone: "(202) 427-2005",
-    linkedin: "https://www.linkedin.com/",
-    location: "Austin, TX & South Florida",
-    bio: "Manizha brings experience in commercial real estate, hospitality, land development, general contracting and business development, contributing to the growth of BNS Development.",
-    credentials: [
-      "Commercial Real Estate & Land Development",
-      "Hospitality & General Contracting Market Expansion",
-      "Master of Business Administration (MBA)"
-    ],
-    sectors: ["Commercial Real Estate", "Hospitality", "Land Development", "Business Growth"]
-  },
-  {
     id: "aravind-vangala",
     name: "Aravind Vangala",
     role: "Leadership",
@@ -58,6 +38,26 @@ export const teamData = [
       "Technology & Engineering Modernization"
     ],
     sectors: ["Strategic Investment", "Real Estate Capital", "Technology", "Enterprise Leadership"]
+  },
+  {
+    id: "manizha-buribekova",
+    name: "Manizha Buribekova",
+    role: "Business Development",
+    title: "Business Development",
+    experience: "Commercial Real Estate & Land Development",
+    portfolioVolume: "Florida & Texas Markets",
+    image: "/team/manizha-buribekova.jpg",
+    email: "manizha@bns-development.com",
+    phone: "(202) 427-2005",
+    linkedin: "https://www.linkedin.com/",
+    location: "Austin, TX & South Florida",
+    bio: "Manizha brings experience in commercial real estate, hospitality, land development, general contracting and business development, contributing to the growth of BNS Development.",
+    credentials: [
+      "Commercial Real Estate & Land Development",
+      "Hospitality & General Contracting Market Expansion",
+      "Master of Business Administration (MBA)"
+    ],
+    sectors: ["Commercial Real Estate", "Hospitality", "Land Development", "Business Growth"]
   },
   {
     id: "kylee-nunnery",
