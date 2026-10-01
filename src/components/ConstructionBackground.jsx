@@ -20,7 +20,7 @@ export default function ConstructionBackground({
     if (!video || !showVideo) return;
 
     let isMounted = true;
-    const targetPlaybackRate = playbackRate ?? (videoSrc.includes('home-page-background-video-2') ? 1.4 : 1.0);
+    const targetPlaybackRate = playbackRate ?? (videoSrc.includes('home-page-background-video-2') ? 2.0 : 1.0);
 
     // Strict DOM properties for reliable mobile/desktop autoplay & continuous looping
     video.muted = true;
