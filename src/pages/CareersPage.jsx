@@ -77,38 +77,38 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
   const candidateTraits = [
     {
       title: 'Take ownership of their work',
-      image: '/images/ground-up.jpg',
-      alt: 'Taking ownership of development work on site',
+      image: '/images/careers/01-ownership.jpg',
+      alt: 'Field construction superintendent taking direct ownership on site',
     },
     {
       title: 'Communicate clearly',
-      image: '/images/process/step-03-coordination.jpg',
-      alt: 'Clear communication and active team coordination',
+      image: '/images/careers/02-communication.jpg',
+      alt: 'Project managers and architects communicating blueprint specifications clearly',
     },
     {
       title: 'Work well with others',
-      image: '/images/about-project-partner.jpg',
-      alt: 'Collaborative teamwork across development partners',
+      image: '/images/careers/03-teamwork.jpg',
+      alt: 'Collaborative teamwork between field crews and project managers',
     },
     {
       title: 'Pay attention to detail',
-      image: '/images/process/step-04-details.jpg',
-      alt: 'Precision estimating and architectural details',
+      image: '/images/careers/04-detail.jpg',
+      alt: 'Close-up quality inspection and technical precision review',
     },
     {
       title: 'Approach challenges with a problem-solving mindset',
-      image: '/images/design-build.jpg',
-      alt: 'Integrated problem solving in design and construction',
+      image: '/images/careers/05-problem-solving.jpg',
+      alt: 'Development team resolving technical challenges with digital BIM models',
     },
     {
       title: 'Value quality and accountability',
-      image: '/images/process/step-05-delivery.jpg',
-      alt: 'Unwavering quality and milestone accountability',
+      image: '/images/careers/06-quality-accountability.jpg',
+      alt: 'Architectural craftsmanship and certified delivery standards',
     },
     {
       title: 'Want to grow professionally',
-      image: '/images/home-strategic-leadership.jpg',
-      alt: 'Professional development and leadership growth',
+      image: '/images/careers/07-growth.jpg',
+      alt: 'Professional development, executive mentoring, and career growth',
     },
   ];
 
