@@ -84,7 +84,7 @@ export default function HouseCTA({
             {/* Sub-text Narrative */}
             {description && (
               <div className="mt-4 sm:mt-6 max-w-2xl mx-auto">
-                <p className="text-sm sm:text-base lg:text-lg text-[#A8A8A0] font-sans leading-relaxed text-center">
+                <p className="text-sm sm:text-base lg:text-lg text-[#9CA3AF] font-sans leading-relaxed text-center">
                   {description}
                 </p>
               </div>

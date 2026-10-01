@@ -257,7 +257,7 @@ export default function SubcontractorsPage({ setActivePage }) {
                 {/* Technical Badge (Style 1: Red Line + Light Text) */}
                 <div className="flex items-center gap-2.5 mb-2">
                   <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
-                  <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#A8A8A0] tracking-wider">
+                  <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#9CA3AF] tracking-wider">
                     Trusted Trade Partners • Florida &amp; Texas
                   </span>
                 </div>
@@ -267,8 +267,8 @@ export default function SubcontractorsPage({ setActivePage }) {
                   Our <span className="text-brand-red">Subcontractors</span>
                 </h1>
 
-                {/* Supporting Text in Manrope #A8A8A0 */}
-                <p className="text-sm sm:text-base lg:text-lg text-[#A8A8A0] font-sans leading-relaxed max-w-2xl">
+                {/* Supporting Text in Manrope #9CA3AF */}
+                <p className="text-sm sm:text-base lg:text-lg text-[#9CA3AF] font-sans leading-relaxed max-w-2xl">
                   A trusted network of premier specialty trade contractors, structural engineers, and craft specialists powering BNS commercial, multifamily, and ground-up builds.
                 </p>
               </motion.div>
@@ -416,7 +416,7 @@ export default function SubcontractorsPage({ setActivePage }) {
                       <h3 className="text-xl sm:text-2xl font-semibold font-display text-brand-heading group-hover:text-brand-red transition-colors leading-tight">
                         {sub.name}
                       </h3>
-                      <p className="mt-1.5 text-xs text-[#A8A8A0] font-sans leading-relaxed">
+                      <p className="mt-1.5 text-xs text-[#9CA3AF] font-sans leading-relaxed">
                         {sub.trade}
                       </p>
                     </div>
@@ -438,13 +438,13 @@ export default function SubcontractorsPage({ setActivePage }) {
                   <div className="mt-6 pt-5 border-t border-white/10 space-y-2.5 text-xs font-mono">
                     {/* Phone Number */}
                     <div className="flex items-center justify-between">
-                      <span className="text-[11px] text-[#A8A8A0]/70 flex items-center gap-2">
+                      <span className="text-[11px] text-[#9CA3AF]/70 flex items-center gap-2">
                         <Phone className="w-3.5 h-3.5 text-brand-red shrink-0" />
                         <span>Phone:</span>
                       </span>
                       <a
                         href={`tel:${sub.phone.replace(/[^0-9]/g, '')}`}
-                        className="text-[#A8A8A0] hover:text-brand-red font-medium transition-colors"
+                        className="text-[#9CA3AF] hover:text-brand-red font-medium transition-colors"
                       >
                         {sub.phone}
                       </a>
@@ -452,13 +452,13 @@ export default function SubcontractorsPage({ setActivePage }) {
 
                     {/* Email */}
                     <div className="flex items-center justify-between">
-                      <span className="text-[11px] text-[#A8A8A0]/70 flex items-center gap-2">
+                      <span className="text-[11px] text-[#9CA3AF]/70 flex items-center gap-2">
                         <Mail className="w-3.5 h-3.5 text-brand-red shrink-0" />
                         <span>Email:</span>
                       </span>
                       <a
                         href={`mailto:${sub.email}`}
-                        className="text-[#A8A8A0] hover:text-brand-red transition-colors truncate max-w-[190px] text-right"
+                        className="text-[#9CA3AF] hover:text-brand-red transition-colors truncate max-w-[190px] text-right"
                         title={sub.email}
                       >
                         {sub.email}
@@ -467,7 +467,7 @@ export default function SubcontractorsPage({ setActivePage }) {
 
                     {/* Website */}
                     <div className="flex items-center justify-between pt-1">
-                      <span className="text-[11px] text-[#A8A8A0]/70 flex items-center gap-2">
+                      <span className="text-[11px] text-[#9CA3AF]/70 flex items-center gap-2">
                         <Globe className="w-3.5 h-3.5 text-brand-red shrink-0" />
                         <span>Website:</span>
                       </span>
@@ -475,10 +475,10 @@ export default function SubcontractorsPage({ setActivePage }) {
                         href={sub.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-[#A8A8A0] hover:text-brand-red font-medium transition-colors group/link"
+                        className="inline-flex items-center gap-1.5 text-[#9CA3AF] hover:text-brand-red font-medium transition-colors group/link"
                       >
                         <span>{sub.website.replace('https://', '')}</span>
-                        <ArrowUpRight className="w-3 h-3 text-[#A8A8A0]/60 group-hover/link:text-brand-red transition-colors" />
+                        <ArrowUpRight className="w-3 h-3 text-[#9CA3AF]/60 group-hover/link:text-brand-red transition-colors" />
                       </a>
                     </div>
                   </div>
@@ -501,14 +501,14 @@ export default function SubcontractorsPage({ setActivePage }) {
             <div className="space-y-3 max-w-2xl">
               <div className="flex items-center gap-2.5 mb-2">
                 <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
-                <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#A8A8A0] tracking-wider">
+                <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#9CA3AF] tracking-wider">
                   Trade Onboarding • Florida &amp; Texas
                 </span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-display font-semibold text-brand-heading leading-tight">
                 Want to Join the BNS Trade Network?
               </h3>
-              <p className="text-sm text-[#A8A8A0] font-sans leading-relaxed">
+              <p className="text-sm text-[#9CA3AF] font-sans leading-relaxed">
                 We are actively bidding and awarding packages across Central Texas, Dallas, Tampa, and South Florida. Reliable pay applications, pristine jobsites, and collaborative superintendents guaranteed.
               </p>
             </div>

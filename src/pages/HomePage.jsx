@@ -328,7 +328,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                   scaleColor="red"
                   className="mb-3 sm:mb-4"
                 />
-                <div className="space-y-4 text-sm sm:text-base text-[#A8A8A0] leading-relaxed font-sans">
+                <div className="space-y-4 text-sm sm:text-base text-[#9CA3AF] leading-relaxed font-sans">
                   <p>
                     The decisions made before development can shape the budget, timeline and outcome of a project. BNS Development gets involved early to help clients evaluate opportunities, plan effectively, coordinate requirements and move projects forward with clarity.
                   </p>
@@ -373,7 +373,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                     <h3 className="text-lg sm:text-xl font-semibold font-display text-white group-hover:text-brand-red transition-colors leading-snug">
                       Decades of Ground-Up Mastery &amp; Guidance
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#A8A8A0] leading-relaxed font-sans italic border-l-2 border-brand-red pl-3.5">
+                    <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed font-sans italic border-l-2 border-brand-red pl-3.5">
                       "Our goal is simple: give clients a knowledgeable partner who can help move the project forward with clarity and confidence."
                     </p>
                   </div>
@@ -484,7 +484,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
               </h2>
 
               {/* Subheading Text */}
-              <p className="mt-3.5 text-sm sm:text-base text-[#A8A8A0] leading-relaxed font-sans max-w-lg">
+              <p className="mt-3.5 text-sm sm:text-base text-[#9CA3AF] leading-relaxed font-sans max-w-lg">
                 A disciplined, relationship-driven foundation<br />
                 built on four essential commitments to every client.
               </p>
@@ -511,7 +511,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                     </h3>
 
                     {/* Pillar Description with ample breathing room */}
-                    <p className="text-sm sm:text-[14px] text-[#A8A8A0] leading-relaxed font-sans pr-2 sm:pr-3">
+                    <p className="text-sm sm:text-[14px] text-[#9CA3AF] leading-relaxed font-sans pr-2 sm:pr-3">
                       {pillar.desc}
                     </p>
                   </div>
@@ -537,7 +537,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
               <div className="space-y-3">
                 <div className="flex items-center gap-2.5">
                   <span className="w-5 h-[2px] bg-brand-red inline-block" />
-                  <span className="font-sans text-xs tracking-wider text-[#A8A8A0] font-semibold">
+                  <span className="font-sans text-xs tracking-wider text-[#9CA3AF] font-semibold">
                     Our Expertise
                   </span>
                 </div>
@@ -551,9 +551,9 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
               {/* Middle Subtle Divider (LG screens) */}
               <div className="hidden lg:block w-[1px] h-20 bg-white/10 self-center shrink-0" />
 
-              {/* Right: Supporting Paragraph in #A8A8A0 */}
+              {/* Right: Supporting Paragraph in #9CA3AF */}
               <div className="max-w-md lg:pb-1">
-                <p className="text-sm sm:text-base text-[#A8A8A0] font-sans leading-relaxed">
+                <p className="text-sm sm:text-base text-[#9CA3AF] font-sans leading-relaxed">
                   Our experience spans residential, multifamily, commercial, hospitality, mixed-use, condominiums, retail, aviation, renovations, land development and ground-up development.
                 </p>
               </div>

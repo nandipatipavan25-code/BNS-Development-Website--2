@@ -99,7 +99,7 @@ export default function GroundUpPage({ setActivePage }) {
                   <div className="space-y-2.5">
                     <div className="flex items-center gap-2.5">
                       <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
-                      <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#A8A8A0] tracking-wider">
+                      <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#9CA3AF] tracking-wider">
                         Ground-Up Construction Services
                       </span>
                     </div>
@@ -115,24 +115,24 @@ export default function GroundUpPage({ setActivePage }) {
                 <div className="mt-4 space-y-3.5 font-sans">
                   <ScrollWordReveal
                     text="Ground-up construction requires coordination from the earliest stages of a project."
-                    colorRevealed="#a8a8a0"
-                    colorHidden="rgba(168, 168, 160, 0.25)"
+                    colorRevealed="#9CA3AF"
+                    colorHidden="rgba(156, 163, 175, 0.25)"
                     delay={0.05}
-                    className="font-medium text-[16px] leading-relaxed text-[#a8a8a0]"
+                    className="font-medium text-[16px] leading-relaxed text-[#9CA3AF]"
                   />
                   <ScrollWordReveal
                     text="BNS Development brings experienced construction leadership to projects that begin with a site and develop into a complete structure."
-                    colorRevealed="#a8a8a0"
-                    colorHidden="rgba(168, 168, 160, 0.25)"
+                    colorRevealed="#9CA3AF"
+                    colorHidden="rgba(156, 163, 175, 0.25)"
                     delay={0.15}
-                    className="text-[16px] leading-relaxed text-[#a8a8a0]"
+                    className="text-[16px] leading-relaxed text-[#9CA3AF]"
                   />
                   <ScrollWordReveal
                     text="From early planning and coordination to construction and completion, we help manage the many moving parts involved in bringing a ground-up project to life."
-                    colorRevealed="#a8a8a0"
-                    colorHidden="rgba(168, 168, 160, 0.25)"
+                    colorRevealed="#9CA3AF"
+                    colorHidden="rgba(156, 163, 175, 0.25)"
                     delay={0.25}
-                    className="text-[16px] leading-relaxed text-[#a8a8a0]"
+                    className="text-[16px] leading-relaxed text-[#9CA3AF]"
                   />
                 </div>
               </div>
@@ -201,24 +201,24 @@ export default function GroundUpPage({ setActivePage }) {
               <div className="space-y-4 text-sm sm:text-base font-sans leading-relaxed">
                 <ScrollWordReveal
                   text="Ground-up projects involve more than constructing a building."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.06}
-                  className="font-medium text-base sm:text-lg text-[#a8a8a0]"
+                  className="font-medium text-base sm:text-lg text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="They require coordination across planning, design, site development, construction, scheduling, trades, materials and multiple project stakeholders."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.18}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="BNS Development's leadership brings extensive experience across ground-up construction projects, including multifamily, hospitality, commercial, automotive, retail and other project types."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.3}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
               </div>
             </div>
@@ -260,7 +260,7 @@ export default function GroundUpPage({ setActivePage }) {
                         {step.title}
                       </h3>
 
-                      <p className="text-xs sm:text-[13px] text-[#A8A8A0] font-sans leading-relaxed">
+                      <p className="text-xs sm:text-[13px] text-[#9CA3AF] font-sans leading-relaxed">
                         {step.desc}
                       </p>
                     </div>
@@ -330,24 +330,24 @@ export default function GroundUpPage({ setActivePage }) {
               <div className="space-y-4 text-sm sm:text-base font-sans leading-relaxed">
                 <ScrollWordReveal
                   text="Ground-up construction can involve hundreds of decisions and multiple project partners."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.06}
-                  className="font-medium text-base sm:text-lg text-[#a8a8a0]"
+                  className="font-medium text-base sm:text-lg text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="Experience matters because challenges are inevitable. What matters is having a team that can recognize issues, communicate clearly and work toward practical solutions."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.18}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="BNS Development brings a hands-on approach to project coordination and construction management, helping clients move from an undeveloped site toward a completed project."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.3}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
               </div>
 

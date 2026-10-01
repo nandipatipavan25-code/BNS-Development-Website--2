@@ -120,7 +120,7 @@ export default function TenantImprovementsPage({ setActivePage }) {
                   <div className="space-y-2.5">
                     <div className="flex items-center gap-2.5">
                       <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
-                      <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#A8A8A0] tracking-wider">
+                      <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#9CA3AF] tracking-wider">
                         Tenant Improvement Services
                       </span>
                     </div>
@@ -136,24 +136,24 @@ export default function TenantImprovementsPage({ setActivePage }) {
                 <div className="mt-4 space-y-3.5 font-sans">
                   <ScrollWordReveal
                     text="A commercial space needs to work for the people and business using it."
-                    colorRevealed="#a8a8a0"
-                    colorHidden="rgba(168, 168, 160, 0.25)"
+                    colorRevealed="#9CA3AF"
+                    colorHidden="rgba(156, 163, 175, 0.25)"
                     delay={0.05}
-                    className="font-medium text-[16px] leading-relaxed text-[#a8a8a0]"
+                    className="font-medium text-[16px] leading-relaxed text-[#9CA3AF]"
                   />
                   <ScrollWordReveal
                     text="BNS Development provides tenant improvement services to help transform existing commercial spaces to meet new functional, operational and design requirements."
-                    colorRevealed="#a8a8a0"
-                    colorHidden="rgba(168, 168, 160, 0.25)"
+                    colorRevealed="#9CA3AF"
+                    colorHidden="rgba(156, 163, 175, 0.25)"
                     delay={0.15}
-                    className="text-[16px] leading-relaxed text-[#a8a8a0]"
+                    className="text-[16px] leading-relaxed text-[#9CA3AF]"
                   />
                   <ScrollWordReveal
                     text="From planning and coordination through delivery and fit-out, we help manage the process of turning an existing space into one that is ready for its next purpose."
-                    colorRevealed="#a8a8a0"
-                    colorHidden="rgba(168, 168, 160, 0.25)"
+                    colorRevealed="#9CA3AF"
+                    colorHidden="rgba(156, 163, 175, 0.25)"
                     delay={0.25}
-                    className="text-[16px] leading-relaxed text-[#a8a8a0]"
+                    className="text-[16px] leading-relaxed text-[#9CA3AF]"
                   />
                 </div>
               </div>
@@ -222,24 +222,24 @@ export default function TenantImprovementsPage({ setActivePage }) {
               <div className="space-y-4 text-sm sm:text-base font-sans leading-relaxed">
                 <ScrollWordReveal
                   text="Tenant improvement projects can involve multiple trades, design requirements, schedules and stakeholders."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.06}
-                  className="font-medium text-base sm:text-lg text-[#a8a8a0]"
+                  className="font-medium text-base sm:text-lg text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="Without proper coordination, even smaller commercial projects can become complicated."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.18}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="Our approach focuses on understanding the existing space, identifying the required improvements and coordinating the work necessary to bring the project together."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.3}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
               </div>
             </div>
@@ -277,7 +277,7 @@ export default function TenantImprovementsPage({ setActivePage }) {
                       <h4 className="text-lg font-semibold font-display text-white group-hover:text-brand-red transition-colors">
                         {svc.title}
                       </h4>
-                      <p className="text-xs sm:text-[13px] text-[#a8a8a0] leading-relaxed font-sans">
+                      <p className="text-xs sm:text-[13px] text-[#9CA3AF] leading-relaxed font-sans">
                         {svc.desc}
                       </p>
                     </div>
@@ -367,17 +367,17 @@ export default function TenantImprovementsPage({ setActivePage }) {
               <div className="space-y-4 text-base sm:text-lg font-sans leading-relaxed">
                 <ScrollWordReveal
                   text="Every square foot of a commercial facility directly impacts productivity, customer experience and brand identity."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.06}
-                  className="font-medium text-[#a8a8a0]"
+                  className="font-medium text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="From initial walkthroughs to final inspections, BNS Development ensures every trade and detail aligns with your operational timeline."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.22}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
               </div>
             </div>
@@ -432,7 +432,7 @@ export default function TenantImprovementsPage({ setActivePage }) {
               <span className="text-brand-red">Transform Your Space?</span>
             </h2>
 
-            <p className="text-sm sm:text-base text-[#a8a8a0] font-sans leading-relaxed max-w-xl mx-auto drop-shadow-md">
+            <p className="text-sm sm:text-base text-[#9CA3AF] font-sans leading-relaxed max-w-xl mx-auto drop-shadow-md">
               Whether you're preparing a space for a new tenant, updating an existing commercial environment or planning a complete build-out, BNS Development can help you move from an existing space to the next stage.
             </p>
 

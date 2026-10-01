@@ -131,7 +131,7 @@ export default function ServiceDetailModal({ service, onClose, onContactClick })
                       className="flex items-center gap-3 p-3.5 rounded-xl bg-brand-black/40 border border-brand-border/60"
                     >
                       <CheckCircle className="w-4 h-4 text-brand-red shrink-0" />
-                      <span className="text-sm text-[#A8A8A0] font-sans">{item}</span>
+                      <span className="text-sm text-[#9CA3AF] font-sans">{item}</span>
                     </div>
                   ))}
                 </div>

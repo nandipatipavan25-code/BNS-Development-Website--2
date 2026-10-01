@@ -132,7 +132,7 @@ export default function PreconstructionPage({ setActivePage }) {
                   <div className="space-y-2.5">
                     <div className="flex items-center gap-2.5">
                       <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
-                      <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#A8A8A0] tracking-wider">
+                      <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#9CA3AF] tracking-wider">
                         Pre Development Services
                       </span>
                     </div>
@@ -148,24 +148,24 @@ export default function PreconstructionPage({ setActivePage }) {
                 <div className="mt-4 space-y-3.5 font-sans">
                   <ScrollWordReveal
                     text="The success of a development project is often determined before development begins."
-                    colorRevealed="#a8a8a0"
-                    colorHidden="rgba(168, 168, 160, 0.25)"
+                    colorRevealed="#9CA3AF"
+                    colorHidden="rgba(156, 163, 175, 0.25)"
                     delay={0.05}
-                    className="font-medium text-[16px] leading-relaxed text-[#a8a8a0]"
+                    className="font-medium text-[16px] leading-relaxed text-[#9CA3AF]"
                   />
                   <ScrollWordReveal
                     text="BNS Development provides Pre Development Services designed to help owners and developers understand their project, identify potential challenges and establish a practical path toward development."
-                    colorRevealed="#a8a8a0"
-                    colorHidden="rgba(168, 168, 160, 0.25)"
+                    colorRevealed="#9CA3AF"
+                    colorHidden="rgba(156, 163, 175, 0.25)"
                     delay={0.15}
-                    className="text-[16px] leading-relaxed text-[#a8a8a0]"
+                    className="text-[16px] leading-relaxed text-[#9CA3AF]"
                   />
                   <ScrollWordReveal
                     text="From early planning and scope development to scheduling and coordination, we help bring clarity to the decisions that need to be made before work begins."
-                    colorRevealed="#a8a8a0"
-                    colorHidden="rgba(168, 168, 160, 0.25)"
+                    colorRevealed="#9CA3AF"
+                    colorHidden="rgba(156, 163, 175, 0.25)"
                     delay={0.25}
-                    className="text-[16px] leading-relaxed text-[#a8a8a0]"
+                    className="text-[16px] leading-relaxed text-[#9CA3AF]"
                   />
                 </div>
               </div>
@@ -234,31 +234,31 @@ export default function PreconstructionPage({ setActivePage }) {
               <div className="space-y-4 text-sm sm:text-base font-sans leading-relaxed">
                 <ScrollWordReveal
                   text="Pre-Development is where ideas begin to take shape."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.06}
-                  className="font-medium text-base sm:text-lg text-[#a8a8a0]"
+                  className="font-medium text-base sm:text-lg text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="It is also where important decisions can be addressed before they become costly problems during development."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.18}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="Our team works with clients and project partners to understand the project requirements, coordinate the necessary information and prepare for the development and execution phase."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.3}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="With extensive experience in development management and general contracting, BNS Development brings a practical development perspective to the planning process."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.42}
-                  className="font-medium text-[#a8a8a0]"
+                  className="font-medium text-[#9CA3AF]"
                 />
               </div>
             </div>
@@ -296,7 +296,7 @@ export default function PreconstructionPage({ setActivePage }) {
                       <h4 className="text-lg font-semibold font-display text-white group-hover:text-brand-red transition-colors">
                         {svc.title}
                       </h4>
-                      <p className="text-xs sm:text-[13px] text-[#a8a8a0] leading-relaxed font-sans">
+                      <p className="text-xs sm:text-[13px] text-[#9CA3AF] leading-relaxed font-sans">
                         {svc.desc}
                       </p>
                     </div>
@@ -405,17 +405,17 @@ export default function PreconstructionPage({ setActivePage }) {
               <div className="space-y-4 text-base sm:text-lg font-sans leading-relaxed">
                 <ScrollWordReveal
                   text="Pre-Development is not simply a preliminary step. It is an opportunity to establish the foundation for the entire project."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.06}
-                  className="font-medium text-[#a8a8a0]"
+                  className="font-medium text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="BNS Development works with clients to move from an initial concept toward a project that is better understood, better coordinated and ready for the next stage."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.22}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
               </div>
             </div>

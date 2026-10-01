@@ -22,7 +22,7 @@ export default function SectionHeading({
   theme = "dark", // 'dark' | 'light'
   scaleColor = "red", // 'red' | 'white'
   showRedLine = null, // null | boolean (defaults to true if null, unless centered)
-  tagColor = "light", // 'light' (#A8A8A0) | 'red' (#D71920)
+  tagColor = "light", // 'light' (#9CA3AF) | 'red' (#D71920)
   useWordReveal = true,
   className = "",
   titleClassName = "",
@@ -51,8 +51,8 @@ export default function SectionHeading({
           )}
           <span className={`text-xs sm:text-[13px] font-sans font-semibold tracking-wider ${
             useLine
-              ? 'text-[#A8A8A0]'
-              : (tagColor === 'red' ? 'text-brand-red' : 'text-[#A8A8A0]')
+              ? 'text-[#9CA3AF]'
+              : (tagColor === 'red' ? 'text-brand-red' : 'text-[#9CA3AF]')
           }`}>
             {cleanTag}
           </span>
@@ -79,14 +79,14 @@ export default function SectionHeading({
           {typeof description === 'string' && useWordReveal ? (
             <ScrollWordReveal
               text={description}
-              colorRevealed="#A8A8A0"
-              colorHidden="rgba(168, 168, 160, 0.25)"
+              colorRevealed="#9CA3AF"
+              colorHidden="rgba(156, 163, 175, 0.25)"
               className={`text-sm sm:text-base leading-relaxed font-sans text-brand-subtext ${
                 centered ? 'justify-center text-center' : ''
               } ${descriptionClassName}`}
             />
           ) : (
-            <div className={`text-sm sm:text-base leading-relaxed font-sans text-[#A8A8A0] ${
+            <div className={`text-sm sm:text-base leading-relaxed font-sans text-[#9CA3AF] ${
               centered ? 'justify-center text-center' : ''
             } ${descriptionClassName}`}>
               {description}

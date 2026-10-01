@@ -98,7 +98,7 @@ export default function AboutPage({ setActivePage, fontPreset = 1 }) {
               <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 text-white">
                 <div className="flex items-center gap-2.5 mb-2">
                   <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
-                  <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#A8A8A0] tracking-wider">
+                  <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#9CA3AF] tracking-wider">
                     The BNS Standard
                   </span>
                 </div>
@@ -182,7 +182,7 @@ export default function AboutPage({ setActivePage, fontPreset = 1 }) {
                       'Managing the Details',
                       'Delivering With Accountability',
                     ].map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-3 text-sm sm:text-[15px] text-[#A8A8A0] font-sans">
+                      <div key={idx} className="flex items-center gap-3 text-sm sm:text-[15px] text-[#9CA3AF] font-sans">
                         <span className="w-2 h-2 rounded-full bg-brand-red shrink-0" />
                         <span>{item}</span>
                       </div>
@@ -270,7 +270,7 @@ export default function AboutPage({ setActivePage, fontPreset = 1 }) {
                         {val.name}
                       </h4>
                     </div>
-                    <p className="text-xs text-[#A8A8A0] font-sans leading-relaxed pl-3.5">
+                    <p className="text-xs text-[#9CA3AF] font-sans leading-relaxed pl-3.5">
                       {val.desc}
                     </p>
                   </div>

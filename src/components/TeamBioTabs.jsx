@@ -56,7 +56,7 @@ export default function TeamBioTabs({ onContactClick }) {
                         <h3 className="text-xl sm:text-[22px] font-semibold font-display text-white tracking-tight leading-tight group-hover:text-brand-red transition-colors">
                           {person.name}
                         </h3>
-                        <p className="text-xs text-[#A8A8A0] font-sans mt-1.5 leading-relaxed">
+                        <p className="text-xs text-[#9CA3AF] font-sans mt-1.5 leading-relaxed">
                           {person.title}
                         </p>
                       </div>

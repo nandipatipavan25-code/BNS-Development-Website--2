@@ -118,7 +118,7 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
             <div className="max-w-4xl space-y-4">
               <div className="flex items-center gap-2.5">
                 <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
-                <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#A8A8A0] tracking-wider">
+                <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#9CA3AF] tracking-wider">
                   Comprehensive Services
                 </span>
               </div>
@@ -133,8 +133,8 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
               <div className="pt-2 max-w-2xl">
                 <ScrollWordReveal
                   text="From early feasibility and Pre Development cost modeling through complex ground-up superstructures and commercial tenant improvements, BNS Development brings single-source accountability and experienced builder leadership to every project."
-                  colorRevealed="#A8A8A0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   className="text-sm sm:text-base text-brand-subtext font-sans leading-relaxed"
                 />
               </div>
@@ -150,7 +150,7 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                   <span>Leadership</span>
                 </div>
                 <div className="text-2xl sm:text-3xl font-display font-semibold text-[#D4D4D0]">35+ Years</div>
-                <p className="text-xs text-[#A8A8A0]">Combined building mastery</p>
+                <p className="text-xs text-[#9CA3AF]">Combined building mastery</p>
               </div>
 
               <div className="space-y-1 p-3 border-l border-white/10">
@@ -159,7 +159,7 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                   <span>Licensing</span>
                 </div>
                 <div className="text-2xl sm:text-3xl font-display font-semibold text-[#D4D4D0]">FL &amp; TX</div>
-                <p className="text-xs text-[#A8A8A0]">General Contractor CGC 1505391</p>
+                <p className="text-xs text-[#9CA3AF]">General Contractor CGC 1505391</p>
               </div>
 
               <div className="space-y-1 p-3 border-l-0 md:border-l border-white/10">
@@ -168,7 +168,7 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                   <span>Accountability</span>
                 </div>
                 <div className="text-2xl sm:text-3xl font-display font-semibold text-[#D4D4D0]">Single-Source</div>
-                <p className="text-xs text-[#A8A8A0]">Unified design &amp; build delivery</p>
+                <p className="text-xs text-[#9CA3AF]">Unified design &amp; build delivery</p>
               </div>
 
               <div className="space-y-1 p-3 border-l border-white/10">
@@ -177,7 +177,7 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                   <span>Standards</span>
                 </div>
                 <div className="text-2xl sm:text-3xl font-display font-semibold text-[#D4D4D0]">100%</div>
-                <p className="text-xs text-[#A8A8A0]">Safety &amp; QA/QC governance</p>
+                <p className="text-xs text-[#9CA3AF]">Safety &amp; QA/QC governance</p>
               </div>
             </div>
           </ScrollReveal>

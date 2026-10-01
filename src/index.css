@@ -11,7 +11,7 @@
   --color-heading: #E6E6E6;
   --color-subheading: #D8D8D2;
   --color-body: #CCCCCC; /* 80% white for general regular text */
-  --color-subtext: #A8A8A0; /* #A8A8A0 for all subtext and text below section headings */
+  --color-subtext: #9CA3AF; /* #9CA3AF for all subtext and text below section headings */
   --color-stat-text: rgba(255, 255, 255, 0.60); /* 60% white for stats supporting text */
   --color-muted: #8A8A82;
   --color-surface-light: #FFFFFF;
@@ -682,9 +682,9 @@ html {
 }
 
 .about-preset-3 .text-brand-subtext,
-.about-preset-3 .text-\[\#A8A8A0\],
+.about-preset-3 .text-\[\#9CA3AF\],
 .about-preset-3 .subtext,
-.about-preset-3 [class*="text-[#A8A8A0]"],
+.about-preset-3 [class*="text-[#9CA3AF]"],
 .about-preset-3 [class*="text-brand-subtext"],
 .about-preset-3 p.text-sm,
 .about-preset-3 p.text-base {

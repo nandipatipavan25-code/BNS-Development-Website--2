@@ -159,7 +159,7 @@ export default function ProjectCarousel({ onSelectProject, onViewAll, bgClassNam
           {/* Kicker (Style 1: Red Line + Light Text) */}
           <div className="flex items-center gap-2.5 mb-3">
             <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
-            <span className="text-xs sm:text-[13px] font-sans font-semibold tracking-wider text-[#A8A8A0]">
+            <span className="text-xs sm:text-[13px] font-sans font-semibold tracking-wider text-[#9CA3AF]">
               Portfolio &amp; Track Record
             </span>
           </div>
@@ -173,7 +173,7 @@ export default function ProjectCarousel({ onSelectProject, onViewAll, bgClassNam
                   in the Work.
                 </span>
               </h2>
-              <p className="mt-2 text-xs sm:text-sm text-[#A8A8A0] leading-relaxed font-sans">
+              <p className="mt-2 text-xs sm:text-sm text-[#9CA3AF] leading-relaxed font-sans">
                 Our team's experience includes multifamily developments, hotels, condominiums, commercial buildings, automotive facilities, retail projects, aviation facilities, renovations and other complex development projects. Explore our project portfolio to see the range of work and experience behind BNS Development.
               </p>
             </div>

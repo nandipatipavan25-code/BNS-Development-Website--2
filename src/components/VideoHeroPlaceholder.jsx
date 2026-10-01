@@ -65,7 +65,7 @@ export default function VideoHeroPlaceholder({
               <h3 className="text-lg sm:text-2xl font-semibold font-display tracking-tight text-[#E6E6E6]">
                 {title}
               </h3>
-              <p className="text-xs sm:text-sm text-[#A8A8A0] font-sans">
+              <p className="text-xs sm:text-sm text-[#9CA3AF] font-sans">
                 {subtitle}
               </p>
             </div>

@@ -24,7 +24,7 @@ export default {
           heading: "#E6E6E6",     // Primary headings (H1, H2, major titles) - #E6E6E6
           subheading: "#D8D8D2",  // Subheadings (H3, H4, card titles, tags, key stats) - Soft oyster
           body: "#CCCCCC",        // General regular text - 80% soft refined white (#CCCCCC)
-          subtext: "#A8A8A0",     // Subtext and text below section headings - #A8A8A0
+          subtext: "#9CA3AF",     // Subtext and text below section headings - #9CA3AF
           statText: "rgba(255, 255, 255, 0.60)", // Supporting/stat text - 60% white
           statMuted: "#999999",   // Supporting/stat text hex - 60% white
           mutedText: "#8A8A82",   // Secondary meta, captions, breadcrumbs

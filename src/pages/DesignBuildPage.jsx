@@ -126,7 +126,7 @@ export default function DesignBuildPage({ setActivePage }) {
                   <div className="space-y-2.5">
                     <div className="flex items-center gap-2.5">
                       <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
-                      <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#A8A8A0] tracking-wider">
+                      <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#9CA3AF] tracking-wider">
                         Design-Build Delivery
                       </span>
                     </div>
@@ -142,24 +142,24 @@ export default function DesignBuildPage({ setActivePage }) {
                 <div className="mt-4 space-y-3.5 font-sans">
                   <ScrollWordReveal
                     text="Design and development work best when the people responsible for both are working toward the same objective."
-                    colorRevealed="#a8a8a0"
-                    colorHidden="rgba(168, 168, 160, 0.25)"
+                    colorRevealed="#9CA3AF"
+                    colorHidden="rgba(156, 163, 175, 0.25)"
                     delay={0.05}
-                    className="font-medium text-[16px] leading-relaxed text-[#a8a8a0]"
+                    className="font-medium text-[16px] leading-relaxed text-[#9CA3AF]"
                   />
                   <ScrollWordReveal
                     text="BNS Development's Design-Build approach brings project planning, design coordination and development execution together through a more integrated process."
-                    colorRevealed="#a8a8a0"
-                    colorHidden="rgba(168, 168, 160, 0.25)"
+                    colorRevealed="#9CA3AF"
+                    colorHidden="rgba(156, 163, 175, 0.25)"
                     delay={0.15}
-                    className="text-[16px] leading-relaxed text-[#a8a8a0]"
+                    className="text-[16px] leading-relaxed text-[#9CA3AF]"
                   />
                   <ScrollWordReveal
                     text="The result is a streamlined approach designed to improve communication, coordination and accountability throughout the project."
-                    colorRevealed="#a8a8a0"
-                    colorHidden="rgba(168, 168, 160, 0.25)"
+                    colorRevealed="#9CA3AF"
+                    colorHidden="rgba(156, 163, 175, 0.25)"
                     delay={0.25}
-                    className="text-[16px] leading-relaxed text-[#a8a8a0]"
+                    className="text-[16px] leading-relaxed text-[#9CA3AF]"
                   />
                 </div>
               </div>
@@ -228,24 +228,24 @@ export default function DesignBuildPage({ setActivePage }) {
               <div className="space-y-4 text-sm sm:text-base font-sans leading-relaxed">
                 <ScrollWordReveal
                   text="Traditional real estate projects can involve multiple parties working independently, which can make communication and coordination more challenging."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.08}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="Design-Build provides an alternative approach by connecting the design and development process more closely."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.22}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="BNS Development helps coordinate the project from early planning through completion, keeping the project team focused on the same goals."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.36}
-                  className="font-medium text-[#a8a8a0]"
+                  className="font-medium text-[#9CA3AF]"
                 />
               </div>
             </div>
@@ -283,7 +283,7 @@ export default function DesignBuildPage({ setActivePage }) {
                       <h4 className="text-lg font-semibold font-display text-white mb-2 group-hover:text-brand-red transition-colors">
                         {item.title}
                       </h4>
-                      <p className="text-xs sm:text-[13px] text-[#a8a8a0] leading-relaxed font-sans">
+                      <p className="text-xs sm:text-[13px] text-[#9CA3AF] leading-relaxed font-sans">
                         {item.desc}
                       </p>
                     </div>
@@ -374,17 +374,17 @@ export default function DesignBuildPage({ setActivePage }) {
               <div className="space-y-4 text-base sm:text-lg font-sans leading-relaxed">
                 <ScrollWordReveal
                   text="Your project should not feel like a series of disconnected stages."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.06}
-                  className="font-medium text-[#a8a8a0]"
+                  className="font-medium text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="BNS Development brings the project together through a coordinated approach designed to keep people, information and decisions moving in the same direction."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.22}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
               </div>
             </div>

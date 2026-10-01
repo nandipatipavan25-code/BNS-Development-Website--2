@@ -107,7 +107,7 @@ export default function ResidentialPage({ setActivePage }) {
                   <div className="space-y-2.5">
                     <div className="flex items-center gap-2.5">
                       <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
-                      <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#A8A8A0] tracking-wider">
+                      <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#9CA3AF] tracking-wider">
                         Residential Services
                       </span>
                     </div>
@@ -123,24 +123,24 @@ export default function ResidentialPage({ setActivePage }) {
                 <div className="mt-4 space-y-3.5 font-sans">
                   <ScrollWordReveal
                     text="Residential development requires attention to both the individual project and the bigger picture."
-                    colorRevealed="#a8a8a0"
-                    colorHidden="rgba(168, 168, 160, 0.25)"
+                    colorRevealed="#9CA3AF"
+                    colorHidden="rgba(156, 163, 175, 0.25)"
                     delay={0.05}
-                    className="font-medium text-[16px] leading-relaxed text-[#a8a8a0]"
+                    className="font-medium text-[16px] leading-relaxed text-[#9CA3AF]"
                   />
                   <ScrollWordReveal
                     text="BNS Development provides residential development services for single-family and multifamily projects, bringing experienced project leadership and development knowledge to developments of different sizes and complexities."
-                    colorRevealed="#a8a8a0"
-                    colorHidden="rgba(168, 168, 160, 0.25)"
+                    colorRevealed="#9CA3AF"
+                    colorHidden="rgba(156, 163, 175, 0.25)"
                     delay={0.15}
-                    className="text-[16px] leading-relaxed text-[#a8a8a0]"
+                    className="text-[16px] leading-relaxed text-[#9CA3AF]"
                   />
                   <ScrollWordReveal
                     text="Whether you're planning a single-family project, multifamily development or residential community, we work to understand the requirements and provide a clear path toward development."
-                    colorRevealed="#a8a8a0"
-                    colorHidden="rgba(168, 168, 160, 0.25)"
+                    colorRevealed="#9CA3AF"
+                    colorHidden="rgba(156, 163, 175, 0.25)"
                     delay={0.25}
-                    className="text-[16px] leading-relaxed text-[#a8a8a0]"
+                    className="text-[16px] leading-relaxed text-[#9CA3AF]"
                   />
                 </div>
               </div>
@@ -209,24 +209,24 @@ export default function ResidentialPage({ setActivePage }) {
               <div className="space-y-4 text-sm sm:text-base font-sans leading-relaxed">
                 <ScrollWordReveal
                   text="Every residential project has its own requirements, from site considerations and planning to coordination, scheduling and development."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.06}
-                  className="font-medium text-base sm:text-lg text-[#a8a8a0]"
+                  className="font-medium text-base sm:text-lg text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="Our team brings experience across residential and multifamily development environments, giving clients access to a broader development perspective throughout the project."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.18}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="We focus on communication, coordination and practical project management to help keep residential projects moving forward."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.3}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
               </div>
             </div>
@@ -264,7 +264,7 @@ export default function ResidentialPage({ setActivePage }) {
                       <h4 className="text-lg font-semibold font-display text-white group-hover:text-brand-red transition-colors">
                         {svc.title}
                       </h4>
-                      <p className="text-xs sm:text-[13px] text-[#a8a8a0] leading-relaxed font-sans">
+                      <p className="text-xs sm:text-[13px] text-[#9CA3AF] leading-relaxed font-sans">
                         {svc.desc}
                       </p>
                     </div>
@@ -322,7 +322,7 @@ export default function ResidentialPage({ setActivePage }) {
                     <h4 className="font-semibold font-display text-white group-hover:text-brand-red transition-colors leading-snug tracking-tight text-xl">
                       {item.title}
                     </h4>
-                    <p className="text-xs sm:text-[13px] text-[#a8a8a0] leading-relaxed font-sans">
+                    <p className="text-xs sm:text-[13px] text-[#9CA3AF] leading-relaxed font-sans">
                       {item.desc}
                     </p>
                   </div>
@@ -350,17 +350,17 @@ export default function ResidentialPage({ setActivePage }) {
               <div className="space-y-4 text-base sm:text-lg font-sans leading-relaxed">
                 <ScrollWordReveal
                   text="Residential projects ultimately become homes, communities and long-term investments."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.06}
-                  className="font-medium text-[#a8a8a0]"
+                  className="font-medium text-[#9CA3AF]"
                 />
                 <ScrollWordReveal
                   text="That's why we approach every project with an understanding that the work matters beyond the project site."
-                  colorRevealed="#a8a8a0"
-                  colorHidden="rgba(168, 168, 160, 0.25)"
+                  colorRevealed="#9CA3AF"
+                  colorHidden="rgba(156, 163, 175, 0.25)"
                   delay={0.22}
-                  className="text-[#a8a8a0]"
+                  className="text-[#9CA3AF]"
                 />
               </div>
             </div>

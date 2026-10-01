@@ -111,7 +111,7 @@ export default function WorkDetailPage({
                   <div className="flex flex-wrap items-center gap-2.5 mb-2">
                     <div className="flex items-center gap-2.5">
                       <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
-                      <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#A8A8A0] tracking-wider">
+                      <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#9CA3AF] tracking-wider">
                         {activeProj.category}
                       </span>
                     </div>
@@ -157,43 +157,43 @@ export default function WorkDetailPage({
           <ScrollReveal direction="up" delay={0.08}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
               <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl">
-                <span className="text-[14px] font-mono text-[#A8A8A0] tracking-widest block mb-1">
+                <span className="text-[14px] font-mono text-[#9CA3AF] tracking-widest block mb-1">
                   Gross Area
                 </span>
                 <div className="text-xl sm:text-2xl font-semibold font-display text-[#D4D4D0]">
                   {activeProj.sqft}
                 </div>
-                <span className="text-xs text-[#A8A8A0] font-sans mt-0.5 block">Conditioned Space</span>
+                <span className="text-xs text-[#9CA3AF] font-sans mt-0.5 block">Conditioned Space</span>
               </div>
 
               <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl">
-                <span className="text-[14px] font-mono text-[#A8A8A0] tracking-widest block mb-1">
+                <span className="text-[14px] font-mono text-[#9CA3AF] tracking-widest block mb-1">
                   Capital Value
                 </span>
                 <div className="text-xl sm:text-2xl font-semibold font-display text-brand-red">
                   {activeProj.value}
                 </div>
-                <span className="text-xs text-[#A8A8A0] font-sans mt-0.5 block">Delivered Budget</span>
+                <span className="text-xs text-[#9CA3AF] font-sans mt-0.5 block">Delivered Budget</span>
               </div>
 
               <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl">
-                <span className="text-[14px] font-mono text-[#A8A8A0] tracking-widest block mb-1">
+                <span className="text-[14px] font-mono text-[#9CA3AF] tracking-widest block mb-1">
                   Year Delivered
                 </span>
                 <div className="text-xl sm:text-2xl font-semibold font-display text-[#D4D4D0]">
                   {activeProj.year}
                 </div>
-                <span className="text-xs text-[#A8A8A0] font-sans mt-0.5 block">On-Time Substantial</span>
+                <span className="text-xs text-[#9CA3AF] font-sans mt-0.5 block">On-Time Substantial</span>
               </div>
 
               <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl">
-                <span className="text-[14px] font-mono text-[#A8A8A0] tracking-widest block mb-1">
+                <span className="text-[14px] font-mono text-[#9CA3AF] tracking-widest block mb-1">
                   Licensure Status
                 </span>
                 <div className="text-xl sm:text-2xl font-semibold font-display text-[#D4D4D0]">
                   FL CGC 1505391
                 </div>
-                <span className="text-xs text-[#A8A8A0] font-sans mt-0.5 block">Self-Performed General Contracting</span>
+                <span className="text-xs text-[#9CA3AF] font-sans mt-0.5 block">Self-Performed General Contracting</span>
               </div>
             </div>
           </ScrollReveal>
