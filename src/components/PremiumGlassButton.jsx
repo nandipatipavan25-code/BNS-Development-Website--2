@@ -389,7 +389,7 @@ export default function PremiumGlassButton({
           'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease',
         zIndex: 1,
       }}
-      className={`group select-none inline-flex items-center justify-center font-sans font-semibold tracking-normal overflow-hidden ${sizeStyles[size] || sizeStyles.md} ${className}`}
+      className={`group select-none inline-flex items-center justify-center font-display font-medium tracking-normal overflow-hidden ${sizeStyles[size] || sizeStyles.md} ${className}`}
     >
       {/* Top Specular Light Rim */}
       <span

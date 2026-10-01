@@ -66,7 +66,7 @@ export default function ProjectDetailModal({ project, onClose, onContactClick })
                 <span>•</span>
                 <span className="text-brand-red font-semibold">{project.status}</span>
                 <span>•</span>
-                <span>COMPLETION: {project.year}</span>
+                <span>Completion: {project.year}</span>
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold text-white tracking-tight">
                 {project.title}

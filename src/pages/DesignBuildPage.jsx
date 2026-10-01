@@ -167,7 +167,6 @@ export default function DesignBuildPage({ setActivePage }) {
                   onClick={handleContactNav}
                   size="lg"
                   icon="none"
-                  className="font-mono text-xs tracking-wider font-bold"
                 >
                   Discuss Your Project
                 </EyeFollowButton>
@@ -442,7 +441,6 @@ export default function DesignBuildPage({ setActivePage }) {
                 onClick={handleContactNav}
                 size="lg"
                 icon="none"
-                className="font-mono text-xs tracking-wider font-bold"
               >
                 Start a Conversation
               </EyeFollowButton>

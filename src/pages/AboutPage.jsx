@@ -304,7 +304,7 @@ export default function AboutPage({ setActivePage, fontPreset = 1 }) {
         title="Let’s Talk About"
         highlight="Your Project"
         description="Whether you're planning a residential project, commercial development, new development or your next opportunity, BNS Development is ready to start the conversation."
-        buttonText="Let’s Build the Right Partnership →"
+        buttonText="Let’s Build the Right Partnership"
       />
     </div>
   );

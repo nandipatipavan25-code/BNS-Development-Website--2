@@ -119,15 +119,27 @@ h1, h2, h3, h4, h5, h6, .font-heading, .font-display {
   font-weight: 600;
 }
 
-/* Lato font enforcement for all body, navigation, buttons, labels, descriptions, forms, and supporting text */
-body, p, li, button, input, textarea, select, label, .font-sans, .font-body, .font-subheading, .font-manrope, .font-mono {
+/* Lato font enforcement for body, input, textarea, select, label, descriptions, and supporting text */
+body, p, li, input, textarea, select, label, .font-sans, .font-body, .font-subheading, .font-manrope {
   font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 /* Base span/a inherit from parent or default to Lato */
-span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *),
-a:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *) {
+span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *, button *, [role="button"] *, .btn *),
+a:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *, button *, [role="button"] *, .btn *) {
   font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* GT Super font enforcement exclusively for all buttons across the entire website */
+button,
+[role="button"],
+.btn,
+.btn-primary,
+button *,
+[role="button"] *,
+.btn * {
+  font-family: 'GT Super', Georgia, serif !important;
+  text-transform: none !important;
 }
 
 /* ==========================================================================

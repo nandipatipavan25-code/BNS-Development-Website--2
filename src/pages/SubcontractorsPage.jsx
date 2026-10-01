@@ -369,7 +369,7 @@ export default function SubcontractorsPage({ setActivePage }) {
                 setSelectedCategory('All Trades');
                 setSearchQuery('');
               }}
-              className="px-5 py-2 rounded-full bg-white/[0.06] border border-white/15 text-xs font-mono tracking-wider text-brand-heading hover:bg-brand-red hover:border-brand-red transition-all cursor-pointer"
+              className="px-5 py-2 rounded-full bg-white/[0.06] border border-white/15 text-xs tracking-wider text-brand-heading hover:bg-brand-red hover:border-brand-red transition-all cursor-pointer"
             >
               Reset All Filters
             </button>

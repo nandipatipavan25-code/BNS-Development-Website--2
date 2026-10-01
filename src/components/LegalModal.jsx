@@ -94,7 +94,7 @@ export default function LegalModal({ type, onClose }) {
           <div className="pt-4 border-t border-brand-border flex justify-end">
             <button
               onClick={onClose}
-              className="px-5 py-2 rounded-full bg-brand-black hover:bg-brand-red text-white text-xs font-mono tracking-wider transition-colors"
+              className="px-5 py-2 rounded-full bg-brand-black hover:bg-brand-red text-white text-xs tracking-wider transition-colors"
             >
               Close
             </button>

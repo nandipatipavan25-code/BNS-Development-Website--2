@@ -31,31 +31,31 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
   const deliveryLifecycle = [
     {
       step: '01',
-      phase: 'FEASIBILITY & CONSTRUCTABILITY',
+      phase: 'Feasibility & Constructability',
       title: 'Constructability & Cost Modeling',
       desc: 'Initial site evaluation, zoning constraints, early parametric budget modeling, and identifying risk factors before capital commitments.',
     },
     {
       step: '02',
-      phase: 'PRE DEVELOPMENT & GMP',
+      phase: 'Pre Development & GMP',
       title: 'GMP Formulation & Buyout Strategy',
       desc: 'Comprehensive trade scope packaging, Primavera P6 baseline scheduling, value engineering, and establishing a Guaranteed Maximum Price.',
     },
     {
       step: '03',
-      phase: 'PROCUREMENT & PERMITTING',
+      phase: 'Procurement & Permitting',
       title: 'Permitting & Trade Vetting',
       desc: 'Engaging pre-qualified trade partners, long-lead equipment buyout, municipal agency coordination, and expedited permit approvals.',
     },
     {
       step: '04',
-      phase: 'FIELD EXECUTION',
+      phase: 'Field Execution',
       title: 'Active Development & Safety Governance',
       desc: 'Mobilization, structural shell erection, daily QA/QC inspections, and zero-compromise OSHA-certified field safety leadership.',
     },
     {
       step: '05',
-      phase: 'COMMISSIONING & HANDOVER',
+      phase: 'Commissioning & Handover',
       title: 'Commissioning & Turnkey Handover',
       desc: 'System testing, life-safety certification, punch list zeroing, Certificate of Occupancy issuance, and complete closeout documentation.',
     },
@@ -270,7 +270,7 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                       <div className="lg:col-span-7 space-y-6 flex flex-col justify-center">
                         <div className="space-y-3.5">
                           <span className="text-[13px] font-mono text-brand-red tracking-widest font-bold">
-                            SERVICE {svc.number}
+                            Service {svc.number}
                           </span>
                           <h2 className="text-2xl sm:text-3xl font-display font-semibold text-white group-hover:text-brand-red transition-colors">
                             {svc.title}
@@ -339,8 +339,8 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                       {item.desc}
                     </p>
                   </div>
-                  <div className="mt-5 pt-3 border-t border-white/10 text-[10px] font-mono text-brand-mutedText ">
-                    PHASE {item.step} // AUDITED
+                  <div className="mt-5 pt-3 border-t border-white/10 text-[10px] font-mono text-brand-mutedText">
+                    Phase {item.step} // Audited
                   </div>
                 </div>
               </ScrollReveal>

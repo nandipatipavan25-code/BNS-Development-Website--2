@@ -177,7 +177,7 @@ export default function WorkPage({ setSelectedProject, setActivePage }) {
                 setStatusFilter('All');
                 setSearchQuery('');
               }}
-              className="px-5 py-2 rounded-full bg-brand-red text-white text-xs font-mono font-bold"
+              className="px-5 py-2 rounded-full bg-brand-red text-white text-xs font-bold"
             >
               Reset Filters
             </button>

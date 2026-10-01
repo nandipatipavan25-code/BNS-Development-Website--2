@@ -82,7 +82,7 @@ export default function TeamBioTabs({ onContactClick }) {
                     <div className="relative z-10 overflow-y-auto pr-1 space-y-4 max-h-[450px] sm:max-h-[470px] scrollbar-thin scrollbar-thumb-white/10">
                       {/* Top Header Information */}
                       <div className="space-y-1">
-                        <div className="text-[11px] font-semibold text-brand-red tracking-wider font-sans uppercase">
+                        <div className="text-[11px] font-semibold text-brand-red tracking-wider font-sans">
                           {person.role}
                         </div>
 
@@ -107,7 +107,7 @@ export default function TeamBioTabs({ onContactClick }) {
                       {/* Full Verified Professional Credentials */}
                       {person.credentials && person.credentials.length > 0 && (
                         <div className="space-y-2 pt-3 border-t border-white/10">
-                          <div className="text-[10px] font-mono text-neutral-400 font-semibold tracking-wider uppercase">
+                          <div className="text-[10px] font-mono text-neutral-400 font-semibold tracking-wider">
                             Core Credentials & Leadership
                           </div>
 

@@ -264,7 +264,7 @@ export default function GroundUpPage({ setActivePage }) {
 
                     <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between">
                       <div className="w-5 h-[2px] bg-brand-red group-hover:w-8 transition-all duration-300" />
-                      <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider">
+                      <span className="text-[10px] font-mono text-neutral-500 tracking-wider">
                         Phase {step.step}
                       </span>
                     </div>

@@ -188,7 +188,7 @@ export default function CareerDetailPage({
               }}
               size="md"
             >
-              APPLY FOR THIS ROLE
+              Apply for This Role
             </PremiumGlassButton>
             <PremiumGlassButton
               onClick={() => {
@@ -199,7 +199,7 @@ export default function CareerDetailPage({
               baseColor="#07080A"
               glassColor="#ffffff"
             >
-              VIEW ALL Open Positions
+              View All Open Positions
             </PremiumGlassButton>
           </div>
         </section>
@@ -417,7 +417,7 @@ export default function CareerDetailPage({
                 <div className="pt-3 flex justify-end">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-8 py-3 rounded-full bg-brand-red text-white/80 text-xs font-mono font-bold tracking-wider hover:bg-brand-redDark hover:text-white transition-all shadow-xl shadow-brand-red/30 cursor-pointer"
+                    className="w-full sm:w-auto px-8 py-3 rounded-full bg-brand-red text-white/80 text-xs font-bold tracking-wider hover:bg-brand-redDark hover:text-white transition-all shadow-xl shadow-brand-red/30 cursor-pointer"
                   >
                     Submit Application
                   </button>
@@ -446,7 +446,7 @@ export default function CareerDetailPage({
                 baseColor="#07080A"
                 glassColor="#ffffff"
               >
-                VIEW ALL
+                View All
               </PremiumGlassButton>
             </div>
 

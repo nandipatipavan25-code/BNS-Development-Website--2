@@ -41,8 +41,8 @@ export default function ServiceDetailModal({ service, onClose, onContactClick })
           <div className="flex items-center justify-between px-6 py-4 border-b border-brand-border bg-brand-black/70 backdrop-blur-md sticky top-0 z-20">
             <div className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
-              <span className="font-mono text-xs tracking-widest text-brand-steel ">
-                CAPABILITY // {service.number} // {service.title}
+              <span className="font-mono text-xs tracking-widest text-brand-steel">
+                Capability // {service.number} // {service.title}
               </span>
             </div>
             <button
@@ -57,8 +57,8 @@ export default function ServiceDetailModal({ service, onClose, onContactClick })
           {/* Modal Content */}
           <div className="p-6 md:p-10 overflow-y-auto space-y-8 flex-grow">
             <div>
-              <span className="text-brand-red font-mono text-xs tracking-widest ">
-                DISCIPLINE {service.number}
+              <span className="text-brand-red font-mono text-xs tracking-widest">
+                Discipline {service.number}
               </span>
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-display font-semibold text-brand-heading tracking-tight mt-1">
                 {service.title}

@@ -130,7 +130,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
               glassColor="#ffffff"
               hoverSpeed={0.7}
             >
-              VIEW Open Positions
+              View Open Positions
             </PremiumGlassButton>
           </div>
         </section>
@@ -226,7 +226,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
               />
               <div className="shrink-0 mb-2">
                 <span className="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-brand-subheading font-mono text-xs tracking-wider">
-                  {jobsData.length} POSITIONS OPEN IN TX &amp; FL
+                  {jobsData.length} Positions Open in TX &amp; FL
                 </span>
               </div>
             </div>
@@ -271,18 +271,18 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                   <div className="shrink-0 flex items-center gap-3">
                     <button
                       onClick={() => handleViewRole(job)}
-                      className="px-4 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-white/25 text-xs font-mono font-bold text-white/70 hover:text-white transition-all cursor-pointer"
+                      className="px-4 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-white/25 text-xs font-bold text-white/70 hover:text-white transition-all cursor-pointer"
                     >
-                      VIEW DETAILS
+                      View Details
                     </button>
                     <button
                       onClick={() => {
                         setSelectedJob(job);
                         setIsApplying(true);
                       }}
-                      className="px-4 py-2.5 rounded-full bg-brand-red hover:bg-brand-redDark border border-brand-red text-xs font-mono font-bold text-white/80 hover:text-white transition-all cursor-pointer shadow-md shadow-brand-red/25"
+                      className="px-4 py-2.5 rounded-full bg-brand-red hover:bg-brand-redDark border border-brand-red text-xs font-bold text-white/80 hover:text-white transition-all cursor-pointer shadow-md shadow-brand-red/25"
                     >
-                      APPLY NOW
+                      Apply Now
                     </button>
                   </div>
                 </div>
@@ -441,7 +441,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                     <button
                       type="button"
                       onClick={() => setIsApplying(false)}
-                      className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-neutral-300 text-xs font-mono font-bold transition-colors"
+                      className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-neutral-300 text-xs font-bold transition-colors"
                     >
                       Cancel
                     </button>

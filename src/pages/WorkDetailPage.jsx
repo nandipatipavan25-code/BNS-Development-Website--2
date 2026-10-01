@@ -134,7 +134,7 @@ export default function WorkDetailPage({
                       {activeProj.location}
                     </span>
                     <span className="text-white/30">•</span>
-                    <span>COMPLETION: {activeProj.year}</span>
+                    <span>Completion: {activeProj.year}</span>
                     <span className="text-white/30">•</span>
                     <span>Gross Area: {activeProj.sqft}</span>
                   </div>
@@ -282,7 +282,7 @@ export default function WorkDetailPage({
               />
 
               <div className="font-mono text-xs text-neutral-400 shrink-0 mb-4 sm:mb-8">
-                <span>{galleryImages.length} {galleryImages.length === 1 ? 'PHOTOGRAPH' : 'PHOTOGRAPHS'}</span>
+                <span>{galleryImages.length} {galleryImages.length === 1 ? 'Photograph' : 'Photographs'}</span>
               </div>
             </div>
           </ScrollReveal>
@@ -311,7 +311,7 @@ export default function WorkDetailPage({
 
                   {/* Corner Badge */}
                   <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white/90">
-                    VIEW {idx + 1}
+                    View {idx + 1}
                   </div>
                 </div>
               </ScrollReveal>
