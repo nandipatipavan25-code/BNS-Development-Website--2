@@ -5,7 +5,7 @@ import {
   Building2, DollarSign, X, ChevronLeft, ChevronRight, Phone, Mail,
   HardHat, Eye, Award
 } from 'lucide-react';
-import { projectsData } from '../data/projects';
+import { workProjectsData as projectsData } from '../data/workProjects';
 import SectionHeading, { ConstructionScaleSVG } from '../components/SectionHeading';
 import ScrollReveal from '../components/ScrollReveal';
 import PremiumGlassButton from '../components/PremiumGlassButton';

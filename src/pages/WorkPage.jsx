@@ -5,7 +5,7 @@ import SectionHeading, { ConstructionScaleSVG } from '../components/SectionHeadi
 import ScrollWordReveal from '../components/ScrollWordReveal';
 import EyeFollowButton from '../components/EyeFollowButton';
 import HouseCTA from '../components/HouseCTA';
-import { projectsData } from '../data/projects';
+import { workProjectsData as projectsData } from '../data/workProjects';
 
 export default function WorkPage({ setSelectedProject, setActivePage }) {
   const [statusFilter, setStatusFilter] = useState('All');
@@ -94,7 +94,7 @@ export default function WorkPage({ setSelectedProject, setActivePage }) {
         {/* ========================================================
             PROJECTS GRID CATALOGUE (Direct Navigation, No Popup Modal)
             ======================================================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <AnimatePresence>
             {filteredProjects.map((project, idx) => (
               <motion.div
@@ -138,7 +138,7 @@ export default function WorkPage({ setSelectedProject, setActivePage }) {
                     <h3 className="text-xl font-semibold font-display text-brand-subheading group-hover:text-brand-red transition-colors leading-snug">
                       {project.title}
                     </h3>
-                    <p className="text-xs text-brand-body font-sans line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-brand-body font-sans line-clamp-3 leading-relaxed">
                       {project.overview}
                     </p>
                   </div>
@@ -150,7 +150,7 @@ export default function WorkPage({ setSelectedProject, setActivePage }) {
                       <span className="text-brand-subheading font-semibold">{project.sqft}</span>
                     </div>
                     <div>
-                      <span className="text-[10px] text-white/60 block">Budget</span>
+                      <span className="text-[10px] text-white/60 block">Scope / Value</span>
                       <span className="text-brand-red font-semibold">{project.value}</span>
                     </div>
                   </div>
@@ -175,7 +175,6 @@ export default function WorkPage({ setSelectedProject, setActivePage }) {
             <button
               onClick={() => {
                 setStatusFilter('All');
-                setSectorFilter('All');
                 setSearchQuery('');
               }}
               className="px-5 py-2 rounded-full bg-brand-red text-white text-xs font-mono font-bold"
