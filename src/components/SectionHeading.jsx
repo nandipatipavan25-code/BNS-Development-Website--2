@@ -75,20 +75,20 @@ export default function SectionHeading({
 
       {/* Description with Scroll Text Reveal Effect */}
       {description && (
-        <div className="mt-2.5 sm:mt-3">
+        <div className="mt-3 sm:mt-3.5">
           {typeof description === 'string' && useWordReveal ? (
             <ScrollWordReveal
               text={description}
               colorRevealed="#9CA3AF"
-              colorHidden="rgba(156, 163, 175, 0.25)"
-              className={`text-sm sm:text-base leading-relaxed font-sans text-brand-subtext ${
-                centered ? 'justify-center text-center' : ''
+              colorHidden="rgba(156, 163, 175, 0.35)"
+              className={`text-sm sm:text-base md:text-[16px] leading-[1.65] font-sans text-[#9CA3AF] ${
+                centered ? 'justify-center text-center max-w-2xl mx-auto' : 'max-w-2xl'
               } ${descriptionClassName}`}
             />
           ) : (
-            <div className={`text-sm sm:text-base leading-relaxed font-sans text-[#9CA3AF] ${
-              centered ? 'justify-center text-center' : ''
-            } ${descriptionClassName}`}>
+            <div className={`text-sm sm:text-base md:text-[16px] leading-[1.65] font-sans text-[#9CA3AF] ${
+                centered ? 'justify-center text-center max-w-2xl mx-auto' : 'max-w-2xl'
+              } ${descriptionClassName}`}>
               {description}
             </div>
           )}

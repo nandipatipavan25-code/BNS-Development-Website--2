@@ -316,7 +316,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                   text="BNS Development provides development services with experienced leadership from planning through completion. From residential and multifamily projects to commercial and ground-up developments, we bring practical expertise, clear communication and accountability to every project."
                   speed={16}
                   startDelay={350}
-                  className="text-xs sm:text-sm md:text-[15px] text-brand-subtext font-sans leading-relaxed"
+                  className="text-xs sm:text-sm md:text-[15px] text-[#9CA3AF] font-sans leading-[1.65] drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]"
                 />
               </div>
 
@@ -496,7 +496,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
               {/* Eyebrow Label with Accent Dash */}
               <div className="flex items-center gap-2.5 mb-3">
                 <span className="w-5 h-[2px] bg-brand-red" />
-                <span className="text-xs sm:text-sm font-sans font-medium text-neutral-400 tracking-wider">
+                <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#9CA3AF] tracking-wider">
                   Guiding Methodology
                 </span>
               </div>
@@ -507,9 +507,8 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
               </h2>
 
               {/* Subheading Text */}
-              <p className="mt-3.5 text-sm sm:text-base text-[#9CA3AF] leading-relaxed font-sans max-w-lg">
-                A disciplined, relationship-driven foundation<br />
-                built on four essential commitments to every client.
+              <p className="mt-3.5 text-sm sm:text-base text-[#9CA3AF] leading-[1.65] font-sans max-w-lg">
+                A disciplined, relationship-driven foundation built on four essential commitments to every client.
               </p>
             </div>
           </ScrollReveal>
