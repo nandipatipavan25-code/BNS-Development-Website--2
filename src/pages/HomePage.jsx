@@ -166,56 +166,52 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
 
   useEffect(() => {
     const video = videoRef.current;
-    if (video) {
-      video.muted = isMuted;
-      video.defaultMuted = true;
-      video.loop = true;
-      video.playsInline = true;
-      video.setAttribute('muted', '');
-      video.setAttribute('playsinline', '');
-      video.setAttribute('webkit-playsinline', 'true');
-      video.setAttribute('loop', '');
+    if (!video) return;
 
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
+    let isMounted = true;
+    video.muted = isMuted;
+    video.defaultMuted = true;
+    video.loop = true;
+    video.playsInline = true;
+
+    const playVideo = () => {
+      if (!video || !isMounted) return;
+      const promise = video.play();
+      if (promise !== undefined) {
+        promise.catch(() => {
           setIsPlaying(false);
           const resumeOnInteraction = () => {
-            if (video && video.paused) {
+            if (video && isMounted && video.paused) {
               video.muted = true;
-              video.play().catch(() => {});
+              video.play().then(() => setIsPlaying(true)).catch(() => {});
             }
           };
           window.addEventListener('click', resumeOnInteraction, { once: true, passive: true });
           window.addEventListener('touchstart', resumeOnInteraction, { once: true, passive: true });
+          window.addEventListener('scroll', resumeOnInteraction, { once: true, passive: true });
         });
       }
+    };
 
-      // Seamless continuous loop handler
-      const handleTimeUpdate = () => {
-        if (video && video.duration > 0) {
-          if (video.currentTime >= video.duration - 0.15) {
-            video.currentTime = 0;
-            if (video.paused) {
-              video.play().catch(() => {});
-            }
-          }
-        }
-      };
-
-      const handleEnded = () => {
-        video.currentTime = 0;
-        video.play().catch(() => {});
-      };
-
-      video.addEventListener('timeupdate', handleTimeUpdate);
-      video.addEventListener('ended', handleEnded);
-
-      return () => {
-        video.removeEventListener('timeupdate', handleTimeUpdate);
-        video.removeEventListener('ended', handleEnded);
-      };
+    if (video.readyState >= 2) {
+      playVideo();
+    } else {
+      video.addEventListener('canplay', playVideo, { once: true });
     }
+
+    const handleEnded = () => {
+      if (video && isMounted) {
+        video.play().catch(() => {});
+      }
+    };
+
+    video.addEventListener('ended', handleEnded);
+
+    return () => {
+      isMounted = false;
+      video.removeEventListener('canplay', playVideo);
+      video.removeEventListener('ended', handleEnded);
+    };
   }, []);
 
   const togglePlay = () => {
@@ -257,12 +253,15 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
             muted={isMuted}
             playsInline
             webkit-playsinline="true"
+            preload="auto"
+            disablePictureInPicture
+            disableRemotePlayback
+            style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden', willChange: 'transform' }}
             className="w-full h-full object-cover select-none cursor-pointer opacity-75"
             onClick={togglePlay}
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
             onEnded={(e) => {
-              e.currentTarget.currentTime = 0;
               e.currentTarget.play().catch(() => {});
             }}
           >

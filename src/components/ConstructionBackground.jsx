@@ -58,21 +58,9 @@ export default function ConstructionBackground({
       video.addEventListener('canplay', safePlay, { once: true });
     }
 
-    // Seamless continuous looping handler
-    const handleTimeUpdate = () => {
-      if (video && video.duration > 0) {
-        if (video.currentTime >= video.duration - 0.12) {
-          video.currentTime = 0;
-          if (video.paused) {
-            safePlay();
-          }
-        }
-      }
-    };
-
+    // Seamless continuous loop & play recovery handlers
     const handleEnded = () => {
       if (video && isMounted) {
-        video.currentTime = 0;
         safePlay();
       }
     };
@@ -89,25 +77,23 @@ export default function ConstructionBackground({
       }
     };
 
-    video.addEventListener('timeupdate', handleTimeUpdate);
     video.addEventListener('ended', handleEnded);
     video.addEventListener('pause', handlePause);
     document.addEventListener('visibilitychange', handleVisibility);
     window.addEventListener('focus', safePlay);
 
-    // Heartbeat check to guarantee seamless playback across navigation and scrolling
+    // Heartbeat check to guarantee uninterrupted playback across scrolling and interaction
     const heartbeatTimer = setInterval(() => {
       if (isMounted && showVideo && video && video.paused) {
         safePlay();
       }
-    }, 1200);
+    }, 1500);
 
     safePlay();
 
     return () => {
       isMounted = false;
       clearInterval(heartbeatTimer);
-      video.removeEventListener('timeupdate', handleTimeUpdate);
       video.removeEventListener('ended', handleEnded);
       video.removeEventListener('pause', handlePause);
       document.removeEventListener('visibilitychange', handleVisibility);
@@ -131,13 +117,17 @@ export default function ConstructionBackground({
             muted
             playsInline
             webkit-playsinline="true"
+            preload="auto"
             disablePictureInPicture
+            disableRemotePlayback
             style={{
-              opacity: videoOpacity ?? (videoSrc.includes('contact') ? 0.20 : 0.75)
+              opacity: videoOpacity ?? (videoSrc.includes('contact') ? 0.20 : 0.75),
+              transform: 'translate3d(0, 0, 0)',
+              backfaceVisibility: 'hidden',
+              willChange: 'transform'
             }}
             className="w-full h-full object-cover filter contrast-[1.05] brightness-100 scale-105 pointer-events-none transition-opacity duration-500"
             onEnded={(e) => {
-              e.currentTarget.currentTime = 0;
               e.currentTarget.play().catch(() => {});
             }}
             onPause={(e) => {
@@ -149,7 +139,6 @@ export default function ConstructionBackground({
             <source src={videoSrc} type="video/mp4" />
             <source src="/videos/home-page-background-video-2.mp4" type="video/mp4" />
             <source src="/videos/Home page background video -2.mp4" type="video/mp4" />
-            <source src="/videos/Home%20page%20background%20video%20-2.mp4" type="video/mp4" />
             <source src="/videos/bg-video.mp4" type="video/mp4" />
           </video>
           {/* Natural, balanced architectural dark vignette */}
