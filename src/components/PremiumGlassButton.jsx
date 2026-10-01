@@ -159,6 +159,7 @@ export default function PremiumGlassButton({
   size = 'md', // 'sm' | 'md' | 'lg'
   icon = null,
   showEye = true,
+  hoverGlow = 'red', // 'red' | 'white' | 'none'
 }) {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
@@ -383,7 +384,11 @@ export default function PremiumGlassButton({
         boxSizing: 'border-box',
         backgroundColor: baseColor,
         boxShadow: isHovered
-          ? 'inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.90), inset 0 -1px 1px 0 rgba(255, 255, 255, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.32), 0 12px 36px -6px rgba(0,0,0,0.9), 0 0 25px rgba(215, 25, 32, 0.25)'
+          ? hoverGlow === 'none'
+            ? 'inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.90), inset 0 -1px 1px 0 rgba(255, 255, 255, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.32), 0 12px 36px -6px rgba(0,0,0,0.9)'
+            : hoverGlow === 'white'
+            ? 'inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.90), inset 0 -1px 1px 0 rgba(255, 255, 255, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.32), 0 12px 36px -6px rgba(0,0,0,0.9), 0 0 20px rgba(255, 255, 255, 0.15)'
+            : 'inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.90), inset 0 -1px 1px 0 rgba(255, 255, 255, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.32), 0 12px 36px -6px rgba(0,0,0,0.9), 0 0 25px rgba(215, 25, 32, 0.25)'
           : 'inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.65), inset 0 -1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 0 1px rgba(255, 255, 255, 0.20), 0 10px 30px -10px rgba(0,0,0,0.75), 0 0 16px rgba(255, 255, 255, 0.06)',
         transition:
           'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease',

@@ -346,6 +346,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                 <PremiumGlassButton
                   onClick={() => setActivePage('contact')}
                   size="md"
+                  hoverGlow="white"
                 >
                   Let’s Develop What’s Next
                 </PremiumGlassButton>
