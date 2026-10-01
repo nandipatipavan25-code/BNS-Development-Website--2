@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   MapPin,
@@ -15,6 +15,12 @@ import {
   Briefcase,
   Check,
   Send,
+  ShieldCheck,
+  Layers,
+  Compass,
+  ArrowUpRight,
+  ChevronRight,
+  Filter,
 } from 'lucide-react';
 import SectionHeading, { ConstructionScaleSVG } from '../components/SectionHeading';
 import ScrollReveal from '../components/ScrollReveal';
@@ -25,6 +31,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
   const [selectedJob, setSelectedJob] = useState(null);
   const [isApplying, setIsApplying] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [selectedDepartment, setSelectedDepartment] = useState('All');
 
   const handleViewRole = (job) => {
     if (setSelectedJobProp) setSelectedJobProp(job);
@@ -51,98 +58,136 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
     coverNote: '',
   });
 
+  // Department filters list
+  const departments = useMemo(() => {
+    const deps = ['All', ...new Set(jobsData.map((j) => j.department))];
+    return deps;
+  }, []);
+
+  const filteredJobs = useMemo(() => {
+    if (selectedDepartment === 'All') return jobsData;
+    return jobsData.filter((j) => j.department === selectedDepartment);
+  }, [selectedDepartment]);
+
   const whyBnsCards = [
     {
+      num: '01',
       icon: <Building2 className="w-5 h-5 text-brand-red" />,
       title: 'Work on Diverse Projects',
       desc: 'Gain experience across residential, multifamily, hospitality, commercial and mixed-use development.',
+      accent: 'Residential • Hospitality • Commercial',
     },
     {
+      num: '02',
       icon: <Award className="w-5 h-5 text-brand-red" />,
       title: 'Learn From Experience',
       desc: 'Work alongside professionals with extensive experience across development, project management and construction.',
+      accent: 'Direct Executive Access & Mentorship',
     },
     {
+      num: '03',
       icon: <Users className="w-5 h-5 text-brand-red" />,
       title: 'Be Part of the Team',
       desc: 'We believe successful projects depend on people working together, communicating clearly and taking ownership of their responsibilities.',
+      accent: 'Collaborative Problem-Solving',
     },
     {
+      num: '04',
       icon: <TrendingUp className="w-5 h-5 text-brand-red" />,
       title: 'Grow With Us',
       desc: 'We value people who are ready to learn, take on responsibility and contribute to the continued growth of BNS Development.',
+      accent: 'Clear Pathways for Advancement',
     },
   ];
 
   const candidateTraits = [
     {
+      id: '01',
       title: 'Take ownership of their work',
       image: '/images/careers/01-ownership.jpg',
       alt: 'Field construction superintendent taking direct ownership on site',
+      category: 'Leadership & Responsibility',
     },
     {
+      id: '02',
       title: 'Communicate clearly',
       image: '/images/careers/02-communication.jpg',
       alt: 'Project managers and architects communicating blueprint specifications clearly',
+      category: 'Coordination & Clarity',
     },
     {
+      id: '03',
       title: 'Work well with others',
       image: '/images/careers/03-teamwork.jpg',
       alt: 'Collaborative teamwork between field crews and project managers',
+      category: 'Teamwork & Culture',
     },
     {
+      id: '04',
       title: 'Pay attention to detail',
       image: '/images/careers/04-detail.jpg',
       alt: 'Close-up quality inspection and technical precision review',
+      category: 'Precision & Accuracy',
     },
     {
+      id: '05',
       title: 'Approach challenges with a problem-solving mindset',
       image: '/images/careers/05-problem-solving.jpg',
       alt: 'Development team resolving technical challenges with digital BIM models',
+      category: 'Engineering & Agility',
     },
     {
+      id: '06',
       title: 'Value quality and accountability',
       image: '/images/careers/06-quality-accountability.jpg',
       alt: 'Architectural craftsmanship and certified delivery standards',
+      category: 'Standards & Execution',
     },
     {
+      id: '07',
       title: 'Want to grow professionally',
       image: '/images/careers/07-growth.jpg',
       alt: 'Professional development, executive mentoring, and career growth',
+      category: 'Advancement & Mastery',
     },
   ];
 
-  // Pure Visual Culture Gallery (Images Only)
+  // Editorial Culture Gallery with Captions
   const cultureGallery = [
     {
       id: 1,
       src: '/images/about-hero.jpg',
       alt: 'BNS Executive Project Review & Field Leadership',
+      caption: 'Executive Project Direction',
+      span: 'sm:col-span-2 lg:col-span-2 aspect-[21/10]',
     },
     {
       id: 2,
       src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
       alt: 'Jobsite Structural Steel Team Collaboration',
+      caption: 'Structural Superstructure Execution',
+      span: 'aspect-[4/3]',
     },
     {
       id: 3,
       src: '/images/preconstruction.jpg',
       alt: 'Pre-Development Planning & Technical Estimating',
+      caption: 'Pre-Development & Technical Estimating',
+      span: 'aspect-[4/3]',
     },
     {
       id: 4,
       src: '/images/design-build.jpg',
       alt: 'Integrated Design-Build Architecture & Engineering',
+      caption: 'Integrated Design-Build Coordination',
+      span: 'aspect-[4/3]',
     },
     {
       id: 5,
       src: '/images/ground-up.jpg',
       alt: 'Commercial Ground-Up Site Leadership',
-    },
-    {
-      id: 6,
-      src: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Modern Digital Development Management',
+      caption: 'Commercial Ground-Up Site Leadership',
+      span: 'sm:col-span-2 lg:col-span-2 aspect-[21/10]',
     },
   ];
 
@@ -166,11 +211,15 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
 
   return (
     <div className="relative pt-24 sm:pt-32 pb-24 overflow-hidden bg-transparent text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20 sm:space-y-24">
+      {/* Background Subtle Ambience Glow */}
+      <div className="absolute top-10 left-1/3 w-[650px] h-[650px] bg-brand-red/[0.04] rounded-full blur-[180px] pointer-events-none -z-10" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20 sm:space-y-28">
+        
         {/* ========================================================
-            1. HERO SECTION
+            1. HERO SECTION (Refined Visual Hierarchy & Pillar Badges)
             ======================================================== */}
-        <section className="space-y-6">
+        <section className="relative space-y-8">
           <SectionHeading
             tag="Build Your Career With BNS Development"
             title={<span className="block">Build Your Career With BNS Development</span>}
@@ -179,12 +228,30 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
             theme="dark"
             scaleColor="red"
           />
+
+          {/* Value Indicator Badges */}
+          <ScrollReveal direction="up" delay={0.08}>
+            <div className="pt-2 flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs font-mono text-white/70">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-red" />
+                Florida &amp; Texas Markets
+              </span>
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-red" />
+                Diverse Project Sectors
+              </span>
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-red" />
+                Collaborative Team Culture
+              </span>
+            </div>
+          </ScrollReveal>
         </section>
 
         {/* ========================================================
-            2. WHY BNS DEVELOPMENT?
+            2. WHY BNS DEVELOPMENT? (Interactive Bento Grid)
             ======================================================== */}
-        <section className="space-y-10">
+        <section className="space-y-10 sm:space-y-12">
           <ScrollReveal direction="up" delay={0.06}>
             <SectionHeading
               tag="Why BNS Development?"
@@ -199,18 +266,41 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyBnsCards.map((card, idx) => (
               <ScrollReveal key={idx} direction="up" delay={idx * 0.08}>
-                <div className="p-7 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-brand-red/40 backdrop-blur-xl shadow-xl flex flex-col justify-between h-full transition-all duration-300 group hover:-translate-y-1 hover-beam-card">
-                  <div className="space-y-4">
-                    <div className="w-12 h-12 rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center text-brand-red group-hover:border-brand-red/60 group-hover:bg-brand-red/10 transition-colors">
-                      {card.icon}
+                <div className="relative p-7 sm:p-8 rounded-3xl bg-[#0C0E13]/80 border border-white/10 hover:border-brand-red/50 backdrop-blur-xl shadow-xl flex flex-col justify-between h-full transition-all duration-500 group hover:-translate-y-1.5 overflow-hidden">
+                  
+                  {/* Top Accent Light Bar */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand-red/0 to-transparent group-hover:via-brand-red/70 transition-all duration-500" />
+                  
+                  {/* Top Header Row with Icon and Number */}
+                  <div className="space-y-5">
+                    <div className="flex items-center justify-between">
+                      <div className="w-12 h-12 rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center text-brand-red group-hover:border-brand-red/50 group-hover:bg-brand-red/10 group-hover:scale-105 transition-all duration-300 shadow-md">
+                        {card.icon}
+                      </div>
+                      <span className="text-xs font-mono tracking-widest text-white/30 group-hover:text-brand-red transition-colors">
+                        {card.num}
+                      </span>
                     </div>
-                    <h3 className="text-lg font-semibold font-display text-brand-subheading group-hover:text-brand-red transition-colors">
-                      {card.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-brand-body leading-relaxed font-sans">
-                      {card.desc}
-                    </p>
+
+                    <div className="space-y-2.5">
+                      <h3 className="text-lg sm:text-xl font-semibold font-display text-white group-hover:text-brand-red transition-colors leading-snug">
+                        {card.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed font-sans">
+                        {card.desc}
+                      </p>
+                    </div>
                   </div>
+
+                  {/* Bottom Micro-Pill Tag */}
+                  <div className="pt-6 mt-4 border-t border-white/5">
+                    <span className="text-[11px] font-mono text-white/50 group-hover:text-white/80 transition-colors">
+                      {card.accent}
+                    </span>
+                  </div>
+
+                  {/* Subtle hover background glow */}
+                  <div className="absolute -right-10 -bottom-10 w-32 h-32 bg-brand-red/0 group-hover:bg-brand-red/[0.08] rounded-full blur-2xl transition-all duration-500 pointer-events-none" />
                 </div>
               </ScrollReveal>
             ))}
@@ -218,9 +308,9 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
         </section>
 
         {/* ========================================================
-            3. WE LOOK FOR PEOPLE WHO (Visual Image Cards)
+            3. WE LOOK FOR PEOPLE WHO (Curated 3-Over-4 Bento Grid)
             ======================================================== */}
-        <section className="space-y-8 sm:space-y-10">
+        <section className="space-y-10 sm:space-y-12">
           <ScrollReveal direction="up" delay={0.06}>
             <SectionHeading
               tag="Who We Look For"
@@ -232,49 +322,96 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
             />
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
-            {candidateTraits.map((trait, idx) => (
-              <ScrollReveal key={idx} direction="up" delay={idx * 0.05}>
-                <div className="relative group overflow-hidden rounded-3xl border border-white/10 hover:border-brand-red/60 bg-[#0B0D11] shadow-xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-end h-64 sm:h-72">
-                  {/* Background Image with Zoom on Hover */}
-                  <img
-                    src={trait.image}
-                    alt={trait.alt}
-                    onError={(e) => {
-                      e.currentTarget.onerror = null;
-                      e.currentTarget.src = '/images/ground-up.jpg';
-                    }}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108 select-none"
-                    loading="lazy"
-                  />
+          <div className="space-y-6">
+            {/* Top Tier: 3 Core Leadership & Culture Standards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {candidateTraits.slice(0, 3).map((trait, idx) => (
+                <ScrollReveal key={trait.id} direction="up" delay={idx * 0.06}>
+                  <div className="relative group overflow-hidden rounded-3xl border border-white/10 hover:border-brand-red/60 bg-[#0B0D11] shadow-2xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-end h-72 sm:h-80">
+                    {/* Background Image with Zoom */}
+                    <img
+                      src={trait.image}
+                      alt={trait.alt}
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = '/images/ground-up.jpg';
+                      }}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108 select-none"
+                      loading="lazy"
+                    />
 
-                  {/* Dark Gradient Overlay for optimal readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#080A0E] via-[#080A0E]/75 to-black/25 group-hover:via-[#080A0E]/60 transition-colors duration-300 pointer-events-none" />
+                    {/* Gradient Scrim for Readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#080A0E] via-[#080A0E]/75 to-black/25 group-hover:via-[#080A0E]/60 transition-colors duration-300 pointer-events-none" />
 
-                  {/* Top Badge */}
-                  <div className="absolute top-4 left-4 z-10">
-                    <div className="w-8 h-8 rounded-xl bg-brand-red/30 border border-brand-red/50 backdrop-blur-md flex items-center justify-center text-white shadow-md shadow-brand-red/20 group-hover:bg-brand-red group-hover:scale-105 transition-all duration-300">
-                      <Check className="w-4 h-4" />
+                    {/* Top Badge */}
+                    <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-xl bg-brand-red/30 border border-brand-red/50 backdrop-blur-md flex items-center justify-center text-white shadow-md shadow-brand-red/20 group-hover:bg-brand-red group-hover:scale-105 transition-all duration-300">
+                        <Check className="w-4 h-4" />
+                      </div>
+                      <span className="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white/70 uppercase tracking-wider">
+                        {trait.category}
+                      </span>
+                    </div>
+
+                    {/* Content Container */}
+                    <div className="relative z-10 p-6 space-y-1.5">
+                      <span className="text-[11px] font-mono uppercase tracking-wider text-brand-red font-semibold">
+                        Standard 0{idx + 1}
+                      </span>
+                      <h3 className="text-lg sm:text-xl font-semibold font-display text-white group-hover:text-brand-red transition-colors leading-snug">
+                        {trait.title}
+                      </h3>
                     </div>
                   </div>
+                </ScrollReveal>
+              ))}
+            </div>
 
-                  {/* Content Container */}
-                  <div className="relative z-10 p-5 sm:p-6 space-y-1.5">
-                    <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-brand-red font-semibold">
-                      Standard 0{idx + 1}
-                    </span>
-                    <h3 className="text-base sm:text-lg font-semibold font-display text-white group-hover:text-brand-red transition-colors leading-snug">
-                      {trait.title}
-                    </h3>
+            {/* Bottom Tier: 4 Execution & Technical Standards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {candidateTraits.slice(3).map((trait, idx) => (
+                <ScrollReveal key={trait.id} direction="up" delay={(idx + 3) * 0.06}>
+                  <div className="relative group overflow-hidden rounded-3xl border border-white/10 hover:border-brand-red/60 bg-[#0B0D11] shadow-xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-end h-64 sm:h-72">
+                    {/* Background Image with Zoom */}
+                    <img
+                      src={trait.image}
+                      alt={trait.alt}
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = '/images/ground-up.jpg';
+                      }}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108 select-none"
+                      loading="lazy"
+                    />
+
+                    {/* Gradient Scrim */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#080A0E] via-[#080A0E]/75 to-black/25 group-hover:via-[#080A0E]/60 transition-colors duration-300 pointer-events-none" />
+
+                    {/* Top Badge */}
+                    <div className="absolute top-4 left-4 z-10">
+                      <div className="w-8 h-8 rounded-xl bg-brand-red/30 border border-brand-red/50 backdrop-blur-md flex items-center justify-center text-white shadow-md shadow-brand-red/20 group-hover:bg-brand-red group-hover:scale-105 transition-all duration-300">
+                        <Check className="w-4 h-4" />
+                      </div>
+                    </div>
+
+                    {/* Content Container */}
+                    <div className="relative z-10 p-5 sm:p-6 space-y-1.5">
+                      <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-brand-red font-semibold">
+                        Standard 0{idx + 4}
+                      </span>
+                      <h3 className="text-base sm:text-lg font-semibold font-display text-white group-hover:text-brand-red transition-colors leading-snug">
+                        {trait.title}
+                      </h3>
+                    </div>
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* ========================================================
-            4. OUR CULTURE: Visual Showcase (Images Only)
+            4. OUR CULTURE: Editorial Visual Showcase
             ======================================================== */}
         <section className="space-y-8 sm:space-y-10">
           <ScrollReveal direction="up" delay={0.06}>
@@ -288,10 +425,11 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
             />
           </ScrollReveal>
 
+          {/* Dynamic Editorial Visual Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {cultureGallery.map((item, idx) => (
-              <ScrollReveal key={item.id} direction="up" delay={idx * 0.06}>
-                <div className="relative aspect-[16/11] w-full rounded-3xl overflow-hidden bg-white/[0.02] border border-white/10 hover:border-brand-red/50 shadow-xl group transition-all duration-500 hover:-translate-y-1">
+              <ScrollReveal key={item.id} direction="up" delay={idx * 0.06} className={item.span || ''}>
+                <div className="relative w-full h-full rounded-3xl overflow-hidden bg-white/[0.02] border border-white/10 hover:border-brand-red/50 shadow-xl group transition-all duration-500 hover:-translate-y-1">
                   <img
                     src={item.src}
                     alt={item.alt}
@@ -302,7 +440,18 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 select-none"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-black/15 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
+                  
+                  {/* Subtle Gradient & Hover Caption Chip */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300 pointer-events-none" />
+                  
+                  <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between pointer-events-none">
+                    <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-mono text-white/80 tracking-wider">
+                      {item.caption}
+                    </span>
+                    <span className="text-white/40 group-hover:text-brand-red transition-colors text-xs font-mono">
+                      0{item.id}
+                    </span>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -310,51 +459,79 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
         </section>
 
         {/* ========================================================
-            5. JOIN OUR TEAM (Call to Action)
+            5. JOIN OUR TEAM (High-Impact Split CTA Showcase)
             ======================================================== */}
         <section id="join-our-team">
           <ScrollReveal direction="up" delay={0.06}>
-            <div className="relative rounded-3xl p-8 sm:p-12 bg-white/[0.03] border border-white/10 hover:border-brand-red/40 backdrop-blur-xl shadow-2xl overflow-hidden group">
-              <div className="relative z-10 max-w-3xl space-y-6">
-                <SectionHeading
-                  tag="Join Our Team"
-                  title="Join Our "
-                  highlight="Team."
-                  description="We'd like to hear from professionals who are interested in being part of BNS Development. If you believe your experience and skills could be a good fit, send us your resume and a brief introduction."
-                  theme="dark"
-                  scaleColor="red"
-                />
+            <div className="relative rounded-3xl p-8 sm:p-12 lg:p-14 bg-gradient-to-br from-[#0E1117] via-[#0A0C10] to-[#07080B] border border-white/10 hover:border-brand-red/40 backdrop-blur-2xl shadow-2xl overflow-hidden group">
+              
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-center relative z-10">
+                {/* Left Column: Heading & Application Action */}
+                <div className="lg:col-span-7 space-y-6">
+                  <SectionHeading
+                    tag="Join Our Team"
+                    title="Join Our "
+                    highlight="Team."
+                    description="We'd like to hear from professionals who are interested in being part of BNS Development. If you believe your experience and skills could be a good fit, send us your resume and a brief introduction."
+                    theme="dark"
+                    scaleColor="red"
+                  />
 
-                <div className="pt-2 flex flex-wrap items-center gap-4">
-                  <button
-                    onClick={handleGeneralApply}
-                    className="px-6 py-3.5 rounded-full bg-brand-red hover:bg-brand-redDark border border-brand-red text-xs sm:text-sm font-bold text-white/90 hover:text-white transition-all cursor-pointer shadow-lg shadow-brand-red/30 flex items-center gap-2"
-                  >
-                    <Send className="w-4 h-4" />
-                    <span>Send Resume &amp; Introduction</span>
-                  </button>
-                  <button
-                    onClick={() => {
-                      const el = document.getElementById('open-positions');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="px-6 py-3.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-white/30 text-xs sm:text-sm font-semibold text-white/80 hover:text-white transition-all cursor-pointer"
-                  >
-                    Browse Active Positions ({jobsData.length})
-                  </button>
+                  <div className="pt-2 flex flex-wrap items-center gap-4">
+                    <button
+                      onClick={handleGeneralApply}
+                      className="px-7 py-3.5 rounded-full bg-brand-red hover:bg-brand-redDark border border-brand-red text-xs sm:text-sm font-bold text-white/90 hover:text-white transition-all cursor-pointer shadow-xl shadow-brand-red/30 flex items-center gap-2.5 group/btn"
+                    >
+                      <Send className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
+                      <span>Send Resume &amp; Introduction</span>
+                    </button>
+                    
+                    <button
+                      onClick={() => {
+                        const el = document.getElementById('open-positions');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="px-6 py-3.5 rounded-full bg-white/[0.05] hover:bg-white/[0.12] border border-white/10 hover:border-white/30 text-xs sm:text-sm font-semibold text-white/80 hover:text-white transition-all cursor-pointer flex items-center gap-2"
+                    >
+                      <span>Explore Active Roles</span>
+                      <ChevronRight className="w-4 h-4 text-white/50" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Right Column: Key Operational Directives */}
+                <div className="lg:col-span-5 p-6 sm:p-7 rounded-2xl bg-white/[0.02] border border-white/10 backdrop-blur-md space-y-4">
+                  <span className="text-xs font-mono uppercase tracking-widest text-brand-red font-semibold block">
+                    Why Builders Thrive Here
+                  </span>
+                  
+                  <div className="space-y-3 text-xs sm:text-sm font-sans text-[#9CA3AF]">
+                    <div className="flex items-start gap-3">
+                      <ShieldCheck className="w-4 h-4 text-brand-red shrink-0 mt-0.5" />
+                      <span>Direct executive leadership access on every project</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Layers className="w-4 h-4 text-brand-red shrink-0 mt-0.5" />
+                      <span>Robust multi-sector pipeline across Florida &amp; Texas</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Compass className="w-4 h-4 text-brand-red shrink-0 mt-0.5" />
+                      <span>Culture focused on autonomy, precision, and growth</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Decorative background glow */}
-              <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-red/10 rounded-full blur-3xl pointer-events-none group-hover:bg-brand-red/15 transition-all duration-700" />
+              {/* Laser decorative background glow */}
+              <div className="absolute -right-24 -bottom-24 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl pointer-events-none group-hover:bg-brand-red/15 transition-all duration-700" />
             </div>
           </ScrollReveal>
         </section>
 
         {/* ========================================================
-            6. OPEN POSITIONS: Active Opportunities
+            6. OPEN POSITIONS (Interactive Category Filters & Job Cards)
             ======================================================== */}
-        <section id="open-positions" className="space-y-10">
+        <section id="open-positions" className="space-y-8 sm:space-y-10">
           <ScrollReveal direction="up" delay={0.06}>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <SectionHeading
@@ -366,44 +543,70 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                 scaleColor="red"
               />
               <div className="shrink-0 mb-2">
-                <span className="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-brand-subheading font-mono text-xs tracking-wider">
-                  {jobsData.length} Positions Open in TX &amp; FL
+                <span className="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-white/80 font-mono text-xs tracking-wider">
+                  {filteredJobs.length} {filteredJobs.length === 1 ? 'Position' : 'Positions'} Available
                 </span>
               </div>
             </div>
           </ScrollReveal>
 
+          {/* Department Filter Chips */}
+          {departments.length > 2 && (
+            <ScrollReveal direction="up" delay={0.08}>
+              <div className="flex flex-wrap items-center gap-2 pt-2">
+                <span className="text-xs font-mono text-white/40 flex items-center gap-1.5 mr-2">
+                  <Filter className="w-3.5 h-3.5 text-brand-red" />
+                  Department:
+                </span>
+                {departments.map((dept) => (
+                  <button
+                    key={dept}
+                    onClick={() => setSelectedDepartment(dept)}
+                    className={`px-4 py-1.5 rounded-full text-xs font-mono tracking-wider transition-all cursor-pointer ${
+                      selectedDepartment === dept
+                        ? 'bg-brand-red text-white border border-brand-red shadow-md shadow-brand-red/25'
+                        : 'bg-white/[0.04] text-white/60 hover:text-white border border-white/10 hover:border-white/20'
+                    }`}
+                  >
+                    {dept}
+                  </button>
+                ))}
+              </div>
+            </ScrollReveal>
+          )}
+
+          {/* Job Listings */}
           <div className="space-y-5">
-            {jobsData.map((job, idx) => (
+            {filteredJobs.map((job, idx) => (
               <ScrollReveal key={job.id} direction="up" delay={idx * 0.06}>
-                <div className="p-6 sm:p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-brand-red/50 backdrop-blur-xl shadow-xl transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-6 hover:-translate-y-1 group hover-beam-card">
+                <div className="p-6 sm:p-8 rounded-3xl bg-[#0C0E13]/80 border border-white/10 hover:border-brand-red/50 backdrop-blur-xl shadow-xl transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-6 hover:-translate-y-1 group hover-beam-card">
                   <div className="space-y-3 max-w-3xl">
-                    <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-brand-mutedText">
+                    <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-white/50">
                       <span className="text-brand-red font-semibold">{job.department}</span>
                       <span>•</span>
-                      <span className="flex items-center gap-1.5 text-brand-body">
+                      <span className="flex items-center gap-1.5 text-white/80">
                         <MapPin className="w-3.5 h-3.5 text-brand-red shrink-0" />
                         {job.location}
                       </span>
                       <span>•</span>
                       <span>{job.type}</span>
                       <span>•</span>
-                      <span className="text-brand-subheading font-semibold">{job.experience}</span>
+                      <span className="text-white/80 font-semibold">{job.experience}</span>
                     </div>
 
                     <h3
                       onClick={() => handleViewRole(job)}
-                      className="text-2xl font-semibold font-display text-brand-subheading group-hover:text-brand-red transition-colors cursor-pointer"
+                      className="text-xl sm:text-2xl font-semibold font-display text-white group-hover:text-brand-red transition-colors cursor-pointer"
                     >
                       {job.title}
                     </h3>
 
-                    <p className="text-sm text-brand-body leading-relaxed font-sans">
+                    <p className="text-sm text-[#9CA3AF] leading-relaxed font-sans">
                       {job.description}
                     </p>
 
                     <div className="pt-1 flex items-center gap-2 text-xs font-mono">
-                      <span className="px-3 py-1 rounded-lg bg-white/[0.05] border border-white/10 text-brand-subheading font-bold">
+                      <span className="px-3 py-1 rounded-lg bg-white/[0.05] border border-white/10 text-white/90 font-bold">
                         {job.salary}
                       </span>
                     </div>
@@ -421,7 +624,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                         setSelectedJob(job);
                         setIsApplying(true);
                       }}
-                      className="px-4 py-2.5 rounded-full bg-brand-red hover:bg-brand-redDark border border-brand-red text-xs font-bold text-white/80 hover:text-white transition-all cursor-pointer shadow-md shadow-brand-red/25"
+                      className="px-5 py-2.5 rounded-full bg-brand-red hover:bg-brand-redDark border border-brand-red text-xs font-bold text-white/90 hover:text-white transition-all cursor-pointer shadow-md shadow-brand-red/25"
                     >
                       Apply Now
                     </button>
@@ -434,7 +637,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
       </div>
 
       {/* ========================================================
-          APPLICATION MODAL (DARK THEME)
+          APPLICATION MODAL (DARK LUXURY THEME)
           ======================================================== */}
       <AnimatePresence>
         {isApplying && selectedJob && (
@@ -478,7 +681,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                   <h4 className="text-2xl font-semibold font-display text-white">
                     Application Received
                   </h4>
-                  <p className="text-sm text-brand-body max-w-md mx-auto font-sans leading-relaxed">
+                  <p className="text-sm text-[#9CA3AF] max-w-md mx-auto font-sans leading-relaxed">
                     Thank you for your submission for {selectedJob.title}. Our team will review your qualifications and contact you directly.
                   </p>
                 </div>
