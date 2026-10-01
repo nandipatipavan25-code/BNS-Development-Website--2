@@ -237,14 +237,14 @@ export default function SubcontractorsPage({ setActivePage }) {
             <img
               src="/images/ground-up.jpg"
               alt="BNS Project Site Structural Engineering"
-              className="w-full h-full object-cover select-none brightness-75 contrast-110 opacity-80 scale-105 transition-transform duration-1000"
+              className="w-full h-full object-cover select-none brightness-100 contrast-105 opacity-100 scale-105 transition-transform duration-1000"
             />
-            {/* Dark Dramatic Architectural Gradients */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#07080A]/90 via-[#07080A]/40 to-black/30" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#07080A]/90 via-transparent to-[#07080A]/60" />
+            {/* Architectural Soft Vignette Gradients */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#07080A]/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#07080A]/70 via-[#07080A]/20 to-transparent" />
 
             {/* Subtle Blueprint Grid Accent */}
-            <div className="absolute inset-0 blueprint-grid-dark opacity-30 pointer-events-none" />
+            <div className="absolute inset-0 blueprint-grid-dark opacity-15 pointer-events-none" />
 
             {/* Hero Content Overlay */}
             <div className="absolute inset-0 z-10 flex flex-col justify-end p-6 sm:p-10 lg:p-14 max-w-4xl">
