@@ -45,8 +45,8 @@ export default function Footer({ setActivePage }) {
                 </button>
 
                 <p className="text-sm text-white/60 max-w-md font-sans leading-relaxed">
-                  A premier commercial and residential real estate development enterprise operating across Florida and Texas. With 35+ years of verified executive leadership and $800M+ in delivered volume, our standard is unwavering:{' '}
-                  <span className="text-white/90 font-semibold">Build It Right.</span>
+                  BNS Development delivers thoughtful development solutions backed by experience, collaboration and accountability.<br className="hidden sm:block" />
+                  From pre-development through completion, we help bring projects from vision to reality.
                 </p>
               </div>
 
