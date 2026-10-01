@@ -75,13 +75,41 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
   ];
 
   const candidateTraits = [
-    'Take ownership of their work',
-    'Communicate clearly',
-    'Work well with others',
-    'Pay attention to detail',
-    'Approach challenges with a problem-solving mindset',
-    'Value quality and accountability',
-    'Want to grow professionally',
+    {
+      title: 'Take ownership of their work',
+      image: '/images/ground-up.jpg',
+      alt: 'Taking ownership of development work on site',
+    },
+    {
+      title: 'Communicate clearly',
+      image: '/images/process/step-03-coordination.jpg',
+      alt: 'Clear communication and active team coordination',
+    },
+    {
+      title: 'Work well with others',
+      image: '/images/about-project-partner.jpg',
+      alt: 'Collaborative teamwork across development partners',
+    },
+    {
+      title: 'Pay attention to detail',
+      image: '/images/process/step-04-details.jpg',
+      alt: 'Precision estimating and architectural details',
+    },
+    {
+      title: 'Approach challenges with a problem-solving mindset',
+      image: '/images/design-build.jpg',
+      alt: 'Integrated problem solving in design and construction',
+    },
+    {
+      title: 'Value quality and accountability',
+      image: '/images/process/step-05-delivery.jpg',
+      alt: 'Unwavering quality and milestone accountability',
+    },
+    {
+      title: 'Want to grow professionally',
+      image: '/images/home-strategic-leadership.jpg',
+      alt: 'Professional development and leadership growth',
+    },
   ];
 
   // Pure Visual Culture Gallery (Images Only)
@@ -213,7 +241,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
         </section>
 
         {/* ========================================================
-            3. WE LOOK FOR PEOPLE WHO
+            3. WE LOOK FOR PEOPLE WHO (Visual Image Cards)
             ======================================================== */}
         <section className="space-y-8 sm:space-y-10">
           <ScrollReveal direction="up" delay={0.06}>
@@ -227,16 +255,41 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
             />
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
             {candidateTraits.map((trait, idx) => (
               <ScrollReveal key={idx} direction="up" delay={idx * 0.05}>
-                <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-brand-red/40 backdrop-blur-md transition-all duration-300 flex items-center gap-4 group hover:-translate-y-0.5">
-                  <div className="w-9 h-9 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center shrink-0 text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all">
-                    <Check className="w-4 h-4" />
+                <div className="relative group overflow-hidden rounded-3xl border border-white/10 hover:border-brand-red/60 bg-[#0B0D11] shadow-xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-end h-64 sm:h-72">
+                  {/* Background Image with Zoom on Hover */}
+                  <img
+                    src={trait.image}
+                    alt={trait.alt}
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = '/images/ground-up.jpg';
+                    }}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108 select-none"
+                    loading="lazy"
+                  />
+
+                  {/* Dark Gradient Overlay for optimal readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#080A0E] via-[#080A0E]/75 to-black/25 group-hover:via-[#080A0E]/60 transition-colors duration-300 pointer-events-none" />
+
+                  {/* Top Badge */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <div className="w-8 h-8 rounded-xl bg-brand-red/30 border border-brand-red/50 backdrop-blur-md flex items-center justify-center text-white shadow-md shadow-brand-red/20 group-hover:bg-brand-red group-hover:scale-105 transition-all duration-300">
+                      <Check className="w-4 h-4" />
+                    </div>
                   </div>
-                  <span className="text-sm sm:text-[15px] font-medium text-brand-subheading group-hover:text-white transition-colors">
-                    {trait}
-                  </span>
+
+                  {/* Content Container */}
+                  <div className="relative z-10 p-5 sm:p-6 space-y-1.5">
+                    <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-brand-red font-semibold">
+                      Standard 0{idx + 1}
+                    </span>
+                    <h3 className="text-base sm:text-lg font-semibold font-display text-white group-hover:text-brand-red transition-colors leading-snug">
+                      {trait.title}
+                    </h3>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
