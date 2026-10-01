@@ -189,7 +189,7 @@ export default function App() {
             ? '/videos/contact-bg-video.mp4'
             : '/videos/bg-video.mp4'
         }
-        videoOpacity={activePage === 'home' ? 0.75 : activePage === 'contact' ? 0.20 : 0.65}
+        videoOpacity={activePage === 'contact' ? 0.20 : 0.75}
       />
 
       {/* Breathing Header / Navbar */}

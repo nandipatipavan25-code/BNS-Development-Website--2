@@ -133,7 +133,7 @@ export default function ConstructionBackground({
             webkit-playsinline="true"
             disablePictureInPicture
             style={{
-              opacity: videoOpacity ?? (videoSrc.includes('contact') ? 0.20 : 0.65)
+              opacity: videoOpacity ?? (videoSrc.includes('contact') ? 0.20 : 0.75)
             }}
             className="w-full h-full object-cover filter contrast-[1.05] brightness-90 scale-105 pointer-events-none transition-opacity duration-500"
             onEnded={(e) => {
