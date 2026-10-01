@@ -448,7 +448,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                           else setActivePage('services');
                           window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}
-                        className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/[0.05] hover:bg-white/[0.12] text-white border border-white/15 hover:border-brand-red/60 text-sm font-sans font-medium transition-all duration-300 shadow-sm group/btn cursor-pointer"
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/[0.05] hover:bg-white/[0.12] text-white border border-white/15 hover:border-brand-red/60 text-sm font-display font-medium transition-all duration-300 shadow-sm group/btn cursor-pointer"
                       >
                         <span>{svc.cta || 'Know More'}</span>
                         <ArrowRight className="w-4 h-4 text-[#ef4444] transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -537,7 +537,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
               <div className="space-y-3">
                 <div className="flex items-center gap-2.5">
                   <span className="w-5 h-[2px] bg-brand-red inline-block" />
-                  <span className="font-mono text-xs tracking-widest text-[#A8A8A0] font-semibold">
+                  <span className="font-sans text-xs tracking-wider text-[#A8A8A0] font-semibold">
                     Our Expertise
                   </span>
                 </div>

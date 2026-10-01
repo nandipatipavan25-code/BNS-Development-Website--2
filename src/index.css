@@ -160,14 +160,14 @@ button *,
   line-height: 1.18 !important;
 }
 
-.font-preset-1, .font-preset-1 p, .font-preset-1 li, .font-preset-1 button, .font-preset-1 a,
+.font-preset-1, .font-preset-1 p, .font-preset-1 li, .font-preset-1 a,
 .font-preset-1 input, .font-preset-1 textarea, .font-preset-1 select, .font-preset-1 label,
 .font-preset-1 .font-sans, .font-preset-1 .font-body, .font-preset-1 .font-subheading,
-.font-preset-1 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *),
-.about-preset-1, .about-preset-1 p, .about-preset-1 li, .about-preset-1 button, .about-preset-1 a,
+.font-preset-1 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *, button *, [role="button"] *, .btn *),
+.about-preset-1, .about-preset-1 p, .about-preset-1 li, .about-preset-1 a,
 .about-preset-1 input, .about-preset-1 textarea, .about-preset-1 select, .about-preset-1 label,
 .about-preset-1 .font-sans, .about-preset-1 .font-body, .about-preset-1 .font-subheading,
-.about-preset-1 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *) {
+.about-preset-1 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *, button *, [role="button"] *, .btn *) {
   font-family: 'Albert Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
   letter-spacing: 0.008em !important;
 }
@@ -176,7 +176,6 @@ button *,
   line-height: 1.65 !important;
 }
 
-.font-preset-1 button, .about-preset-1 button,
 .font-preset-1 a, .about-preset-1 a {
   letter-spacing: 0.025em !important;
 }
@@ -231,14 +230,14 @@ button *,
   line-height: 1.3 !important;
 }
 
-.font-preset-2, .font-preset-2 p, .font-preset-2 li, .font-preset-2 button, .font-preset-2 a,
+.font-preset-2, .font-preset-2 p, .font-preset-2 li, .font-preset-2 a,
 .font-preset-2 input, .font-preset-2 textarea, .font-preset-2 select, .font-preset-2 label,
 .font-preset-2 .font-sans, .font-preset-2 .font-body, .font-preset-2 .font-subheading,
-.font-preset-2 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *),
-.about-preset-2, .about-preset-2 p, .about-preset-2 li, .about-preset-2 button, .about-preset-2 a,
+.font-preset-2 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *, button *, [role="button"] *, .btn *),
+.about-preset-2, .about-preset-2 p, .about-preset-2 li, .about-preset-2 a,
 .about-preset-2 input, .about-preset-2 textarea, .about-preset-2 select, .about-preset-2 label,
 .about-preset-2 .font-sans, .about-preset-2 .font-body, .about-preset-2 .font-subheading,
-.about-preset-2 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *) {
+.about-preset-2 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *, button *, [role="button"] *, .btn *) {
   font-family: 'Michroma', 'Eurostile', -apple-system, BlinkMacSystemFont, sans-serif !important;
   letter-spacing: 0.025em !important;
 }
@@ -248,7 +247,6 @@ button *,
   letter-spacing: 0.02em !important;
 }
 
-.font-preset-2 button, .about-preset-2 button,
 .font-preset-2 a, .about-preset-2 a {
   letter-spacing: 0.05em !important;
   font-weight: 600 !important;
@@ -269,14 +267,14 @@ button *,
   line-height: 1.15 !important;
 }
 
-.font-preset-3, .font-preset-3 p, .font-preset-3 li, .font-preset-3 button, .font-preset-3 a,
+.font-preset-3, .font-preset-3 p, .font-preset-3 li, .font-preset-3 a,
 .font-preset-3 input, .font-preset-3 textarea, .font-preset-3 select, .font-preset-3 label,
 .font-preset-3 .font-sans, .font-preset-3 .font-body, .font-preset-3 .font-subheading,
-.font-preset-3 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *),
-.about-preset-3, .about-preset-3 p, .about-preset-3 li, .about-preset-3 button, .about-preset-3 a,
+.font-preset-3 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *, button *, [role="button"] *, .btn *),
+.about-preset-3, .about-preset-3 p, .about-preset-3 li, .about-preset-3 a,
 .about-preset-3 input, .about-preset-3 textarea, .about-preset-3 select, .about-preset-3 label,
 .about-preset-3 .font-sans, .about-preset-3 .font-body, .about-preset-3 .font-subheading,
-.about-preset-3 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *) {
+.about-preset-3 span:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .font-heading *, .font-display *, button *, [role="button"] *, .btn *) {
   font-family: 'Libre Baskerville', 'Georgia', serif !important;
   letter-spacing: 0.01em !important;
 }
@@ -285,7 +283,6 @@ button *,
   line-height: 1.75 !important;
 }
 
-.font-preset-3 button, .about-preset-3 button,
 .font-preset-3 a, .about-preset-3 a {
   font-family: 'League Spartan', sans-serif !important;
   letter-spacing: 0.04em !important;
@@ -636,10 +633,9 @@ html {
 }
 
 .about-preset-2 p,
-.about-preset-2 span,
+.about-preset-2 span:not(button *, [role="button"] *, .btn *),
 .about-preset-2 li,
 .about-preset-2 a,
-.about-preset-2 button,
 .about-preset-2 .font-sans {
   font-family: 'Michroma', sans-serif !important;
   letter-spacing: 0.02em;
