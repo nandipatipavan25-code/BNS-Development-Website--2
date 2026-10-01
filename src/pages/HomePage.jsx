@@ -251,13 +251,13 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
         <div className="relative w-full h-[72vh] min-h-[500px] sm:min-h-[600px] md:h-[82vh] overflow-hidden bg-[#0F1014] shadow-2xl flex items-center justify-center group">
           <video
             ref={videoRef}
-            src="/videos/hero-video.mp4"
+            src="/videos/home-page-background-video-2.mp4"
             autoPlay
             loop
             muted={isMuted}
             playsInline
             webkit-playsinline="true"
-            className="w-full h-full object-cover select-none cursor-pointer"
+            className="w-full h-full object-cover select-none cursor-pointer opacity-75"
             onClick={togglePlay}
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
@@ -266,8 +266,8 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
               e.currentTarget.play().catch(() => {});
             }}
           >
-            <source src="/videos/hero-video.mp4" type="video/mp4" />
-            <source src="/videos/home page.mp4" type="video/mp4" />
+            <source src="/videos/home-page-background-video-2.mp4" type="video/mp4" />
+            <source src="/videos/Home page background video -2.mp4" type="video/mp4" />
           </video>
 
           {/* Cinematic Gradient Overlay */}

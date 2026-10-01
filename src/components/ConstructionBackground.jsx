@@ -135,7 +135,7 @@ export default function ConstructionBackground({
             style={{
               opacity: videoOpacity ?? (videoSrc.includes('contact') ? 0.20 : 0.75)
             }}
-            className="w-full h-full object-cover filter contrast-[1.05] brightness-90 scale-105 pointer-events-none transition-opacity duration-500"
+            className="w-full h-full object-cover filter contrast-[1.05] brightness-100 scale-105 pointer-events-none transition-opacity duration-500"
             onEnded={(e) => {
               e.currentTarget.currentTime = 0;
               e.currentTarget.play().catch(() => {});
@@ -153,7 +153,7 @@ export default function ConstructionBackground({
             <source src="/videos/bg-video.mp4" type="video/mp4" />
           </video>
           {/* Natural, balanced architectural dark vignette */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#07080A]/70 via-[#07080A]/45 to-[#07080A]/85 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#07080A]/35 via-[#07080A]/15 to-[#07080A]/50 pointer-events-none" />
         </div>
       )}
 
