@@ -108,8 +108,13 @@ export default function WorkDetailPage({
 
                 {/* Overlaid Title & Meta */}
                 <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 right-6 sm:right-10 max-w-4xl space-y-3">
-                  <div className="flex flex-wrap items-center gap-2.5">
-                    <div className="text-xs sm:text-sm font-semibold text-brand-red tracking-wider mb-2">{activeProj.category}</div>
+                  <div className="flex flex-wrap items-center gap-2.5 mb-2">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
+                      <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#A8A8A0] tracking-wider">
+                        {activeProj.category}
+                      </span>
+                    </div>
 
                     {activeProj.status && (
                       <span className="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-white/90 font-mono text-[10px] sm:text-xs tracking-wider backdrop-blur-md">

@@ -96,7 +96,12 @@ export default function AboutPage({ setActivePage, fontPreset = 1 }) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#07080A] via-[#07080A]/40 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 text-white">
-                <div className="text-xs sm:text-sm font-semibold text-brand-red tracking-wider mb-2">The BNS Standard</div>
+                <div className="flex items-center gap-2.5 mb-2">
+                  <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
+                  <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#A8A8A0] tracking-wider">
+                    The BNS Standard
+                  </span>
+                </div>
                 <p className="text-xl sm:text-2xl lg:text-3xl font-semibold font-display leading-tight max-w-3xl text-brand-heading">
                   "Strong Projects. Stronger Partnership. More Than Your Average Partner."
                 </p>

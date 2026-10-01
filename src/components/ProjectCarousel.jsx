@@ -156,12 +156,12 @@ export default function ProjectCarousel({ onSelectProject, onViewAll, bgClassNam
       ══════════════════════════════════════════ */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 pb-8 sm:pb-12">
         <ScrollReveal direction="up" delay={0.05}>
-          {/* Kicker */}
-          <div className="flex items-center text-xs font-sans font-semibold tracking-wider mb-3">
-            <div className="flex items-center gap-2">
-              <span className="w-5 h-0.5 bg-brand-red inline-block" />
-              <span className="text-brand-red">Portfolio &amp; Track Record</span>
-            </div>
+          {/* Kicker (Style 1: Red Line + Light Text) */}
+          <div className="flex items-center gap-2.5 mb-3">
+            <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
+            <span className="text-xs sm:text-[13px] font-sans font-semibold tracking-wider text-[#A8A8A0]">
+              Portfolio &amp; Track Record
+            </span>
           </div>
 
           {/* Title + Nav row */}

@@ -116,8 +116,11 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
         <section className="space-y-8">
           <ScrollReveal direction="up" delay={0.05}>
             <div className="max-w-4xl space-y-4">
-              <div className="text-xs sm:text-sm font-semibold text-brand-red tracking-wider">
-                Comprehensive Services
+              <div className="flex items-center gap-2.5">
+                <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
+                <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#A8A8A0] tracking-wider">
+                  Comprehensive Services
+                </span>
               </div>
 
               <h1 className="text-2xl sm:text-3xl md:text-[36px] lg:text-[42px] font-display font-semibold tracking-tight leading-tight sm:leading-snug md:leading-normal lg:leading-[42px] text-brand-heading">

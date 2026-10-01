@@ -254,8 +254,13 @@ export default function SubcontractorsPage({ setActivePage }) {
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="space-y-3 sm:space-y-4"
               >
-                {/* Technical Badge */}
-                <div className="text-xs sm:text-sm font-semibold text-brand-red tracking-wider mb-2">Trusted Trade Partners • Florida & Texas</div>
+                {/* Technical Badge (Style 1: Red Line + Light Text) */}
+                <div className="flex items-center gap-2.5 mb-2">
+                  <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
+                  <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#A8A8A0] tracking-wider">
+                    Trusted Trade Partners • Florida &amp; Texas
+                  </span>
+                </div>
 
                 {/* Main Heading: Our Subcontractors in GT Super font */}
                 <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-display font-semibold text-brand-heading tracking-tight leading-[1.12]">
@@ -494,7 +499,12 @@ export default function SubcontractorsPage({ setActivePage }) {
 
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="space-y-3 max-w-2xl">
-              <div className="text-xs sm:text-sm font-semibold text-brand-red tracking-wider mb-2">Trade Onboarding • Florida &amp; Texas</div>
+              <div className="flex items-center gap-2.5 mb-2">
+                <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
+                <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#A8A8A0] tracking-wider">
+                  Trade Onboarding • Florida &amp; Texas
+                </span>
+              </div>
               <h3 className="text-2xl sm:text-3xl font-display font-semibold text-brand-heading leading-tight">
                 Want to Join the BNS Trade Network?
               </h3>

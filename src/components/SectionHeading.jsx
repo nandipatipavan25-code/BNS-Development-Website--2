@@ -21,6 +21,8 @@ export default function SectionHeading({
   centered = false,
   theme = "dark", // 'dark' | 'light'
   scaleColor = "red", // 'red' | 'white'
+  showRedLine = null, // null | boolean (defaults to true if null, unless centered)
+  tagColor = "light", // 'light' (#A8A8A0) | 'red' (#D71920)
   useWordReveal = true,
   className = "",
   titleClassName = "",
@@ -29,21 +31,31 @@ export default function SectionHeading({
   // Clean tag string by removing leading slashes
   const cleanTag = typeof tag === 'string' ? tag.replace(/^\/\/\s*/, '') : tag;
   const hasCustomMargin = /(^|\s)m[by]-/.test(className);
+  const useLine = showRedLine !== null ? showRedLine : !centered;
 
   return (
     <div className={`${hasCustomMargin ? '' : (description ? 'mb-6 sm:mb-8' : 'mb-3 sm:mb-4')} ${centered ? 'text-center max-w-3xl mx-auto' : 'max-w-3xl'} ${className}`}>
-      {/* Clean, Minimal Section Eyebrow Label */}
+      {/* Clean, Minimal Section Eyebrow Label (Style 1: Red Line + Light Text / Style 2: Text-Only) */}
       {cleanTag && (
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className={`text-xs sm:text-sm font-semibold text-brand-red tracking-wider mb-2.5 ${
-            centered ? 'text-center' : ''
+          className={`flex items-center gap-2.5 mb-2.5 ${
+            centered ? 'justify-center text-center' : ''
           }`}
         >
-          {cleanTag}
+          {useLine && (
+            <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
+          )}
+          <span className={`text-xs sm:text-[13px] font-sans font-semibold tracking-wider ${
+            useLine
+              ? 'text-[#A8A8A0]'
+              : (tagColor === 'red' ? 'text-brand-red' : 'text-[#A8A8A0]')
+          }`}>
+            {cleanTag}
+          </span>
         </motion.div>
       )}
 
