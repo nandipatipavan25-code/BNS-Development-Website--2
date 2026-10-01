@@ -385,7 +385,11 @@ export default function ResidentialPage({ setActivePage }) {
         {/* ========================================================
             6. PLANNING A RESIDENTIAL PROJECT? (Closing CTA)
             ======================================================== */}
-        <section className="relative p-10 sm:p-14 lg:p-16 rounded-3xl border border-white/15 backdrop-blur-2xl shadow-2xl text-center space-y-6 overflow-hidden group">
+        <section className="relative p-10 sm:p-14 lg:p-16 rounded-3xl border border-brand-red/30 hover:border-brand-red/70 shadow-[0_0_50px_-10px_rgba(215,25,32,0.35)] hover:shadow-[0_0_70px_-5px_rgba(215,25,32,0.6)] backdrop-blur-2xl text-center space-y-6 overflow-hidden group transition-all duration-700">
+          {/* Luminous Red Ambient Border Glow Effect */}
+          <div className="absolute -inset-[1.5px] rounded-3xl bg-gradient-to-r from-brand-red/60 via-brand-red/25 to-brand-red/60 opacity-60 group-hover:opacity-100 blur-[3px] transition-all duration-700 pointer-events-none" />
+          <div className="absolute -inset-[4px] rounded-3xl bg-brand-red/30 blur-2xl opacity-45 group-hover:opacity-85 transition-all duration-700 pointer-events-none" />
+
           {/* Background Video (cta-bg.mp4) */}
           <div className="absolute inset-0 z-0 overflow-hidden bg-[#07080A]">
             <video
@@ -395,18 +399,19 @@ export default function ResidentialPage({ setActivePage }) {
               muted
               playsInline
               webkit-playsinline="true"
+              preload="auto"
               disablePictureInPicture
-              className="w-full h-full object-cover object-center pointer-events-none transition-transform duration-1000 ease-out scale-105 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+              disableRemotePlayback
+              className="w-full h-full object-cover object-center pointer-events-none transition-transform duration-1000 ease-out scale-105 group-hover:scale-110 brightness-105 contrast-100"
+              style={{ opacity: 1 }}
               onEnded={(e) => {
-                e.currentTarget.currentTime = 0;
                 e.currentTarget.play().catch(() => {});
               }}
             >
               <source src="/videos/cta-bg.mp4" type="video/mp4" />
             </video>
-            {/* Soft, balanced vignette to let video show through with high clarity */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#07080A]/50 via-[#07080A]/20 to-[#07080A]/40 pointer-events-none" />
-            <div className="absolute inset-0 bg-radial-gradient from-brand-red/15 via-transparent to-transparent pointer-events-none" />
+            {/* Soft, minimal vignette for text contrast without black shade */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/25 pointer-events-none" />
           </div>
 
           <div className="max-w-2xl mx-auto space-y-5 relative z-10">

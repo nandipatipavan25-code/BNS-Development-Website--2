@@ -31,36 +31,42 @@ export default function HouseCTA({
   return (
     <section className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-16 sm:py-24">
       <ScrollReveal direction="up" distance={30} delay={0.1}>
-        {/* Outer Frame */}
-        <div
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          className={`relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl transition-all duration-700 group ${bgClassName}`}
-        >
-          {/* Background CTA Video (CTA Background.mp4 at 75% opacity) */}
-          <div className="absolute inset-0 z-0 overflow-hidden bg-[#07080A]">
-            <video
-              ref={videoRef}
-              src="/videos/cta-bg.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              webkit-playsinline="true"
-              disablePictureInPicture
-              className="w-full h-full object-cover object-center pointer-events-none transition-transform duration-1000 ease-out scale-105 group-hover:scale-110"
-              style={{ opacity: 0.75 }}
-              onEnded={(e) => {
-                e.currentTarget.currentTime = 0;
-                e.currentTarget.play().catch(() => {});
-              }}
-            >
-              <source src="/videos/cta-bg.mp4" type="video/mp4" />
-              <source src="/videos/CTA%20Background.mp4" type="video/mp4" />
-            </video>
-            {/* Softened black vignette for maximum video clarity */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#07080A]/60 via-black/25 to-[#07080A]/60 pointer-events-none" />
-          </div>
+        <div className="relative group">
+          {/* Luminous Red Ambient Border Glow Effect */}
+          <div className="absolute -inset-[1.5px] rounded-3xl bg-gradient-to-r from-brand-red/60 via-brand-red/25 to-brand-red/60 opacity-60 group-hover:opacity-100 blur-[3px] transition-all duration-700 pointer-events-none" />
+          <div className="absolute -inset-[4px] rounded-3xl bg-brand-red/30 blur-2xl opacity-45 group-hover:opacity-85 transition-all duration-700 pointer-events-none" />
+
+          {/* Outer Frame */}
+          <div
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className={`relative rounded-3xl overflow-hidden border border-brand-red/30 group-hover:border-brand-red/70 shadow-[0_0_50px_-10px_rgba(215,25,32,0.35)] group-hover:shadow-[0_0_70px_-5px_rgba(215,25,32,0.6)] transition-all duration-700 ${bgClassName}`}
+          >
+            {/* Background CTA Video (Clear, luminous unshaded playback) */}
+            <div className="absolute inset-0 z-0 overflow-hidden bg-[#07080A]">
+              <video
+                ref={videoRef}
+                src="/videos/cta-bg.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                webkit-playsinline="true"
+                preload="auto"
+                disablePictureInPicture
+                disableRemotePlayback
+                className="w-full h-full object-cover object-center pointer-events-none brightness-105 contrast-100 transition-transform duration-1000 ease-out scale-105 group-hover:scale-110"
+                style={{ opacity: 1 }}
+                onEnded={(e) => {
+                  e.currentTarget.play().catch(() => {});
+                }}
+              >
+                <source src="/videos/cta-bg.mp4" type="video/mp4" />
+                <source src="/videos/CTA%20Background.mp4" type="video/mp4" />
+              </video>
+              {/* Soft, minimal vignette for text contrast without black shade */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/25 pointer-events-none" />
+            </div>
 
           {/* Foreground CTA Content Centered inside the Laser Frame */}
           <div className="relative z-10 p-8 sm:p-14 lg:p-20 text-center flex flex-col items-center justify-center min-h-[460px] sm:min-h-[540px]">
@@ -104,7 +110,8 @@ export default function HouseCTA({
             </div>
           </div>
         </div>
-      </ScrollReveal>
-    </section>
+      </div>
+    </ScrollReveal>
+  </section>
   );
 }
