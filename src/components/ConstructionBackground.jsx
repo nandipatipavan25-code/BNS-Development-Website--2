@@ -158,7 +158,9 @@ export default function ConstructionBackground({
               }
             }}
           >
-            <source src={videoSrc} type="video/mp4" />
+            <source src={videoSrc} type={videoSrc.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
+            <source src="/videos/home-page-background-video-2.webm" type="video/webm" />
+            <source src="/videos/Home page background video -2.webm" type="video/webm" />
             <source src="/videos/home-page-background-video-2.mp4" type="video/mp4" />
             <source src="/videos/Home page background video -2.mp4" type="video/mp4" />
             <source src="/videos/bg-video.mp4" type="video/mp4" />
