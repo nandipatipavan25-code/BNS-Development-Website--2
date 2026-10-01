@@ -269,7 +269,7 @@ export default function SubcontractorsPage({ setActivePage }) {
 
                 {/* Supporting Text in Manrope #9CA3AF */}
                 <p className="text-sm sm:text-base lg:text-lg text-[#9CA3AF] font-sans leading-relaxed max-w-2xl">
-                  A trusted network of premier specialty trade contractors, structural engineers, and craft specialists powering BNS commercial, multifamily, and ground-up builds.
+                  A trusted network of premier specialty trade contractors, structural engineers,<br className="hidden sm:inline" /> and craft specialists powering BNS commercial, multifamily, and ground-up builds.
                 </p>
               </motion.div>
             </div>
