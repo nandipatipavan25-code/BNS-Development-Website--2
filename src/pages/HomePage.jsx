@@ -299,7 +299,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
           <div className="absolute inset-0 z-[1] overflow-hidden">
             <video
               ref={videoRef}
-              src="/videos/hero-video.mp4"
+              src="/videos/hero-video.webm"
               autoPlay
               loop
               muted={true}
@@ -315,9 +315,10 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
               }}
               className="w-full h-full object-cover select-none pointer-events-none opacity-90 transition-opacity duration-700"
             >
+              <source src="/videos/hero-video.webm" type="video/webm" />
+              <source src="/videos/home-page-hero-section-video.webm" type="video/webm" />
+              <source src="/videos/Home page hero section video.webm" type="video/webm" />
               <source src="/videos/hero-video.mp4" type="video/mp4" />
-              <source src="/videos/home-page-hero-section-video.mp4" type="video/mp4" />
-              <source src="/videos/Home page hero section video.mp4" type="video/mp4" />
             </video>
 
             {/* Subtle Gradient Overlay for Clean Text Legibility without Heavy Black Shade */}
