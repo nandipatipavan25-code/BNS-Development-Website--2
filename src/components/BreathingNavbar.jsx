@@ -53,8 +53,8 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
             >
               <div className="relative">
                 <img
-                  src="/logos/BNS LOGO-01.svg"
-                  alt="BNS DEVELOPMENT"
+                  src="/logos/logo-01.svg"
+                  alt="BNS Development"
                   className={`transition-all duration-500 w-auto object-contain ${
                     isScrolled ? 'h-[36px] md:h-[42px]' : 'h-[42px] md:h-[50px]'
                   }`}

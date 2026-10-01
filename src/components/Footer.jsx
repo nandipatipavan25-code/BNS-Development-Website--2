@@ -30,8 +30,8 @@ export default function Footer({ setActivePage }) {
               <div>
                 <button onClick={() => handleNav('home')} className="focus:outline-none block mb-3 cursor-pointer" aria-label="BNS Development">
                   <img
-                    src="/logos/BNS LOGO-01.svg"
-                    alt="BNS DEVELOPMENT"
+                    src="/logos/logo-01.svg"
+                    alt="BNS Development"
                     className="h-10 sm:h-12 w-auto object-contain"
                   />
                 </button>
