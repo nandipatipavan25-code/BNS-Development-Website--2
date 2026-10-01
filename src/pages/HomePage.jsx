@@ -367,7 +367,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
               <ScrollReveal direction="left" delay={0.08}>
                 <SectionHeading
                   tag="Strategic Execution"
-                  title="A Better Way to Move a"
+                  title={<>A Better Way to Move a<br /></>}
                   highlight="Project Forward"
                   theme="dark"
                   scaleColor="red"
