@@ -284,7 +284,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                 backfaceVisibility: 'hidden',
                 willChange: 'transform'
               }}
-              className="w-full h-full object-cover select-none cursor-pointer opacity-70 mix-blend-screen transition-opacity duration-700"
+              className="w-full h-full object-cover select-none cursor-pointer opacity-90 transition-opacity duration-700"
               onClick={togglePlay}
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
@@ -297,9 +297,9 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
               <source src="/videos/Home page hero section video.mp4" type="video/mp4" />
             </video>
 
-            {/* Cinematic Transparent Gradient Overlay for Clean Text Legibility */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0B0E] via-[#0A0B0E]/40 to-black/20 pointer-events-none" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0A0B0E]/80 via-transparent to-transparent pointer-events-none" />
+            {/* Subtle Gradient Overlay for Clean Text Legibility without Heavy Black Shade */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0B0E]/50 via-[#0A0B0E]/15 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0A0B0E]/40 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* ── LAYER 3: EXISTING HERO CONTENT OVERLAY ── */}
