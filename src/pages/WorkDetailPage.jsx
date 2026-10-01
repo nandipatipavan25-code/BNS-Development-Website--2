@@ -18,7 +18,11 @@ export default function WorkDetailPage({
 }) {
   // Determine active project from prop, URL query param, or fallback to first project
   const getActiveProject = () => {
-    if (project) return project;
+    if (project && project.highlights) return project;
+    if (project && project.id) {
+      const found = projectsData.find((p) => p.id === project.id);
+      if (found) return found;
+    }
     if (typeof window !== 'undefined') {
       const searchStr = window.location.search || (window.location.hash.includes('?') ? window.location.hash.split('?')[1] : '');
       const params = new URLSearchParams(searchStr);

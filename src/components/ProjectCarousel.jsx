@@ -64,12 +64,62 @@ const TICKER_BOTTOM = [
   { label: 'Full Structural Fidelity', icon: Ruler },
 ];
 
+const CAROUSEL_PROJECTS = [
+  {
+    id: "district-36",
+    title: "District 36 (The Eve at the District)",
+    category: "Multifamily & Retail Mixed-Use",
+    location: "Miami, FL",
+    year: "2016",
+    image: "/images/projects/district-36-cover.png",
+  },
+  {
+    id: "marriott-residents",
+    title: "Marriott Residents",
+    category: "Hospitality & Residential",
+    location: "Sunny Isles Beach, FL",
+    year: "Completed",
+    image: "/images/projects/marriott-residents-cover.png",
+  },
+  {
+    id: "district-36",
+    title: "District 36 Structural Shell",
+    category: "Ground-Up Construction",
+    location: "Miami, FL",
+    year: "2016",
+    image: "/images/projects/district-36-image-1.png",
+  },
+  {
+    id: "marriott-residents",
+    title: "Marriott Residents Tower",
+    category: "Hospitality Development",
+    location: "Sunny Isles Beach, FL",
+    year: "Completed",
+    image: "/images/projects/marriott-residents-image-1.png",
+  },
+  {
+    id: "district-36",
+    title: "District 36 Aerial Perspectives",
+    category: "High-Rise Development",
+    location: "Miami, FL",
+    year: "2016",
+    image: "/images/projects/district-36-image-2.png",
+  },
+  {
+    id: "marriott-residents",
+    title: "Marriott Residents Ground-Up",
+    category: "Site Logistics & Shell",
+    location: "Sunny Isles Beach, FL",
+    year: "Completed",
+    image: "/images/projects/marriott-residents-image-2.png",
+  },
+];
+
 export default function ProjectCarousel({ onSelectProject, onViewAll, bgClassName = "bg-[#0A0A0A]" }) {
   const scrollRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  const showcaseProjects = projectsData.slice(0, 5);
-  const displayProjects = [...showcaseProjects, ...showcaseProjects, ...showcaseProjects];
+  const displayProjects = [...CAROUSEL_PROJECTS, ...CAROUSEL_PROJECTS, ...CAROUSEL_PROJECTS];
 
   /* Auto-scroll */
   useEffect(() => {
