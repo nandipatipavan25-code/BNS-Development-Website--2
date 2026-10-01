@@ -153,10 +153,10 @@ export default function ProjectCarousel({ onSelectProject, onViewAll, bgClassNam
       {/* ══════════════════════════════════════════
           HEADER
       ══════════════════════════════════════════ */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 pb-8 sm:pb-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 pb-6 sm:pb-8">
         <ScrollReveal direction="up" delay={0.05}>
-          {/* Kicker (Style 1: Red Line + Light Text) */}
-          <div className="flex items-center gap-2.5 mb-3">
+          {/* Eyebrow Label with Accent Dash */}
+          <div className="flex items-center gap-2.5 mb-3.5">
             <span className="w-5 h-[2px] bg-brand-red inline-block shrink-0" />
             <span className="text-xs sm:text-[13px] font-sans font-semibold tracking-wider text-[#9CA3AF]">
               Portfolio &amp; Track Record
@@ -164,23 +164,24 @@ export default function ProjectCarousel({ onSelectProject, onViewAll, bgClassNam
           </div>
 
           {/* Title + Nav row */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-8 sm:pb-10">
-            <div className="max-w-3xl">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-display font-semibold tracking-tight leading-[1.15]">
-                <span className="text-[#E6E6E6] block">Experience You Can See</span>
-                <span className="text-brand-red font-semibold block">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+            <div className="space-y-3.5 max-w-3xl">
+              <h2 className="text-[19px] sm:text-2xl md:text-3xl lg:text-[34px] xl:text-[38px] section-heading-title font-display font-semibold tracking-tight leading-[1.15] whitespace-nowrap">
+                <span className="text-[#E6E6E6]">Experience You Can See </span>
+                <span className="text-brand-red font-semibold">
                   in the Work.
                 </span>
               </h2>
-              <p className="mt-2 text-xs sm:text-sm text-[#9CA3AF] leading-relaxed font-sans">
-                Our team's experience includes multifamily developments, hotels, condominiums, commercial buildings, automotive facilities, retail projects, aviation facilities, renovations and other complex development projects. Explore our project portfolio to see the range of work and experience behind BNS Development.
+              <p className="text-sm sm:text-base text-[#9CA3AF] leading-[1.65] font-sans max-w-2xl">
+                Our team's experience includes multifamily developments, hotels, condominiums, commercial buildings, automotive facilities, retail projects, aviation facilities, renovations and other complex development projects.
               </p>
             </div>
 
-            <div className="shrink-0">
+            <div className="shrink-0 lg:pb-1">
               <PremiumGlassButton
                 onClick={onViewAll}
                 size="sm"
+                textColor="#999999"
               >
                 View All Projects
               </PremiumGlassButton>
@@ -234,17 +235,11 @@ export default function ProjectCarousel({ onSelectProject, onViewAll, bgClassNam
                 />
                 {/* Dark scrim on hover */}
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-
-                {/* Category pill */}
-                <div className="absolute top-3 left-3 px-2.5 py-1 bg-brand-red text-white text-[9px] font-mono font-bold tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {project.category}
-                </div>
-
               </div>
 
               {/* Bottom title & Action Button */}
               <div className="px-4 py-3 sm:py-3.5 flex items-center justify-between gap-3">
-                <h3 className="text-sm sm:text-base font-semibold font-display text-white/85 group-hover:text-white transition-colors tracking-tight line-clamp-1 flex-1">
+                <h3 className="text-sm sm:text-base font-semibold font-display text-[#9ca3af] group-hover:text-[#FFFFFF] transition-colors tracking-tight line-clamp-1 flex-1">
                   {project.title}
                 </h3>
                 <div className="w-8 h-8 bg-brand-red flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-md">

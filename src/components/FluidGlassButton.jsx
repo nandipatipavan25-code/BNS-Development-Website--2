@@ -14,7 +14,7 @@ export default function FluidGlassButton({
   className = '',
   size = 'md',
   baseColor = '#000000',
-  glassColor = '#ffffff',
+  glassColor = '#D9D9D9',
 }) {
   const positionClass =
     position === 'bottom-right'

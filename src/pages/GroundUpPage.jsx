@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
-  HardHat, Building2, Home, Building, Sparkles, Layers,
-  Car, Store, Compass, CheckCircle2, ArrowRight, ShieldCheck,
-  ClipboardList, Calendar, Users, Target, CheckSquare
+  HardHat, ClipboardList, Users, Target, CheckSquare
 } from 'lucide-react';
 import SectionHeading, { ConstructionScaleSVG } from '../components/SectionHeading';
 import ScrollReveal from '../components/ScrollReveal';
 import ScrollWordReveal from '../components/ScrollWordReveal';
+import EyeFollowButton from '../components/EyeFollowButton';
 import ServiceCTASection from '../components/ServiceCTASection';
 import ServiceBreadcrumb from '../components/ServiceBreadcrumb';
 
@@ -65,26 +64,14 @@ export default function GroundUpPage({ setActivePage }) {
     },
   ];
 
-  // Ground-Up Projects We Support
-  const supportedProjects = [
-    { name: 'Multifamily', icon: Building2 },
-    { name: 'Single-Family Residential', icon: Home },
-    { name: 'Commercial', icon: Building },
-    { name: 'Hospitality', icon: Sparkles },
-    { name: 'Mixed-Use', icon: Layers },
-    { name: 'Automotive', icon: Car },
-    { name: 'Retail', icon: Store },
-    { name: 'Other Development Projects', icon: Compass },
-  ];
-
   return (
-    <div className="relative pt-24 sm:pt-32 pb-24 text-white overflow-hidden">
+    <div className="relative pt-24 sm:pt-32 pb-24 text-[#CCCCCC] service-detail-scope overflow-hidden">
       {/* Background Architectural Ambient Lighting */}
       <div className="absolute top-20 left-1/4 w-[600px] h-[600px] bg-brand-red/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12 sm:space-y-16">
-        <ServiceBreadcrumb currentTitle="Commercial Development" setActivePage={setActivePage} />
+        <ServiceBreadcrumb currentTitle="Ground Up Development" setActivePage={setActivePage} />
 
         {/* ========================================================
             1. HERO SECTION (Starting With a Vision. Building From the Ground Up.)
@@ -103,7 +90,7 @@ export default function GroundUpPage({ setActivePage }) {
                       </span>
                     </div>
 
-                    <h1 className="text-[30px] sm:text-[36px] md:text-[42px] font-display font-semibold tracking-tight leading-[1.15]">
+                    <h1 className="text-[30px] sm:text-[36px] md:text-[38px] font-display font-semibold tracking-tight leading-[1.15]">
                       <span className="block text-white">Starting With a Vision.</span>
                       <span className="block text-brand-red">Building From the Ground Up.</span>
                     </h1>
@@ -191,7 +178,7 @@ export default function GroundUpPage({ setActivePage }) {
             <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
               <SectionHeading
                 tag="Comprehensive Execution"
-                title={<span className="text-white">Experience From</span>}
+                title={<span className="text-[#E6E6E6]" style={{ color: '#E6E6E6' }}>Experience From</span>}
                 highlight={<span className="text-brand-red">the Ground Up</span>}
                 theme="dark"
                 scaleColor="red"
@@ -236,6 +223,8 @@ export default function GroundUpPage({ setActivePage }) {
               description="A structured, milestone-driven framework that keeps your project moving smoothly from raw land to finished handover."
               theme="dark"
               scaleColor="red"
+              className="max-w-none"
+              descriptionClassName="!max-w-none lg:whitespace-nowrap"
             />
           </ScrollReveal>
 
@@ -250,12 +239,12 @@ export default function GroundUpPage({ setActivePage }) {
                         <span className="text-xl font-mono font-bold text-brand-red">
                           {step.step}
                         </span>
-                        <div className="p-2 rounded-lg bg-white/[0.04] text-neutral-300 group-hover:text-brand-red group-hover:bg-brand-red/10 transition-colors">
+                        <div className="p-2 rounded-lg bg-white/[0.04] text-neutral-300 group-hover:text-[#FFFFFF] group-hover:bg-brand-red/10 transition-colors">
                           <IconComp className="w-4 h-4" />
                         </div>
                       </div>
 
-                      <h3 className="text-lg font-semibold font-display text-white group-hover:text-brand-red transition-colors leading-snug">
+                      <h3 className="text-lg font-semibold font-display text-[#CCCCCC] group-hover:text-[#FFFFFF] transition-colors leading-snug">
                         {step.title}
                       </h3>
 
@@ -263,13 +252,6 @@ export default function GroundUpPage({ setActivePage }) {
                         {step.desc}
                       </p>
                     </div>
-
-                    <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between">
-                      <div className="w-5 h-[2px] bg-brand-red group-hover:w-8 transition-all duration-300" />
-                      <span className="text-[10px] font-mono text-neutral-500 tracking-wider">
-                        Phase {step.step}
-                      </span>
-                    </div>
                   </div>
                 </ScrollReveal>
               );
@@ -278,41 +260,7 @@ export default function GroundUpPage({ setActivePage }) {
         </section>
 
         {/* ========================================================
-            4. GROUND-UP PROJECTS WE SUPPORT (8 Project Types)
-            ======================================================== */}
-        <section className="space-y-10">
-          <ScrollReveal direction="up" delay={0.05}>
-            <SectionHeading
-              tag="Sector Versatility"
-              title={<span className="text-white">Ground-Up Projects</span>}
-              highlight={<span className="text-brand-red">We Support</span>}
-              description="Our team's documented experience spans a diverse spectrum of ground-up asset classes across high-growth markets."
-              theme="dark"
-              scaleColor="red"
-            />
-          </ScrollReveal>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
-            {supportedProjects.map((proj, idx) => {
-              const IconComp = proj.icon;
-              return (
-                <ScrollReveal key={idx} delay={idx * 0.05}>
-                  <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-brand-red/50 backdrop-blur-md transition-all duration-300 group flex items-center gap-3.5 hover:-translate-y-1">
-                    <div className="p-2.5 rounded-xl bg-white/[0.04] group-hover:bg-brand-red/10 border border-white/10 group-hover:border-brand-red/30 text-neutral-300 group-hover:text-brand-red transition-colors shrink-0">
-                      <IconComp className="w-4 h-4 sm:w-5 sm:h-5" />
-                    </div>
-                    <span className="text-xs sm:text-sm font-semibold font-display text-white group-hover:text-brand-red transition-colors leading-snug">
-                      {proj.name}
-                    </span>
-                  </div>
-                </ScrollReveal>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* ========================================================
-            5. EXPERIENCE THAT HELPS MOVE COMPLEX PROJECTS FORWARD
+            4. EXPERIENCE THAT HELPS MOVE COMPLEX PROJECTS FORWARD
             ======================================================== */}
         <section className="relative p-8 sm:p-12 lg:p-16 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-brand-red/40 backdrop-blur-md shadow-2xl overflow-hidden transition-all duration-500">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -320,7 +268,7 @@ export default function GroundUpPage({ setActivePage }) {
             <div className="lg:col-span-7 space-y-6">
               <SectionHeading
                 tag="Leadership & Accountability"
-                title={<span className="text-white">Experience That Helps Move</span>}
+                title={<span className="text-[#E6E6E6]" style={{ color: '#E6E6E6' }}>Experience That Helps Move</span>}
                 highlight={<span className="text-brand-red">Complex Projects Forward</span>}
                 theme="dark"
                 scaleColor="red"

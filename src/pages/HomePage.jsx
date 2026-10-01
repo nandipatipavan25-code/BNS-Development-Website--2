@@ -347,6 +347,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                   onClick={() => setActivePage('contact')}
                   size="md"
                   hoverGlow="white"
+                  textColor="#999999"
                 >
                   Let’s Develop What’s Next
                 </PremiumGlassButton>
@@ -373,11 +374,11 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                   scaleColor="red"
                   className="mb-3 sm:mb-4"
                 />
-                <div className="space-y-4 text-sm sm:text-base text-[#9CA3AF] leading-relaxed font-sans">
-                  <p>
+                <div className="space-y-4 text-sm sm:text-base text-[#9ca3af] leading-relaxed font-sans">
+                  <p className="text-[#9ca3af]" style={{ color: '#9ca3af' }}>
                     The decisions made before development can shape the budget, timeline and outcome of a project. BNS Development gets involved early to help clients evaluate opportunities, plan effectively, coordinate requirements and move projects forward with clarity.
                   </p>
-                  <p>
+                  <p className="text-[#9ca3af]" style={{ color: '#9ca3af' }}>
                     With experience across development, project management, general contracting, owner’s representation and land development, we bring a practical perspective to every stage.
                   </p>
                 </div>
@@ -385,6 +386,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                   <PremiumGlassButton
                     onClick={() => setActivePage('about')}
                     size="md"
+                    textColor="#999999"
                   >
                     Meet BNS Development
                   </PremiumGlassButton>
@@ -406,16 +408,11 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                     />
                     {/* Soft Transparent Gradient Fade */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
-
-                    {/* Top Badge */}
-                    <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-xs font-sans font-semibold text-brand-red tracking-wider">
-                      Foundational Perspective
-                    </div>
                   </div>
 
                   {/* Editorial Quote Shelf - Transparent Glass Style */}
                   <div className="p-6 sm:p-7 space-y-3 bg-transparent border-t border-white/[0.08]">
-                    <h3 className="text-lg sm:text-xl font-semibold font-display text-white group-hover:text-brand-red transition-colors leading-snug">
+                    <h3 className="text-lg sm:text-xl font-semibold font-display text-[#9CA3AF] group-hover:text-[#FFFFFF] transition-colors leading-snug">
                       Decades of Ground-Up Mastery &amp; Guidance
                     </h3>
                     <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed font-sans italic border-l-2 border-brand-red pl-3.5">
@@ -473,7 +470,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                   {/* Card Content & Action Button - Transparent Glass Style */}
                   <div className="px-6 sm:px-8 pb-8 pt-5 flex flex-col flex-1 justify-between relative z-10 bg-transparent">
                     <div>
-                      <h3 className="text-2xl sm:text-[28px] font-display font-medium text-white tracking-tight leading-tight group-hover:text-brand-red transition-colors">
+                      <h3 className="text-2xl sm:text-[24px] font-display font-medium text-[#B8B8B8] tracking-tight leading-tight group-hover:text-[#FFFFFF] transition-colors">
                         {svc.title}
                       </h3>
 
@@ -493,9 +490,9 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                           else setActivePage('services');
                           window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}
-                        className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/[0.05] hover:bg-white/[0.12] text-white border border-white/15 hover:border-brand-red/60 text-sm font-display font-medium transition-all duration-300 shadow-sm group/btn cursor-pointer"
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/[0.05] hover:bg-white/[0.12] text-[#999999] hover:text-[#FFFFFF] border border-white/15 hover:border-brand-red/60 text-sm font-display font-medium transition-all duration-300 shadow-sm group/btn cursor-pointer"
                       >
-                        <span>{svc.cta || 'Know More'}</span>
+                        <span className="text-[#999999] group-hover/btn:text-[#FFFFFF] transition-colors">{svc.cta || 'Know More'}</span>
                         <ArrowRight className="w-4 h-4 text-[#ef4444] transition-transform duration-300 group-hover/btn:translate-x-1" />
                       </button>
                     </div>
@@ -524,13 +521,14 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
               </div>
 
               {/* Editorial Heading */}
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold text-white tracking-tight leading-[1.15]">
+              <h2 className="text-2xl sm:text-3xl md:text-[38px] lg:text-[38px] font-display font-semibold text-[#E6E6E6] tracking-tight leading-[1.15] section-heading-title">
                 Our <span className="text-brand-red">Approach.</span>
               </h2>
 
               {/* Subheading Text */}
-              <p className="mt-3.5 text-sm sm:text-base text-[#9CA3AF] leading-[1.65] font-sans max-w-lg">
-                A disciplined, relationship-driven foundation built on four essential commitments to every client.
+              <p className="mt-3.5 text-sm sm:text-base text-[#9CA3AF] leading-[1.65] font-sans max-w-xl">
+                A disciplined, relationship-driven foundation built<br />
+                on four essential commitments to every client.
               </p>
             </div>
           </ScrollReveal>
@@ -550,7 +548,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                     </div>
 
                     {/* Pillar Title */}
-                    <h3 className="text-2xl sm:text-[24px] font-semibold font-display text-white group-hover:text-brand-red transition-colors mb-4 tracking-tight leading-snug">
+                    <h3 className="text-2xl sm:text-[24px] font-semibold font-display text-[#9ca3af] group-hover:text-[#FFFFFF] transition-colors mb-4 tracking-tight leading-snug">
                       {pillar.title}
                     </h3>
 
@@ -586,7 +584,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                   </span>
                 </div>
 
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-display font-semibold text-[#E6E6E6] tracking-tight leading-[1.15]">
+                <h2 className="text-2xl sm:text-3xl md:text-[38px] lg:text-[38px] section-heading-title font-display font-semibold text-[#E6E6E6] tracking-tight leading-[1.15]">
                   Experience Across{' '}
                   <span className="text-brand-red">Projects</span>
                 </h2>
@@ -626,9 +624,6 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                       {/* Cinematic Transparent Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent group-hover:via-black/15 transition-all duration-500 pointer-events-none" />
 
-                      {/* Top Subtle Red Accent Sweep on Hover */}
-                      <span className="absolute top-0 left-0 right-0 h-[2px] bg-brand-red scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20 pointer-events-none" />
-
                       {/* Bottom Info Shelf */}
                       <div className="relative z-10 p-3 sm:p-3.5 flex items-center gap-2.5">
                         {/* Icon Box */}
@@ -636,10 +631,9 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                           <IconComp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         </div>
 
-                        {/* Red Accent Dash & Sector Title */}
+                        {/* Sector Title */}
                         <div className="min-w-0 flex-1">
-                          <span className="w-3.5 h-[2px] bg-brand-red block mb-1 group-hover:w-5 transition-all duration-300" />
-                          <h3 className="text-xs sm:text-[13px] font-sans font-medium text-[#E6E6E6] group-hover:text-white transition-colors leading-snug line-clamp-2">
+                          <h3 className="text-xs sm:text-[13px] font-sans font-medium text-[#9ca3af] group-hover:text-[#FFFFFF] transition-colors leading-snug line-clamp-2">
                             {sector.name}
                           </h3>
                         </div>
@@ -670,9 +664,6 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                       {/* Cinematic Transparent Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent group-hover:via-black/15 transition-all duration-500 pointer-events-none" />
 
-                      {/* Top Subtle Red Accent Sweep on Hover */}
-                      <span className="absolute top-0 left-0 right-0 h-[2px] bg-brand-red scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20 pointer-events-none" />
-
                       {/* Bottom Info Shelf */}
                       <div className="relative z-10 p-3 sm:p-3.5 flex items-center gap-2.5">
                         {/* Icon Box */}
@@ -680,10 +671,9 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                           <IconComp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         </div>
 
-                        {/* Red Accent Dash & Sector Title */}
+                        {/* Sector Title */}
                         <div className="min-w-0 flex-1">
-                          <span className="w-3.5 h-[2px] bg-brand-red block mb-1 group-hover:w-5 transition-all duration-300" />
-                          <h3 className="text-xs sm:text-[13px] font-sans font-medium text-[#E6E6E6] group-hover:text-white transition-colors leading-snug line-clamp-2">
+                          <h3 className="text-xs sm:text-[13px] font-sans font-medium text-[#9ca3af] group-hover:text-[#FFFFFF] transition-colors leading-snug line-clamp-2">
                             {sector.name}
                           </h3>
                         </div>

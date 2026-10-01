@@ -88,7 +88,7 @@ export default function ResidentialPage({ setActivePage }) {
   ];
 
   return (
-    <div className="relative pt-24 sm:pt-32 pb-24 text-white overflow-hidden">
+    <div className="relative pt-24 sm:pt-32 pb-24 text-[#CCCCCC] service-detail-scope overflow-hidden">
       {/* Background Architectural Ambient Lighting */}
       <div className="absolute top-20 left-1/4 w-[600px] h-[600px] bg-brand-red/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-[160px] pointer-events-none" />
@@ -113,7 +113,7 @@ export default function ResidentialPage({ setActivePage }) {
                       </span>
                     </div>
 
-                    <h1 className="text-[30px] sm:text-[36px] md:text-[42px] font-display font-semibold tracking-tight leading-[1.15]">
+                    <h1 className="text-[30px] sm:text-[36px] md:text-[38px] font-display font-semibold tracking-tight leading-[1.15]">
                       <span className="block text-white">Building Homes.</span>
                       <span className="block text-brand-red">Developing Communities.</span>
                     </h1>
@@ -201,7 +201,7 @@ export default function ResidentialPage({ setActivePage }) {
             <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
               <SectionHeading
                 tag="Experience"
-                title={<span className="text-white">Residential Development With</span>}
+                title={<span className="text-[#E6E6E6]" style={{ color: '#E6E6E6' }}>Residential Development With</span>}
                 highlight={<span className="text-brand-red">Experience Behind It</span>}
                 theme="dark"
                 scaleColor="red"
@@ -245,6 +245,7 @@ export default function ResidentialPage({ setActivePage }) {
             theme="dark"
             scaleColor="red"
             centered={true}
+            showRedLine={true}
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -262,7 +263,7 @@ export default function ResidentialPage({ setActivePage }) {
                           0{idx + 1}
                         </span>
                       </div>
-                      <h4 className="text-lg font-semibold font-display text-white group-hover:text-brand-red transition-colors">
+                      <h4 className="text-lg font-semibold font-display text-[#CCCCCC] group-hover:text-[#FFFFFF] transition-colors">
                         {svc.title}
                       </h4>
                       <p className="text-xs sm:text-[13px] text-[#9CA3AF] leading-relaxed font-sans">
@@ -290,6 +291,7 @@ export default function ResidentialPage({ setActivePage }) {
             highlight={<span className="text-brand-red">Approach</span>}
             theme="dark"
             scaleColor="red"
+            showRedLine={true}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -307,25 +309,14 @@ export default function ResidentialPage({ setActivePage }) {
                   {/* High-Contrast Gradient Vignette for Readability & White/Red Style */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#07080A] via-[#07080A]/60 to-black/30 group-hover:via-[#07080A]/45 transition-all duration-500 pointer-events-none" />
 
-                  {/* Top Row: Step indicator & Status Icon */}
-                  <div className="relative z-10 flex items-center justify-between">
-                    <span className="px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-xs font-mono text-brand-red font-bold">
-                      {item.step}
-                    </span>
-                    <div className="w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-white/80 group-hover:border-brand-red group-hover:text-brand-red transition-all shadow-md">
-                      <CheckCircle2 className="w-4 h-4 text-brand-red" />
-                    </div>
-                  </div>
-
-                  {/* Bottom Row: Exact Step Title & Description */}
-                  <div className="relative z-10 space-y-2 mt-auto pt-8">
-                    <div className="w-8 h-[2px] bg-brand-red group-hover:w-16 transition-all duration-300" />
-                    <h4 className="font-semibold font-display text-white group-hover:text-brand-red transition-colors leading-snug tracking-tight text-xl">
+                  {/* Bottom Row: Exact Step Title */}
+                  <div className="relative z-10 mt-auto pt-8">
+                    <h4
+                      className="font-semibold font-display text-[#B3B3B3] group-hover:text-[#FFFFFF] transition-colors leading-snug tracking-tight text-xl"
+                      style={{ color: '#B3B3B3' }}
+                    >
                       {item.title}
                     </h4>
-                    <p className="text-xs sm:text-[13px] text-[#9CA3AF] leading-relaxed font-sans">
-                      {item.desc}
-                    </p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -342,7 +333,7 @@ export default function ResidentialPage({ setActivePage }) {
             <div className="lg:col-span-7 space-y-5">
               <SectionHeading
                 tag="Philosophy"
-                title={<span className="text-white">Building More Than</span>}
+                title={<span className="text-[#E6E6E6]" style={{ color: '#E6E6E6' }}>Building More Than</span>}
                 highlight={<span className="text-brand-red">Structures</span>}
                 theme="dark"
                 scaleColor="red"

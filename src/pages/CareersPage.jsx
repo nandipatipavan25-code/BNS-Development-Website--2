@@ -13,7 +13,6 @@ import {
   Users,
   TrendingUp,
   Briefcase,
-  Check,
   Send,
   ShieldCheck,
   Layers,
@@ -152,44 +151,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
     },
   ];
 
-  // Editorial Culture Gallery with Captions
-  const cultureGallery = [
-    {
-      id: 1,
-      src: '/images/about-hero.jpg',
-      alt: 'BNS Executive Project Review & Field Leadership',
-      caption: 'Executive Project Direction',
-      span: 'sm:col-span-2 lg:col-span-2 aspect-[21/10]',
-    },
-    {
-      id: 2,
-      src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Jobsite Structural Steel Team Collaboration',
-      caption: 'Structural Superstructure Execution',
-      span: 'aspect-[4/3]',
-    },
-    {
-      id: 3,
-      src: '/images/preconstruction.jpg',
-      alt: 'Pre-Development Planning & Technical Estimating',
-      caption: 'Pre-Development & Technical Estimating',
-      span: 'aspect-[4/3]',
-    },
-    {
-      id: 4,
-      src: '/images/design-build.jpg',
-      alt: 'Integrated Design-Build Architecture & Engineering',
-      caption: 'Integrated Design-Build Coordination',
-      span: 'aspect-[4/3]',
-    },
-    {
-      id: 5,
-      src: '/images/ground-up.jpg',
-      alt: 'Commercial Ground-Up Site Leadership',
-      caption: 'Commercial Ground-Up Site Leadership',
-      span: 'sm:col-span-2 lg:col-span-2 aspect-[21/10]',
-    },
-  ];
+
 
   const handleApplySubmit = (e) => {
     e.preventDefault();
@@ -210,7 +172,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
   };
 
   return (
-    <div className="relative pt-24 sm:pt-32 pb-24 overflow-hidden bg-transparent text-white">
+    <div className="relative pt-24 sm:pt-32 pb-24 overflow-hidden bg-transparent text-[#BFBFBF]">
       {/* Background Subtle Ambience Glow */}
       <div className="absolute top-10 left-1/3 w-[650px] h-[650px] bg-brand-red/[0.04] rounded-full blur-[180px] pointer-events-none -z-10" />
 
@@ -231,7 +193,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
 
           {/* Value Indicator Badges */}
           <ScrollReveal direction="up" delay={0.08}>
-            <div className="pt-2 flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs font-mono text-white/70">
+            <div className="pt-2 flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs font-mono text-[#BFBFBF]">
               <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-red" />
                 Florida &amp; Texas Markets
@@ -266,24 +228,24 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyBnsCards.map((card, idx) => (
               <ScrollReveal key={idx} direction="up" delay={idx * 0.08}>
-                <div className="relative p-7 sm:p-8 rounded-3xl bg-[#0C0E13]/80 border border-white/10 hover:border-brand-red/50 backdrop-blur-xl shadow-xl flex flex-col justify-between h-full transition-all duration-500 group hover:-translate-y-1.5 overflow-hidden">
+                <div className="relative p-7 sm:p-8 rounded-3xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/15 hover:border-brand-red/50 backdrop-blur-2xl shadow-2xl shadow-black/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] flex flex-col justify-between h-full transition-all duration-500 group hover:-translate-y-1.5 overflow-hidden">
                   
-                  {/* Top Accent Light Bar */}
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand-red/0 to-transparent group-hover:via-brand-red/70 transition-all duration-500" />
+                  {/* Top Specular Rim & Accent Light Bar */}
+                  <div className="absolute top-0 inset-x-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover:via-brand-red/70 transition-all duration-500 pointer-events-none" />
                   
                   {/* Top Header Row with Icon and Number */}
                   <div className="space-y-5">
                     <div className="flex items-center justify-between">
-                      <div className="w-12 h-12 rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center text-brand-red group-hover:border-brand-red/50 group-hover:bg-brand-red/10 group-hover:scale-105 transition-all duration-300 shadow-md">
+                      <div className="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md flex items-center justify-center text-brand-red group-hover:border-brand-red/50 group-hover:bg-brand-red/10 group-hover:scale-105 transition-all duration-300 shadow-sm">
                         {card.icon}
                       </div>
-                      <span className="text-xs font-mono tracking-widest text-white/30 group-hover:text-brand-red transition-colors">
+                      <span className="text-xs font-mono tracking-widest text-[#BFBFBF]/50 group-hover:text-[#FFFFFF] transition-colors">
                         {card.num}
                       </span>
                     </div>
 
                     <div className="space-y-2.5">
-                      <h3 className="text-lg sm:text-xl font-semibold font-display text-white group-hover:text-brand-red transition-colors leading-snug">
+                      <h3 className="text-lg sm:text-xl font-semibold font-display text-[#BFBFBF] group-hover:text-[#FFFFFF] transition-colors leading-snug">
                         {card.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed font-sans">
@@ -293,14 +255,14 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                   </div>
 
                   {/* Bottom Micro-Pill Tag */}
-                  <div className="pt-6 mt-4 border-t border-white/5">
-                    <span className="text-[11px] font-mono text-white/50 group-hover:text-white/80 transition-colors">
+                  <div className="pt-6 mt-4 border-t border-white/10">
+                    <span className="text-[11px] font-mono text-[#BFBFBF]/60 group-hover:text-white/80 transition-colors">
                       {card.accent}
                     </span>
                   </div>
 
                   {/* Subtle hover background glow */}
-                  <div className="absolute -right-10 -bottom-10 w-32 h-32 bg-brand-red/0 group-hover:bg-brand-red/[0.08] rounded-full blur-2xl transition-all duration-500 pointer-events-none" />
+                  <div className="absolute -right-10 -bottom-10 w-32 h-32 bg-brand-red/0 group-hover:bg-brand-red/[0.12] rounded-full blur-2xl transition-all duration-500 pointer-events-none" />
                 </div>
               </ScrollReveal>
             ))}
@@ -343,22 +305,9 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                     {/* Gradient Scrim for Readability */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#080A0E] via-[#080A0E]/75 to-black/25 group-hover:via-[#080A0E]/60 transition-colors duration-300 pointer-events-none" />
 
-                    {/* Top Badge */}
-                    <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-xl bg-brand-red/30 border border-brand-red/50 backdrop-blur-md flex items-center justify-center text-white shadow-md shadow-brand-red/20 group-hover:bg-brand-red group-hover:scale-105 transition-all duration-300">
-                        <Check className="w-4 h-4" />
-                      </div>
-                      <span className="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white/70 uppercase tracking-wider">
-                        {trait.category}
-                      </span>
-                    </div>
-
                     {/* Content Container */}
-                    <div className="relative z-10 p-6 space-y-1.5">
-                      <span className="text-[11px] font-mono uppercase tracking-wider text-brand-red font-semibold">
-                        Standard 0{idx + 1}
-                      </span>
-                      <h3 className="text-lg sm:text-xl font-semibold font-display text-white group-hover:text-brand-red transition-colors leading-snug">
+                    <div className="relative z-10 p-6">
+                      <h3 className="text-lg sm:text-xl font-semibold font-display text-[#BFBFBF] group-hover:text-[#FFFFFF] transition-colors leading-snug">
                         {trait.title}
                       </h3>
                     </div>
@@ -387,19 +336,9 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                     {/* Gradient Scrim */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#080A0E] via-[#080A0E]/75 to-black/25 group-hover:via-[#080A0E]/60 transition-colors duration-300 pointer-events-none" />
 
-                    {/* Top Badge */}
-                    <div className="absolute top-4 left-4 z-10">
-                      <div className="w-8 h-8 rounded-xl bg-brand-red/30 border border-brand-red/50 backdrop-blur-md flex items-center justify-center text-white shadow-md shadow-brand-red/20 group-hover:bg-brand-red group-hover:scale-105 transition-all duration-300">
-                        <Check className="w-4 h-4" />
-                      </div>
-                    </div>
-
                     {/* Content Container */}
-                    <div className="relative z-10 p-5 sm:p-6 space-y-1.5">
-                      <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-brand-red font-semibold">
-                        Standard 0{idx + 4}
-                      </span>
-                      <h3 className="text-base sm:text-lg font-semibold font-display text-white group-hover:text-brand-red transition-colors leading-snug">
+                    <div className="relative z-10 p-5 sm:p-6">
+                      <h3 className="text-base sm:text-lg font-semibold font-display text-[#BFBFBF] group-hover:text-[#FFFFFF] transition-colors leading-snug">
                         {trait.title}
                       </h3>
                     </div>
@@ -410,53 +349,6 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
           </div>
         </section>
 
-        {/* ========================================================
-            4. OUR CULTURE: Editorial Visual Showcase
-            ======================================================== */}
-        <section className="space-y-8 sm:space-y-10">
-          <ScrollReveal direction="up" delay={0.06}>
-            <SectionHeading
-              tag="Life at BNS"
-              title="Our "
-              highlight="Culture."
-              description="A culture defined by field leadership, accountability, and the shared pride of delivering monumental structures."
-              theme="dark"
-              scaleColor="red"
-            />
-          </ScrollReveal>
-
-          {/* Dynamic Editorial Visual Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {cultureGallery.map((item, idx) => (
-              <ScrollReveal key={item.id} direction="up" delay={idx * 0.06} className={item.span || ''}>
-                <div className="relative w-full h-full rounded-3xl overflow-hidden bg-white/[0.02] border border-white/10 hover:border-brand-red/50 shadow-xl group transition-all duration-500 hover:-translate-y-1">
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    onError={(e) => {
-                      e.currentTarget.onerror = null;
-                      e.currentTarget.src = '/images/ground-up.jpg';
-                    }}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 select-none"
-                    loading="lazy"
-                  />
-                  
-                  {/* Subtle Gradient & Hover Caption Chip */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300 pointer-events-none" />
-                  
-                  <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between pointer-events-none">
-                    <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-mono text-white/80 tracking-wider">
-                      {item.caption}
-                    </span>
-                    <span className="text-white/40 group-hover:text-brand-red transition-colors text-xs font-mono">
-                      0{item.id}
-                    </span>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </section>
 
         {/* ========================================================
             5. JOIN OUR TEAM (High-Impact Split CTA Showcase)
@@ -491,10 +383,10 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                         const el = document.getElementById('open-positions');
                         if (el) el.scrollIntoView({ behavior: 'smooth' });
                       }}
-                      className="px-6 py-3.5 rounded-full bg-white/[0.05] hover:bg-white/[0.12] border border-white/10 hover:border-white/30 text-xs sm:text-sm font-semibold text-white/80 hover:text-white transition-all cursor-pointer flex items-center gap-2"
+                      className="px-6 py-3.5 rounded-full bg-white/[0.05] hover:bg-white/[0.12] border border-white/10 hover:border-white/30 text-xs sm:text-sm font-semibold text-[#BFBFBF] hover:text-[#FFFFFF] transition-all cursor-pointer flex items-center gap-2"
                     >
                       <span>Explore Active Roles</span>
-                      <ChevronRight className="w-4 h-4 text-white/50" />
+                      <ChevronRight className="w-4 h-4 text-[#BFBFBF]/60" />
                     </button>
                   </div>
                 </div>
@@ -543,7 +435,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                 scaleColor="red"
               />
               <div className="shrink-0 mb-2">
-                <span className="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-white/80 font-mono text-xs tracking-wider">
+                <span className="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-[#BFBFBF] font-mono text-xs tracking-wider">
                   {filteredJobs.length} {filteredJobs.length === 1 ? 'Position' : 'Positions'} Available
                 </span>
               </div>
@@ -554,7 +446,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
           {departments.length > 2 && (
             <ScrollReveal direction="up" delay={0.08}>
               <div className="flex flex-wrap items-center gap-2 pt-2">
-                <span className="text-xs font-mono text-white/40 flex items-center gap-1.5 mr-2">
+                <span className="text-xs font-mono text-[#BFBFBF]/50 flex items-center gap-1.5 mr-2">
                   <Filter className="w-3.5 h-3.5 text-brand-red" />
                   Department:
                 </span>
@@ -565,7 +457,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                     className={`px-4 py-1.5 rounded-full text-xs font-mono tracking-wider transition-all cursor-pointer ${
                       selectedDepartment === dept
                         ? 'bg-brand-red text-white border border-brand-red shadow-md shadow-brand-red/25'
-                        : 'bg-white/[0.04] text-white/60 hover:text-white border border-white/10 hover:border-white/20'
+                        : 'bg-white/[0.04] text-[#BFBFBF]/70 hover:text-[#FFFFFF] border border-white/10 hover:border-white/20'
                     }`}
                   >
                     {dept}
@@ -579,24 +471,24 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
           <div className="space-y-5">
             {filteredJobs.map((job, idx) => (
               <ScrollReveal key={job.id} direction="up" delay={idx * 0.06}>
-                <div className="p-6 sm:p-8 rounded-3xl bg-[#0C0E13]/80 border border-white/10 hover:border-brand-red/50 backdrop-blur-xl shadow-xl transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-6 hover:-translate-y-1 group hover-beam-card">
+                <div className="p-6 sm:p-8 rounded-3xl bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 hover:border-brand-red/50 backdrop-blur-xl shadow-xl transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-6 hover:-translate-y-1 group hover-beam-card">
                   <div className="space-y-3 max-w-3xl">
-                    <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-white/50">
+                    <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-[#BFBFBF]/60">
                       <span className="text-brand-red font-semibold">{job.department}</span>
                       <span>•</span>
-                      <span className="flex items-center gap-1.5 text-white/80">
+                      <span className="flex items-center gap-1.5 text-[#BFBFBF]">
                         <MapPin className="w-3.5 h-3.5 text-brand-red shrink-0" />
                         {job.location}
                       </span>
                       <span>•</span>
                       <span>{job.type}</span>
                       <span>•</span>
-                      <span className="text-white/80 font-semibold">{job.experience}</span>
+                      <span className="text-[#BFBFBF] font-semibold">{job.experience}</span>
                     </div>
 
                     <h3
                       onClick={() => handleViewRole(job)}
-                      className="text-xl sm:text-2xl font-semibold font-display text-white group-hover:text-brand-red transition-colors cursor-pointer"
+                      className="text-xl sm:text-2xl font-semibold font-display text-[#BFBFBF] group-hover:text-[#FFFFFF] transition-colors cursor-pointer"
                     >
                       {job.title}
                     </h3>
@@ -606,7 +498,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                     </p>
 
                     <div className="pt-1 flex items-center gap-2 text-xs font-mono">
-                      <span className="px-3 py-1 rounded-lg bg-white/[0.05] border border-white/10 text-white/90 font-bold">
+                      <span className="px-3 py-1 rounded-lg bg-white/[0.05] border border-white/10 text-[#BFBFBF] font-bold">
                         {job.salary}
                       </span>
                     </div>
@@ -615,7 +507,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                   <div className="shrink-0 flex items-center gap-3">
                     <button
                       onClick={() => handleViewRole(job)}
-                      className="px-4 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-white/25 text-xs font-bold text-white/70 hover:text-white transition-all cursor-pointer"
+                      className="px-4 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-white/25 text-xs font-bold text-[#BFBFBF] hover:text-[#FFFFFF] transition-all cursor-pointer"
                     >
                       View Details
                     </button>
@@ -654,14 +546,14 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-xl bg-[#0C0E12] border border-white/15 rounded-3xl p-6 sm:p-8 z-10 shadow-2xl max-h-[90vh] overflow-y-auto text-white"
+              className="relative w-full max-w-xl bg-[#0C0E12] border border-white/15 rounded-3xl p-6 sm:p-8 z-10 shadow-2xl max-h-[90vh] overflow-y-auto text-[#BFBFBF]"
             >
               <div className="flex items-center justify-between pb-4 border-b border-white/10">
                 <div>
                   <span className="text-xs font-mono text-brand-red tracking-widest font-bold">
                     Application for Employment
                   </span>
-                  <h3 className="text-xl font-semibold font-display text-white mt-0.5">
+                  <h3 className="text-xl font-semibold font-display text-[#BFBFBF] mt-0.5">
                     {selectedJob.title}
                   </h3>
                 </div>
@@ -678,7 +570,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                   <div className="w-14 h-14 rounded-full bg-brand-red/10 text-brand-red border border-brand-red/30 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h4 className="text-2xl font-semibold font-display text-white">
+                  <h4 className="text-2xl font-semibold font-display text-[#BFBFBF]">
                     Application Received
                   </h4>
                   <p className="text-sm text-[#9CA3AF] max-w-md mx-auto font-sans leading-relaxed">
@@ -688,7 +580,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
               ) : (
                 <form onSubmit={handleApplySubmit} className="space-y-4 pt-4">
                   <div>
-                    <label className="block text-xs font-mono text-neutral-300 mb-1">
+                    <label className="block text-xs font-mono text-[#BFBFBF] mb-1">
                       Full Name *
                     </label>
                     <input
@@ -697,13 +589,13 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                       placeholder="e.g. Alex Morgan"
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-[#BFBFBF] placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-mono text-neutral-300 mb-1">
+                      <label className="block text-xs font-mono text-[#BFBFBF] mb-1">
                         Email Address *
                       </label>
                       <input
@@ -712,11 +604,11 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="you@domain.com"
-                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-[#BFBFBF] placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-mono text-neutral-300 mb-1">
+                      <label className="block text-xs font-mono text-[#BFBFBF] mb-1">
                         Phone Number *
                       </label>
                       <input
@@ -725,14 +617,14 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="(512) 000-0000"
-                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-[#BFBFBF] placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-mono text-neutral-300 mb-1">
+                      <label className="block text-xs font-mono text-[#BFBFBF] mb-1">
                         Years of Experience *
                       </label>
                       <input
@@ -741,11 +633,11 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                         value={formData.yearsExp}
                         onChange={(e) => setFormData({ ...formData, yearsExp: e.target.value })}
                         placeholder="e.g. 5+ Years"
-                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-[#BFBFBF] placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-mono text-neutral-300 mb-1">
+                      <label className="block text-xs font-mono text-[#BFBFBF] mb-1">
                         LinkedIn / Portfolio URL
                       </label>
                       <input
@@ -753,13 +645,13 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                         value={formData.portfolio}
                         onChange={(e) => setFormData({ ...formData, portfolio: e.target.value })}
                         placeholder="https://linkedin.com/in/..."
-                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-[#BFBFBF] placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono text-neutral-300 mb-1">
+                    <label className="block text-xs font-mono text-[#BFBFBF] mb-1">
                       Resume Attachment (PDF or DOCX)
                     </label>
                     <div className="p-4 rounded-xl border border-dashed border-white/20 bg-white/[0.02] text-center cursor-pointer hover:border-brand-red transition-colors">
@@ -769,7 +661,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono text-neutral-300 mb-1">
+                    <label className="block text-xs font-mono text-[#BFBFBF] mb-1">
                       Brief Introduction / Note
                     </label>
                     <textarea
@@ -777,7 +669,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                       value={formData.coverNote}
                       onChange={(e) => setFormData({ ...formData, coverNote: e.target.value })}
                       placeholder="Share a brief introduction about your background, projects, or goals..."
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors resize-none font-sans"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-[#BFBFBF] placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors resize-none font-sans"
                     />
                   </div>
 
@@ -785,7 +677,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                     <button
                       type="button"
                       onClick={() => setIsApplying(false)}
-                      className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-neutral-300 text-xs font-bold transition-colors cursor-pointer"
+                      className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-[#BFBFBF] text-xs font-bold transition-colors cursor-pointer"
                     >
                       Cancel
                     </button>

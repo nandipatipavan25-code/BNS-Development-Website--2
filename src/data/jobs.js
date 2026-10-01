@@ -49,7 +49,7 @@ export const jobsData = [
     type: "Full-Time",
     experience: "7+ Years",
     salary: "$115,000 – $150,000",
-    description: "Develop comprehensive conceptual budgets, GMP proposals, and detailed trade quantity takeoffs. You will work directly with our Managing Partners to de-risk projects before ground is broken.",
+    description: "Develop comprehensive conceptual budgets, GMP proposals, and detailed trade quantity takeoffs. You will work directly with our Founders to de-risk projects before ground is broken.",
     requirements: [
       "7+ years commercial general contracting estimating experience in Texas or Florida markets",
       "Proven expertise in conceptual cost modeling, value engineering, and trade scope packaging",

@@ -14,7 +14,7 @@ export default function EyeFollowButton({
   icon = 'none', // 'up-right' | 'right' | 'none' | ReactNode
   className = '',
   baseColor = '#000000',
-  glassColor = '#ffffff',
+  glassColor = '#D9D9D9',
 }) {
   const renderIcon = () => {
     if (!icon || icon === 'none') return null;
@@ -37,6 +37,7 @@ export default function EyeFollowButton({
       icon={renderIcon()}
       baseColor={baseColor}
       glassColor={glassColor}
+      showEye={true}
     >
       {children}
     </PremiumGlassButton>

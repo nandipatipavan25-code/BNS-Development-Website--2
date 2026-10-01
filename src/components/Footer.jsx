@@ -12,7 +12,11 @@ export default function Footer({ setActivePage }) {
   };
 
   const handleNav = (page) => {
-    setActivePage(page);
+    if (typeof setActivePage === 'function') {
+      setActivePage(page);
+    } else {
+      window.location.hash = `#${page}`;
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -36,23 +40,30 @@ export default function Footer({ setActivePage }) {
             {/* ── Left: Brand + Social ── */}
             <div className="lg:col-span-5 space-y-6">
               <div>
-                <button onClick={() => handleNav('home')} className="focus:outline-none block mb-3 cursor-pointer" aria-label="BNS Development">
+                <a
+                  href="#home"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav('home');
+                  }}
+                  className="focus:outline-none block mb-3 cursor-pointer"
+                  aria-label="BNS Development"
+                >
                   <img
                     src="/logos/logo-01.svg"
                     alt="BNS Development"
                     className="h-10 sm:h-12 w-auto object-contain"
                   />
-                </button>
+                </a>
 
-                <p className="text-sm text-white/60 max-w-md font-sans leading-relaxed">
-                  BNS Development delivers thoughtful development solutions backed by experience, collaboration and accountability.<br className="hidden sm:block" />
-                  From pre-development through completion, we help bring projects from vision to reality.
+                <p className="text-sm text-[#9CA3AF] max-w-md sm:max-w-lg font-sans leading-relaxed">
+                  BNS Development delivers thoughtful development solutions backed by experience, collaboration and accountability. From pre-development through completion, we help bring projects from vision to reality.
                 </p>
               </div>
 
               {/* Social Media */}
               <div className="space-y-2">
-                <h5 className="text-xs font-mono text-brand-red font-semibold">Follow Us</h5>
+                <h5 className="text-[15px] font-mono text-brand-red font-semibold">Follow Us</h5>
                 <div className="flex items-center gap-2 flex-wrap">
                   <a
                     href="https://www.linkedin.com"
@@ -103,39 +114,47 @@ export default function Footer({ setActivePage }) {
 
               {/* Navigation */}
               <div className="space-y-3">
-                <h4 className="text-xs font-mono text-brand-red font-semibold">Navigation</h4>
+                <h4 className="text-[15px] font-mono text-brand-red font-semibold">Navigation</h4>
                 <ul className="space-y-2.5 text-sm text-white/60">
                   <li>
-                    <button onClick={() => handleNav('home')} className="hover:text-white/90 transition-colors cursor-pointer">Home</button>
+                    <a href="#home" onClick={(e) => { e.preventDefault(); handleNav('home'); }} className="hover:text-white/90 transition-colors cursor-pointer inline-block">Home</a>
                   </li>
                   <li>
-                    <button onClick={() => handleNav('about')} className="hover:text-white/90 transition-colors cursor-pointer">About Us</button>
+                    <a href="#about" onClick={(e) => { e.preventDefault(); handleNav('about'); }} className="hover:text-white/90 transition-colors cursor-pointer inline-block">About Us</a>
                   </li>
-                  <li><button onClick={() => handleNav('services')} className="hover:text-white/90 transition-colors cursor-pointer">Services</button></li>
-                  <li><button onClick={() => handleNav('work')} className="hover:text-white/90 transition-colors cursor-pointer">Work</button></li>
-                  <li><button onClick={() => handleNav('careers')} className="hover:text-white/90 transition-colors cursor-pointer">Careers</button></li>
-                  <li><button onClick={() => handleNav('subcontractors')} className="hover:text-white/90 transition-colors cursor-pointer">Subcontractors</button></li>
                   <li>
-                    <button onClick={() => handleNav('contact')} className="hover:text-white/90 transition-colors cursor-pointer">Contact Us</button>
+                    <a href="#services" onClick={(e) => { e.preventDefault(); handleNav('services'); }} className="hover:text-white/90 transition-colors cursor-pointer inline-block">Services</a>
+                  </li>
+                  <li>
+                    <a href="#work" onClick={(e) => { e.preventDefault(); handleNav('work'); }} className="hover:text-white/90 transition-colors cursor-pointer inline-block">Work</a>
+                  </li>
+                  <li>
+                    <a href="#careers" onClick={(e) => { e.preventDefault(); handleNav('careers'); }} className="hover:text-white/90 transition-colors cursor-pointer inline-block">Careers</a>
+                  </li>
+                  <li>
+                    <a href="#subcontractors" onClick={(e) => { e.preventDefault(); handleNav('subcontractors'); }} className="hover:text-white/90 transition-colors cursor-pointer inline-block">Subcontractors</a>
+                  </li>
+                  <li>
+                    <a href="#contact" onClick={(e) => { e.preventDefault(); handleNav('contact'); }} className="hover:text-white/90 transition-colors cursor-pointer inline-block">Contact Us</a>
                   </li>
                 </ul>
               </div>
 
               {/* Services */}
               <div className="space-y-3">
-                <h4 className="text-xs font-mono text-brand-red font-semibold">Services</h4>
+                <h4 className="text-[15px] font-mono text-brand-red font-semibold">Services</h4>
                 <ul className="space-y-2.5 text-sm text-white/60">
-                  <li><button onClick={() => handleNav('predevelopment')} className="hover:text-white/90 transition-colors cursor-pointer text-left">Pre Development Services</button></li>
-                  <li><button onClick={() => handleNav('design-build')} className="hover:text-white/90 transition-colors cursor-pointer text-left">Design-Build Delivery</button></li>
-                  <li><button onClick={() => handleNav('residential')} className="hover:text-white/90 transition-colors cursor-pointer text-left">Residential Development</button></li>
-                  <li><button onClick={() => handleNav('tenant-improvements')} className="hover:text-white/90 transition-colors cursor-pointer text-left">Tenant Improvements</button></li>
-                  <li><button onClick={() => handleNav('ground-up')} className="hover:text-white/90 transition-colors cursor-pointer text-left">Ground Up Development</button></li>
+                  <li><a href="#predevelopment" onClick={(e) => { e.preventDefault(); handleNav('predevelopment'); }} className="hover:text-white/90 transition-colors cursor-pointer text-left block">Pre Development Services</a></li>
+                  <li><a href="#design-build" onClick={(e) => { e.preventDefault(); handleNav('design-build'); }} className="hover:text-white/90 transition-colors cursor-pointer text-left block">Design-Build Delivery</a></li>
+                  <li><a href="#residential" onClick={(e) => { e.preventDefault(); handleNav('residential'); }} className="hover:text-white/90 transition-colors cursor-pointer text-left block">Residential Development</a></li>
+                  <li><a href="#tenant-improvements" onClick={(e) => { e.preventDefault(); handleNav('tenant-improvements'); }} className="hover:text-white/90 transition-colors cursor-pointer text-left block">Tenant Improvements</a></li>
+                  <li><a href="#ground-up" onClick={(e) => { e.preventDefault(); handleNav('ground-up'); }} className="hover:text-white/90 transition-colors cursor-pointer text-left block">Ground Up Development</a></li>
                 </ul>
               </div>
 
               {/* Contact & Offices — merged column */}
               <div className="space-y-3">
-                <h4 className="text-xs font-mono text-brand-red font-semibold">Contact &amp; Offices</h4>
+                <h4 className="text-[15px] font-mono text-brand-red font-semibold">Contact &amp; Offices</h4>
                 <ul className="space-y-2.5 text-xs text-white/60">
                   <li className="flex items-center gap-2 font-mono">
                     <Phone className="w-3.5 h-3.5 text-brand-red shrink-0" />
@@ -174,9 +193,21 @@ export default function Footer({ setActivePage }) {
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4 text-center md:text-left">
               <span>© {new Date().getFullYear()} BNS Development LLC. All Rights Reserved.</span>
               <span>•</span>
-              <button onClick={() => setLegalModalType('privacy')} className="hover:text-white/90 transition-colors underline cursor-pointer">Privacy Policy</button>
+              <button
+                onClick={() => setLegalModalType('privacy')}
+                className="hover:text-white/90 transition-colors underline cursor-pointer !font-sans footer-legal-btn"
+                style={{ fontFamily: "'Lato', sans-serif" }}
+              >
+                Privacy Policy
+              </button>
               <span>•</span>
-              <button onClick={() => setLegalModalType('terms')} className="hover:text-white/90 transition-colors underline cursor-pointer">Terms &amp; Conditions</button>
+              <button
+                onClick={() => setLegalModalType('terms')}
+                className="hover:text-white/90 transition-colors underline cursor-pointer !font-sans footer-legal-btn"
+                style={{ fontFamily: "'Lato', sans-serif" }}
+              >
+                Terms &amp; Conditions
+              </button>
               <span>•</span>
               <span className="text-white/60">Design and Developed by GA Digital Solutions</span>
             </div>

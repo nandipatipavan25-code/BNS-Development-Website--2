@@ -44,12 +44,13 @@ export default function WorkPage({ setSelectedProject, setActivePage }) {
             description={
               <>
                 <span className="block">Explore our curated catalogue of completed, active, and upcoming developments across Florida and Central Texas.</span>
-                <span className="block mt-0.5">Over $800M in delivered capital volume built with uncompromising structural discipline.</span>
+                <span className="block mt-1">Over $800M in delivered capital volume built with uncompromising structural discipline.</span>
               </>
             }
             theme="dark"
             scaleColor="red"
-            className="!max-w-4xl"
+            className="!max-w-5xl"
+            descriptionClassName="!max-w-none"
           />
 
           {/* Interactive Filter Matrix in Dark Glassmorphism */}
@@ -118,15 +119,9 @@ export default function WorkPage({ setSelectedProject, setActivePage }) {
                   {/* Subtle Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0C0E12] via-transparent to-black/30" />
 
-                  {/* Top Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[10px] font-mono tracking-wider text-brand-red font-semibold">
-                      {project.category}
-                    </span>
-                  </div>
 
                   {/* Bottom Location */}
-                  <div className="absolute bottom-3 left-4 flex items-center gap-1.5 text-xs font-mono text-brand-body">
+                  <div className="absolute bottom-3 left-4 flex items-center gap-1.5 text-xs font-mono text-[#B3B3B3]">
                     <MapPin className="w-3.5 h-3.5 text-brand-red" />
                     <span>{project.location}</span>
                   </div>
@@ -135,10 +130,10 @@ export default function WorkPage({ setSelectedProject, setActivePage }) {
                 {/* Content Body */}
                 <div className="p-6 space-y-4 flex-grow flex flex-col justify-between">
                   <div className="space-y-2">
-                    <h3 className="text-xl font-semibold font-display text-brand-subheading group-hover:text-brand-red transition-colors leading-snug">
+                    <h3 className="text-xl font-semibold font-display text-[#B3B3B3] group-hover:text-[#FFFFFF] transition-colors leading-snug">
                       {project.title}
                     </h3>
-                    <p className="text-xs text-brand-body font-sans line-clamp-3 leading-relaxed">
+                    <p className="text-xs text-[#B3B3B3] font-sans line-clamp-3 leading-relaxed">
                       {project.overview}
                     </p>
                   </div>
@@ -146,17 +141,17 @@ export default function WorkPage({ setSelectedProject, setActivePage }) {
                   {/* Metrics strip */}
                   <div className="pt-4 border-t border-white/10 grid grid-cols-2 gap-2 text-[11px] font-mono text-brand-mutedText">
                     <div>
-                      <span className="text-[10px] text-white/60 block">Area</span>
-                      <span className="text-brand-subheading font-semibold">{project.sqft}</span>
+                      <span className="text-[10px] text-[#9CA3AF] block">Area</span>
+                      <span className="text-[#B3B3B3] font-semibold">{project.sqft}</span>
                     </div>
                     <div>
-                      <span className="text-[10px] text-white/60 block">Scope / Value</span>
+                      <span className="text-[10px] text-[#9CA3AF] block">Scope / Value</span>
                       <span className="text-brand-red font-semibold">{project.value}</span>
                     </div>
                   </div>
 
                   {/* View Details Link */}
-                  <div className="pt-2 flex items-center justify-between text-xs font-mono tracking-wider font-bold text-brand-subheading group-hover:text-brand-red transition-colors">
+                  <div className="pt-2 flex items-center justify-between text-xs font-mono tracking-wider font-bold text-[#B3B3B3] group-hover:text-[#FFFFFF] transition-colors">
                     <span>View Specifications</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </div>

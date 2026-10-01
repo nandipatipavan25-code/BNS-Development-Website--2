@@ -16,7 +16,7 @@ export default function ServiceBreadcrumb({ currentTitle, setActivePage }) {
     <div className="w-full mb-8 sm:mb-12">
       <div className="flex flex-wrap items-center justify-between gap-4 py-3 px-4 sm:px-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-lg">
         {/* Breadcrumbs trail */}
-        <nav aria-label="Breadcrumb" className="flex items-center gap-2 font-mono text-xs text-neutral-400">
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2 font-mono text-xs text-[#9CA3AF]">
           <button
             onClick={() => handleNav('home')}
             className="hover:text-white transition-colors cursor-pointer font-medium"
@@ -39,10 +39,10 @@ export default function ServiceBreadcrumb({ currentTitle, setActivePage }) {
         {/* Back button */}
         <button
           onClick={() => handleNav('services')}
-          className="inline-flex items-center gap-2 text-xs font-mono text-neutral-300 hover:text-white transition-colors group cursor-pointer"
+          className="inline-flex items-center gap-2 text-xs font-mono text-[#9CA3AF] hover:text-white transition-colors group cursor-pointer"
         >
           <ArrowLeft className="w-3.5 h-3.5 text-brand-red transition-transform group-hover:-translate-x-1" />
-          <span>Back to Services</span>
+          <span className="text-[#9CA3AF] group-hover:text-white transition-colors">Back to Services</span>
         </button>
       </div>
     </div>

@@ -22,7 +22,7 @@ export default function TeamBioTabs({ onContactClick }) {
             <ScrollReveal key={person.id} delay={idx * 0.08} direction="up">
               <div
                 onClick={() => toggleFlip(person.id)}
-                className={`flip-card-container group h-[520px] sm:h-[550px] w-full cursor-pointer select-none ${
+                className={`flip-card-container group h-[445px] sm:h-[475px] w-full cursor-pointer select-none ${
                   isFlipped ? 'is-flipped' : ''
                 }`}
               >
@@ -41,22 +41,20 @@ export default function TeamBioTabs({ onContactClick }) {
                         loading="lazy"
                       />
 
-                      {/* Top Role Badge */}
-                      <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[10px] font-sans font-semibold text-brand-red">
-                        {person.role}
-                      </div>
-
                       {/* Bottom Image Fade */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
                     </div>
 
-                    {/* Lower Info Shelf */}
-                    <div className="p-5 flex-1 flex flex-col justify-center bg-transparent">
+                    {/* Lower Info Shelf - Compact Rectangular Content Area */}
+                    <div className="px-5 py-3 sm:py-3.5 flex-1 flex flex-col justify-center bg-transparent">
                       <div>
-                        <h3 className="text-xl sm:text-[22px] font-semibold font-display text-white tracking-tight leading-tight group-hover:text-brand-red transition-colors">
+                        <h3
+                          className="text-xl sm:text-[22px] font-semibold font-display tracking-tight leading-tight transition-colors team-member-name !text-[#CCCCCC]"
+                          style={{ color: '#CCCCCC' }}
+                        >
                           {person.name}
                         </h3>
-                        <p className="text-xs text-[#9CA3AF] font-sans mt-1.5 leading-relaxed">
+                        <p className="text-xs text-[#9CA3AF] font-sans mt-1 leading-normal">
                           {person.title}
                         </p>
                       </div>
@@ -66,7 +64,7 @@ export default function TeamBioTabs({ onContactClick }) {
                   {/* ========================================================
                       BACK OF CARD: Full Name, Bio & All Credentials (Blurred Glass)
                       ======================================================== */}
-                  <div className="flip-card-back bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-black/50 backdrop-blur-2xl border border-white/15 group-hover:border-brand-red/60 p-5 sm:p-6 flex flex-col justify-between relative shadow-2xl text-left">
+                  <div className="flip-card-back bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-black/50 backdrop-blur-2xl border border-white/15 group-hover:border-brand-red/60 p-4 sm:p-5 flex flex-col justify-between relative shadow-2xl text-left">
                     {/* Atmospheric Portrait Watermark */}
                     <div className="absolute inset-0 pointer-events-none overflow-hidden">
                       <img
@@ -79,14 +77,20 @@ export default function TeamBioTabs({ onContactClick }) {
                     </div>
 
                     {/* Scrollable / Full Content Body */}
-                    <div className="relative z-10 overflow-y-auto pr-1 space-y-4 max-h-[450px] sm:max-h-[470px] scrollbar-thin scrollbar-thumb-white/10">
+                    <div className="relative z-10 overflow-y-auto pr-1 space-y-3.5 max-h-[365px] sm:max-h-[395px] scrollbar-thin scrollbar-thumb-white/10">
                       {/* Top Header Information */}
                       <div className="space-y-1">
-                        <div className="text-[11px] font-semibold text-brand-red tracking-wider font-sans">
+                        <div
+                          className="text-[11px] font-semibold text-[#9CA3AF] tracking-wider uppercase !font-sans team-role-label"
+                          style={{ fontFamily: "'Lato', sans-serif" }}
+                        >
                           {person.role}
                         </div>
 
-                        <h3 className="text-xl sm:text-[22px] font-semibold font-display text-white tracking-tight leading-snug">
+                        <h3
+                          className="text-xl sm:text-[22px] font-semibold font-display tracking-tight leading-snug team-member-name !text-[#CCCCCC]"
+                          style={{ color: '#CCCCCC' }}
+                        >
                           {person.name}
                         </h3>
 
@@ -107,7 +111,7 @@ export default function TeamBioTabs({ onContactClick }) {
                       {/* Full Verified Professional Credentials */}
                       {person.credentials && person.credentials.length > 0 && (
                         <div className="space-y-2 pt-3 border-t border-white/10">
-                          <div className="text-[10px] font-mono text-neutral-400 font-semibold tracking-wider">
+                          <div className="text-[10px] font-sans text-neutral-400 font-semibold tracking-wider">
                             Core Credentials & Leadership
                           </div>
 

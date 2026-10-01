@@ -109,14 +109,14 @@ export default function ApproachAnimatedBg() {
             <path
               d="M 120,80 L 340,80 L 290,140 L 70,140 Z M 70,140 L 70,260 L 290,260 L 290,140 M 290,260 L 340,200 L 340,80"
               fill="none"
-              stroke="#FFFFFF"
+              stroke="#D9D9D9"
               strokeOpacity="0.04"
               strokeWidth="1"
             />
             <path
               d="M 220,130 L 520,130 L 460,210 L 160,210 Z M 160,210 L 160,350 L 460,350 L 460,210 M 460,350 L 520,270 L 520,130"
               fill="none"
-              stroke="#FFFFFF"
+              stroke="#D9D9D9"
               strokeOpacity="0.06"
               strokeWidth="1"
             />

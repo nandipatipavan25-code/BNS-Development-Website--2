@@ -189,7 +189,13 @@ export default function App() {
             ? '/videos/contact-bg-video.mp4'
             : '/videos/bg-video.webm'
         }
-        videoOpacity={activePage === 'contact' ? 0.20 : 0.75}
+        videoOpacity={
+          activePage === 'home'
+            ? 0.42
+            : activePage === 'contact'
+            ? 0.20
+            : 0.38
+        }
         playbackRate={activePage === 'home' ? 2.0 : 1.0}
       />
 

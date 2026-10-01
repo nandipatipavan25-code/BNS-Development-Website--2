@@ -103,7 +103,7 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
   }, [selectedCategory, searchQuery]);
 
   return (
-    <div className="relative pt-24 sm:pt-32 pb-24 overflow-hidden bg-transparent text-white">
+    <div className="relative pt-24 sm:pt-32 pb-24 overflow-hidden bg-transparent text-[#CCCCCC] services-page-scope">
       {/* Background Architectural Ambient Lighting */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-brand-red/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-[160px] pointer-events-none" />
@@ -123,7 +123,7 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                 </span>
               </div>
 
-              <h1 className="text-2xl sm:text-3xl md:text-[36px] lg:text-[42px] font-display font-semibold tracking-tight leading-tight sm:leading-snug md:leading-normal lg:leading-[42px] text-brand-heading">
+              <h1 className="text-2xl sm:text-3xl md:text-[36px] lg:text-[38px] font-display font-semibold tracking-tight leading-tight sm:leading-snug md:leading-normal lg:leading-[38px] text-brand-heading text-[#E6E6E6]">
                 Precision Disciplines.<br />
                 <span className="text-brand-red">
                   Built for Complexity.
@@ -149,7 +149,7 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                   <Clock className="w-3.5 h-3.5" />
                   <span>Leadership</span>
                 </div>
-                <div className="text-2xl sm:text-3xl font-display font-semibold text-[#D4D4D0]">35+ Years</div>
+                <div className="text-[24px] font-sans font-bold text-[#B3B3B3]" style={{ fontFamily: "'Lato', sans-serif" }}>35+ Years</div>
                 <p className="text-xs text-[#9CA3AF]">Combined building mastery</p>
               </div>
 
@@ -158,7 +158,7 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                   <ShieldCheck className="w-3.5 h-3.5" />
                   <span>Licensing</span>
                 </div>
-                <div className="text-2xl sm:text-3xl font-display font-semibold text-[#D4D4D0]">FL &amp; TX</div>
+                <div className="text-[24px] font-sans font-bold text-[#B3B3B3]" style={{ fontFamily: "'Lato', sans-serif" }}>FL &amp; TX</div>
                 <p className="text-xs text-[#9CA3AF]">General Contractor CGC 1505391</p>
               </div>
 
@@ -167,7 +167,7 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                   <Layers className="w-3.5 h-3.5" />
                   <span>Accountability</span>
                 </div>
-                <div className="text-2xl sm:text-3xl font-display font-semibold text-[#D4D4D0]">Single-Source</div>
+                <div className="text-[24px] font-sans font-bold text-[#B3B3B3]" style={{ fontFamily: "'Lato', sans-serif" }}>Single-Source</div>
                 <p className="text-xs text-[#9CA3AF]">Unified design &amp; build delivery</p>
               </div>
 
@@ -176,7 +176,7 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                   <Award className="w-3.5 h-3.5" />
                   <span>Standards</span>
                 </div>
-                <div className="text-2xl sm:text-3xl font-display font-semibold text-[#D4D4D0]">100%</div>
+                <div className="text-[24px] font-sans font-bold text-[#B3B3B3]" style={{ fontFamily: "'Lato', sans-serif" }}>100%</div>
                 <p className="text-xs text-[#9CA3AF]">Safety &amp; QA/QC governance</p>
               </div>
             </div>
@@ -216,7 +216,7 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search scopes, deliverables, projects..."
-                className="w-full bg-white/[0.04] border border-white/10 rounded-full pl-10 pr-4 py-2 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-brand-red transition-colors font-sans"
+                className="w-full bg-white/[0.04] border border-white/10 rounded-full pl-10 pr-4 py-2 text-xs text-[#CCCCCC] placeholder-neutral-500 focus:outline-none focus:border-brand-red transition-colors font-sans"
               />
               {searchQuery && (
                 <button
@@ -235,8 +235,8 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
           {filteredServices.length === 0 ? (
             <div className="py-16 text-center space-y-4 rounded-3xl bg-white/[0.02] border border-white/10 p-8">
               <Search className="w-10 h-10 text-neutral-500 mx-auto" />
-              <h3 className="text-lg font-semibold font-display text-white">No Matching Capabilities Found</h3>
-              <p className="text-xs sm:text-sm text-neutral-400 max-w-md mx-auto">
+              <h3 className="text-lg font-semibold font-display text-[#CCCCCC]">No Matching Capabilities Found</h3>
+              <p className="text-xs sm:text-sm text-[#9CA3AF] max-w-md mx-auto">
                 No services matched your search term "{searchQuery}". Try searching for terms like "GMP", "scheduling", "permits", or reset filters.
               </p>
               <button
@@ -275,11 +275,11 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                           <span className="text-[13px] font-mono text-brand-red tracking-widest font-bold">
                             Service {svc.number}
                           </span>
-                          <h2 className="text-2xl sm:text-3xl font-display font-semibold text-white group-hover:text-brand-red transition-colors">
+                          <h2 className="text-2xl sm:text-3xl font-display font-semibold text-[#B3B3B3] group-hover:text-[#FFFFFF] transition-colors">
                             {svc.title}
                           </h2>
 
-                          <p className="text-sm sm:text-base text-[#CCCCCC] leading-relaxed font-sans">
+                          <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed font-sans">
                             {svc.overview}
                           </p>
                         </div>
@@ -289,7 +289,7 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                           <div className="pt-4 border-t border-white/10 flex justify-start sm:justify-end">
                             <button
                               onClick={() => setActivePage(svc.id === 'preconstruction' ? 'predevelopment' : svc.id)}
-                              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/[0.04] hover:bg-brand-red/15 border border-white/10 hover:border-brand-red/40 text-xs sm:text-sm font-sans text-white transition-all cursor-pointer group shadow-lg"
+                              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/[0.04] hover:bg-brand-red/15 border border-white/10 hover:border-brand-red/40 text-xs sm:text-sm font-sans text-[#CCCCCC] hover:text-[#FFFFFF] transition-all cursor-pointer group shadow-lg"
                             >
                               <span>View Detailed Service Page</span>
                               <ArrowRight className="w-3.5 h-3.5 text-brand-red group-hover:translate-x-1 transition-transform" />
@@ -332,18 +332,15 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                       </span>
                       <span className="w-1.5 h-1.5 rounded-full bg-brand-red group-hover:scale-150 transition-transform" />
                     </div>
-                    <div className="text-[10px] font-mono text-brand-mutedText tracking-widest">
+                    <div className="text-[10px] font-mono text-brand-mutedText tracking-widest leading-tight">
                       {item.phase}
                     </div>
-                    <h4 className="text-base font-semibold font-display text-brand-subheading group-hover:text-brand-red transition-colors leading-snug">
+                    <h4 className="text-base font-semibold font-display text-[#B3B3B3] group-hover:text-[#FFFFFF] transition-colors leading-snug">
                       {item.title}
                     </h4>
-                    <p className="text-xs text-brand-body font-sans leading-relaxed">
+                    <p className="text-xs text-[#9CA3AF] font-sans leading-relaxed">
                       {item.desc}
                     </p>
-                  </div>
-                  <div className="mt-5 pt-3 border-t border-white/10 text-[10px] font-mono text-brand-mutedText">
-                    Phase {item.step} // Audited
                   </div>
                 </div>
               </ScrollReveal>
@@ -376,10 +373,10 @@ export default function ServicesPage({ setActivePage, setSelectedService }) {
                       <div className="w-10 h-10 rounded-xl bg-brand-red/10 border border-brand-red/40 flex items-center justify-center text-brand-red">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <h3 className="text-xl font-semibold font-display text-brand-subheading">
+                      <h3 className="text-xl font-semibold font-display text-[#B3B3B3]">
                         {pillar.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-brand-body font-sans leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#9CA3AF] font-sans leading-relaxed">
                         {pillar.desc}
                       </p>
                     </div>

@@ -107,7 +107,7 @@ export default function DesignBuildPage({ setActivePage }) {
   ];
 
   return (
-    <div className="relative pt-24 sm:pt-32 pb-24 text-white overflow-hidden">
+    <div className="relative pt-24 sm:pt-32 pb-24 text-[#CCCCCC] service-detail-scope overflow-hidden">
       {/* Background Architectural Ambient Lighting */}
       <div className="absolute top-20 left-1/4 w-[600px] h-[600px] bg-brand-red/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-[160px] pointer-events-none" />
@@ -132,7 +132,7 @@ export default function DesignBuildPage({ setActivePage }) {
                       </span>
                     </div>
 
-                    <h1 className="text-[30px] sm:text-[36px] md:text-[42px] font-display font-semibold tracking-tight leading-[1.15]">
+                    <h1 className="text-[30px] sm:text-[36px] md:text-[38px] font-display font-semibold tracking-tight leading-[1.15]">
                       <span className="block text-white">One Coordinated Approach</span>
                       <span className="block text-brand-red">From Design Through Delivery</span>
                     </h1>
@@ -220,7 +220,7 @@ export default function DesignBuildPage({ setActivePage }) {
             <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
               <SectionHeading
                 tag="Design-Build"
-                title={<span className="text-white">Bringing Design and</span>}
+                title={<span className="text-[#E6E6E6]" style={{ color: '#E6E6E6' }}>Bringing Design and</span>}
                 highlight={<span className="text-brand-red">Development Together</span>}
                 theme="dark"
                 scaleColor="red"
@@ -264,6 +264,7 @@ export default function DesignBuildPage({ setActivePage }) {
             theme="dark"
             scaleColor="red"
             centered={true}
+            showRedLine={true}
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
@@ -281,16 +282,12 @@ export default function DesignBuildPage({ setActivePage }) {
                           <IconComp className="w-4 h-4" />
                         </div>
                       </div>
-                      <h4 className="text-lg font-semibold font-display text-white mb-2 group-hover:text-brand-red transition-colors">
+                      <h4 className="text-lg font-semibold font-display text-[#CCCCCC] mb-2 group-hover:text-[#FFFFFF] transition-colors">
                         {item.title}
                       </h4>
                       <p className="text-xs sm:text-[13px] text-[#9CA3AF] leading-relaxed font-sans">
                         {item.desc}
                       </p>
-                    </div>
-
-                    <div className="mt-6 pt-3 border-t border-white/10 flex items-center justify-start">
-                      <div className="w-6 h-[2px] bg-brand-red transition-all duration-300 group-hover:w-12" />
                     </div>
                   </div>
                 </ScrollReveal>
@@ -312,10 +309,6 @@ export default function DesignBuildPage({ setActivePage }) {
               theme="dark"
               scaleColor="red"
             />
-            <p className="text-xs sm:text-sm font-mono text-brand-red tracking-wider font-bold pt-1 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
-              <span>Benefits can include:</span>
-            </p>
           </div>
 
           {/* Pictorial Grid Display: 6 Benefits from user specification */}
@@ -334,20 +327,12 @@ export default function DesignBuildPage({ setActivePage }) {
                   {/* High-Contrast Gradient Vignette for Readability & White/Red Style */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#07080A] via-[#07080A]/60 to-black/30 group-hover:via-[#07080A]/45 transition-all duration-500 pointer-events-none" />
 
-                  {/* Top Row: Step indicator & Status Icon */}
-                  <div className="relative z-10 flex items-center justify-between">
-                    <span className="px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-xs font-mono text-brand-red font-bold">
-                      {item.step}
-                    </span>
-                    <div className="w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-white/80 group-hover:border-brand-red group-hover:text-brand-red transition-all shadow-md">
-                      <CheckCircle2 className="w-4 h-4 text-brand-red" />
-                    </div>
-                  </div>
-
                   {/* Bottom Row: Exact Benefit Title */}
-                  <div className="relative z-10 space-y-2 mt-auto pt-8">
-                    <div className="w-8 h-[2px] bg-brand-red group-hover:w-16 transition-all duration-300" />
-                    <h4 className="font-semibold font-display text-white group-hover:text-brand-red transition-colors leading-snug tracking-tight text-lg sm:text-xl">
+                  <div className="relative z-10 mt-auto pt-8">
+                    <h4
+                      className="font-semibold font-display text-[#B3B3B3] group-hover:text-[#FFFFFF] transition-colors leading-snug tracking-tight text-lg sm:text-xl"
+                      style={{ color: '#B3B3B3' }}
+                    >
                       {item.title}
                     </h4>
                   </div>
@@ -366,7 +351,7 @@ export default function DesignBuildPage({ setActivePage }) {
             <div className="lg:col-span-7 space-y-5">
               <SectionHeading
                 tag="Collaboration"
-                title={<span className="text-white">A Partner From</span>}
+                title={<span className="text-[#E6E6E6]" style={{ color: '#E6E6E6' }}>A Partner From</span>}
                 highlight={<span className="text-brand-red">Concept to Completion</span>}
                 theme="dark"
                 scaleColor="red"

@@ -106,7 +106,7 @@ export default function CareerDetailPage({
   const otherJobs = jobsData.filter((j) => j.id !== activeJob.id);
 
   return (
-    <div className="relative pt-24 sm:pt-32 pb-24 overflow-hidden bg-transparent text-white min-h-screen">
+    <div className="relative pt-24 sm:pt-32 pb-24 overflow-hidden bg-transparent text-[#BFBFBF] min-h-screen">
       {/* Background Architectural Glow */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-brand-red/10 rounded-full blur-[160px] pointer-events-none -z-10" />
 
@@ -120,9 +120,9 @@ export default function CareerDetailPage({
             }}
             size="sm"
             baseColor="#07080A"
-            glassColor="#ffffff"
+            glassColor="#BFBFBF"
             hoverSpeed={0.65}
-            icon={<ArrowLeft className="w-3.5 h-3.5 text-neutral-300" />}
+            icon={<ArrowLeft className="w-3.5 h-3.5 text-brand-red" />}
           >
             Back to All Openings
           </PremiumGlassButton>
@@ -130,7 +130,7 @@ export default function CareerDetailPage({
           <div className="flex items-center gap-2">
             <button
               onClick={handleShare}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 hover:border-brand-red/60 text-xs font-sans text-neutral-300 hover:text-white transition-all cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 hover:border-brand-red/60 text-xs font-sans text-[#BFBFBF] hover:text-[#FFFFFF] transition-all cursor-pointer"
               title="Copy role link"
             >
               {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Share2 className="w-3.5 h-3.5 text-brand-red" />}
@@ -151,21 +151,21 @@ export default function CareerDetailPage({
               <span className="px-3 py-1 rounded-md bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold">
                 {activeJob.department}
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white/[0.04] border border-white/10 text-neutral-300 text-xs">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white/[0.04] border border-white/10 text-[#BFBFBF] text-xs">
                 <MapPin className="w-3.5 h-3.5 text-brand-red" />
                 {activeJob.location}
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white/[0.04] border border-white/10 text-neutral-300 text-xs">
-                <Briefcase className="w-3.5 h-3.5 text-neutral-400" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white/[0.04] border border-white/10 text-[#BFBFBF] text-xs">
+                <Briefcase className="w-3.5 h-3.5 text-brand-red" />
                 {activeJob.type}
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white/[0.04] border border-white/10 text-neutral-300 text-xs">
-                <Clock className="w-3.5 h-3.5 text-neutral-400" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white/[0.04] border border-white/10 text-[#BFBFBF] text-xs">
+                <Clock className="w-3.5 h-3.5 text-brand-red" />
                 {activeJob.experience}
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-display font-semibold text-brand-heading tracking-tight leading-[1.12]">
+            <h1 className="text-2xl sm:text-[30px] md:text-[30px] lg:text-[30px] font-display font-semibold text-[#BFBFBF] tracking-tight leading-[1.2]">
               {activeJob.title}
             </h1>
 
@@ -181,26 +181,24 @@ export default function CareerDetailPage({
           </div>
 
           <div className="pt-2 flex flex-wrap items-center gap-4">
-            <PremiumGlassButton
+            <button
               onClick={() => {
                 const el = document.getElementById('apply-form');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              size="md"
+              className="px-7 py-3.5 rounded-full bg-brand-red hover:bg-brand-redDark border border-brand-red text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-xl shadow-brand-red/30 flex items-center justify-center gap-2 group"
             >
-              Apply for This Role
-            </PremiumGlassButton>
-            <PremiumGlassButton
+              <span>Apply for This Role</span>
+            </button>
+            <button
               onClick={() => {
                 setActivePage('careers');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              size="md"
-              baseColor="#07080A"
-              glassColor="#ffffff"
+              className="px-6 py-3.5 rounded-full bg-white/[0.05] hover:bg-white/[0.12] border border-white/10 hover:border-white/30 text-xs sm:text-sm font-semibold text-[#BFBFBF] hover:text-[#FFFFFF] transition-all cursor-pointer flex items-center justify-center gap-2"
             >
-              View All Open Positions
-            </PremiumGlassButton>
+              <span>View All Open Positions</span>
+            </button>
           </div>
         </section>
 
@@ -214,7 +212,7 @@ export default function CareerDetailPage({
               <div className="w-10 h-10 rounded-xl bg-brand-red/15 border border-brand-red/40 flex items-center justify-center text-brand-red">
                 <CheckCircle2 className="w-5 h-5" />
               </div>
-              <h2 className="text-xl sm:text-2xl font-display font-semibold text-brand-subheading">
+              <h2 className="text-xl sm:text-2xl font-display font-semibold text-[#BFBFBF]">
                 Key Responsibilities
               </h2>
             </div>
@@ -222,7 +220,7 @@ export default function CareerDetailPage({
               {activeJob.responsibilities.map((resp, idx) => (
                 <li key={idx} className="flex items-start gap-3">
                   <span className="w-2 h-2 rounded-full bg-brand-red shrink-0 mt-2" />
-                  <span className="text-sm sm:text-[15px] text-brand-body leading-relaxed font-sans">
+                  <span className="text-sm sm:text-[15px] text-[#BFBFBF] leading-relaxed font-sans">
                     {resp}
                   </span>
                 </li>
@@ -236,7 +234,7 @@ export default function CareerDetailPage({
               <div className="w-10 h-10 rounded-xl bg-brand-red/15 border border-brand-red/40 flex items-center justify-center text-brand-red">
                 <Award className="w-5 h-5" />
               </div>
-              <h2 className="text-xl sm:text-2xl font-display font-semibold text-white">
+              <h2 className="text-xl sm:text-2xl font-display font-semibold text-[#BFBFBF]">
                 Required Qualifications
               </h2>
             </div>
@@ -244,7 +242,7 @@ export default function CareerDetailPage({
               {activeJob.requirements.map((req, idx) => (
                 <li key={idx} className="flex items-start gap-3">
                   <span className="w-2 h-2 rounded-full bg-brand-red shrink-0 mt-2" />
-                  <span className="text-sm sm:text-[15px] text-brand-body leading-relaxed font-sans">
+                  <span className="text-sm sm:text-[15px] text-[#BFBFBF] leading-relaxed font-sans">
                     {req}
                   </span>
                 </li>
@@ -275,10 +273,10 @@ export default function CareerDetailPage({
                 <div className="w-10 h-10 rounded-xl bg-black/60 border border-white/10 flex items-center justify-center text-brand-red">
                   {perk.icon}
                 </div>
-                <h3 className="text-base font-semibold font-display text-white">
+                <h3 className="text-base font-semibold font-display text-[#BFBFBF]">
                   {perk.title}
                 </h3>
-                <p className="text-xs text-brand-body leading-relaxed font-sans">
+                <p className="text-xs text-[#9CA3AF] leading-relaxed font-sans">
                   {perk.desc}
                 </p>
               </div>
@@ -295,10 +293,10 @@ export default function CareerDetailPage({
               <span className="text-xs font-mono text-brand-red tracking-widest font-bold">
                 Direct Application
               </span>
-              <h2 className="text-2xl sm:text-3xl font-display font-semibold text-white mt-1">
+              <h2 className="text-2xl sm:text-3xl font-display font-semibold text-[#BFBFBF] mt-1">
                 Apply for {activeJob.title}
               </h2>
-              <p className="text-sm text-brand-body mt-2 font-sans">
+              <p className="text-sm text-[#9CA3AF] mt-2 font-sans">
                 Submit your credentials directly to BNS Executive Hiring. Confidentiality guaranteed.
               </p>
             </div>
@@ -312,18 +310,18 @@ export default function CareerDetailPage({
                 <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-emerald-400 mx-auto">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-semibold font-display text-white">
+                <h3 className="text-2xl font-semibold font-display text-[#BFBFBF]">
                   Application Successfully Received
                 </h3>
-                <p className="text-sm text-neutral-300 max-w-md mx-auto font-sans leading-relaxed">
-                  Thank you for submitting your credentials. Our Managing Partners will review your experience and follow up promptly.
+                <p className="text-sm text-[#9CA3AF] max-w-md mx-auto font-sans leading-relaxed">
+                  Thank you for submitting your credentials. Our Founders will review your experience and follow up promptly.
                 </p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono text-neutral-300 mb-1">
+                    <label className="block text-xs font-mono text-[#BFBFBF] mb-1">
                       Full Legal Name *
                     </label>
                     <input
@@ -332,11 +330,11 @@ export default function CareerDetailPage({
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                       placeholder="e.g. Johnathan Vance"
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors font-sans"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-[#BFBFBF] placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors font-sans"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-neutral-300 mb-1">
+                    <label className="block text-xs font-mono text-[#BFBFBF] mb-1">
                       Direct Email *
                     </label>
                     <input
@@ -345,14 +343,14 @@ export default function CareerDetailPage({
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="john@example.com"
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors font-sans"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-[#BFBFBF] placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors font-sans"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono text-neutral-300 mb-1">
+                    <label className="block text-xs font-mono text-[#BFBFBF] mb-1">
                       Mobile Phone *
                     </label>
                     <input
@@ -361,11 +359,11 @@ export default function CareerDetailPage({
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="(512) 000-0000"
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors font-sans"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-[#BFBFBF] placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors font-sans"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-neutral-300 mb-1">
+                    <label className="block text-xs font-mono text-[#BFBFBF] mb-1">
                       Years of Experience
                     </label>
                     <input
@@ -373,13 +371,13 @@ export default function CareerDetailPage({
                       value={formData.yearsExp}
                       onChange={(e) => setFormData({ ...formData, yearsExp: e.target.value })}
                       placeholder="e.g. 12 Years"
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors font-sans"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-[#BFBFBF] placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors font-sans"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-neutral-300 mb-1">
+                  <label className="block text-xs font-mono text-[#BFBFBF] mb-1">
                     LinkedIn / Portfolio URL
                   </label>
                   <input
@@ -387,22 +385,22 @@ export default function CareerDetailPage({
                     value={formData.portfolio}
                     onChange={(e) => setFormData({ ...formData, portfolio: e.target.value })}
                     placeholder="https://linkedin.com/in/username"
-                    className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors font-sans"
+                    className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-[#BFBFBF] placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors font-sans"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-neutral-300 mb-1">
+                  <label className="block text-xs font-mono text-[#BFBFBF] mb-1">
                     Resume Attachment (PDF or DOCX)
                   </label>
                   <div className="p-4 rounded-xl border border-dashed border-white/20 bg-white/[0.02] text-center cursor-pointer hover:border-brand-red transition-colors">
                     <Upload className="w-5 h-5 text-brand-red mx-auto mb-1" />
-                    <span className="text-xs text-neutral-400">Click to select resume file or drag here</span>
+                    <span className="text-xs text-[#BFBFBF]/70">Click to select resume file or drag here</span>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-neutral-300 mb-1">
+                  <label className="block text-xs font-mono text-[#BFBFBF] mb-1">
                     Brief Introduction / Note
                   </label>
                   <textarea
@@ -410,7 +408,7 @@ export default function CareerDetailPage({
                     value={formData.coverNote}
                     onChange={(e) => setFormData({ ...formData, coverNote: e.target.value })}
                     placeholder="Highlight relevant ground-up or commercial projects you've led..."
-                    className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors resize-none font-sans"
+                    className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-[#BFBFBF] placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors resize-none font-sans"
                   />
                 </div>
 
@@ -435,7 +433,7 @@ export default function CareerDetailPage({
             <div className="flex items-center justify-between">
               <div>
                 <span className="text-xs font-mono text-brand-red tracking-wider">Other Positions</span>
-                <h3 className="text-2xl font-display font-semibold text-white">Explore More Roles</h3>
+                <h3 className="text-2xl font-display font-semibold text-[#BFBFBF]">Explore More Roles</h3>
               </div>
               <PremiumGlassButton
                 onClick={() => {
@@ -444,7 +442,7 @@ export default function CareerDetailPage({
                 }}
                 size="sm"
                 baseColor="#07080A"
-                glassColor="#ffffff"
+                glassColor="#BFBFBF"
               >
                 View All
               </PremiumGlassButton>
@@ -466,16 +464,16 @@ export default function CareerDetailPage({
                 >
                   <div className="space-y-3">
                     <span className="text-xs font-mono text-brand-red font-semibold">{oj.department}</span>
-                    <h4 className="text-lg font-semibold font-display text-white group-hover:text-brand-red transition-colors">
+                    <h4 className="text-lg font-semibold font-display text-[#BFBFBF] group-hover:text-[#FFFFFF] transition-colors">
                       {oj.title}
                     </h4>
-                    <p className="text-xs text-brand-body line-clamp-2 font-sans">
+                    <p className="text-xs text-[#9CA3AF] line-clamp-2 font-sans">
                       {oj.description}
                     </p>
                   </div>
-                  <div className="pt-4 flex items-center justify-between text-xs font-mono text-neutral-400 border-t border-white/5 mt-4">
+                  <div className="pt-4 flex items-center justify-between text-xs font-mono text-[#9CA3AF] border-t border-white/5 mt-4">
                     <span>{oj.location}</span>
-                    <span className="text-white font-bold group-hover:text-brand-red transition-colors">View Role →</span>
+                    <span className="text-[#BFBFBF] font-bold group-hover:text-[#FFFFFF] transition-colors">View Role →</span>
                   </div>
                 </div>
               ))}

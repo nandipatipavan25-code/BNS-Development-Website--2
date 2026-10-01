@@ -249,7 +249,7 @@ export default function BreathingNavbar({ activePage, setActivePage }) {
             <div className="flex items-center lg:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-white hover:text-brand-red focus:outline-none transition-colors cursor-pointer font-sans"
+                className="p-2 text-white hover:text-[#FFFFFF] focus:outline-none transition-colors cursor-pointer font-sans"
                 aria-label="Toggle navigation menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

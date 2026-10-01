@@ -1,14 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
-import { ConstructionScaleSVG } from './SectionHeading';
 import PremiumGlassButton from './PremiumGlassButton';
 
 export default function HouseCTA({
   onStartProject,
   bgClassName = "bg-[#07080A]",
-  badge = "Project Initiation",
+  badge = null,
   title = "Ready to Talk About",
   highlight = "Your Project?",
   description = "Whether you're evaluating an opportunity or preparing to begin development, BNS Development is ready to understand your goals and help move your project forward.",
@@ -19,13 +17,28 @@ export default function HouseCTA({
 
   useEffect(() => {
     const video = videoRef.current;
-    if (video) {
-      video.muted = true;
-      video.defaultMuted = true;
-      video.loop = true;
-      video.playsInline = true;
-      video.play().catch(() => {});
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.loop = true;
+    video.playsInline = true;
+
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {});
     }
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && video.paused) {
+        video.play().catch(() => {});
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
   }, []);
 
   return (
@@ -42,11 +55,10 @@ export default function HouseCTA({
             onMouseLeave={() => setIsHovered(false)}
             className={`relative rounded-3xl overflow-hidden border border-brand-red/20 group-hover:border-brand-red/45 shadow-[0_0_30px_-8px_rgba(215,25,32,0.20)] group-hover:shadow-[0_0_45px_-5px_rgba(215,25,32,0.35)] transition-all duration-700 ${bgClassName}`}
           >
-            {/* Background CTA Video (Clear, luminous unshaded playback) */}
+            {/* Background CTA Video - Perfectly Fit, No Unwanted Cropping */}
             <div className="absolute inset-0 z-0 overflow-hidden bg-[#07080A]">
               <video
                 ref={videoRef}
-                src="/videos/cta-bg.mp4"
                 autoPlay
                 loop
                 muted
@@ -55,63 +67,62 @@ export default function HouseCTA({
                 preload="auto"
                 disablePictureInPicture
                 disableRemotePlayback
-                className="w-full h-full object-cover object-center pointer-events-none brightness-105 contrast-100 transition-transform duration-1000 ease-out scale-105 group-hover:scale-110"
+                className="w-full h-full object-cover object-center pointer-events-none brightness-105 contrast-100"
                 style={{ opacity: 1 }}
                 onEnded={(e) => {
                   e.currentTarget.play().catch(() => {});
                 }}
               >
+                <source src="/videos/CTA Background.webm" type="video/webm" />
+                <source src="/videos/cta-bg.webm" type="video/webm" />
                 <source src="/videos/cta-bg.mp4" type="video/mp4" />
-                <source src="/videos/CTA%20Background.mp4" type="video/mp4" />
+                <source src="/videos/CTA Background.mp4" type="video/mp4" />
               </video>
-              {/* Soft, minimal vignette for text contrast without black shade */}
+              {/* 20% Black Layer Overlay */}
+              <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+
+              {/* Soft, minimal vignette for text contrast */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/25 pointer-events-none" />
             </div>
 
-          {/* Foreground CTA Content Centered inside the Laser Frame */}
-          <div className="relative z-10 p-8 sm:p-14 lg:p-20 text-center flex flex-col items-center justify-center min-h-[460px] sm:min-h-[540px]">
-            {/* Top Badge */}
-            {badge && (
-              <div className="text-xs sm:text-sm font-semibold text-brand-red tracking-wider mb-2">
-                {badge}
-              </div>
-            )}
+            {/* Foreground CTA Content Centered inside the Laser Frame */}
+            <div className="relative z-10 p-8 sm:p-14 lg:p-20 text-center flex flex-col items-center justify-center min-h-[460px] sm:min-h-[540px]">
+              {/* Headline */}
+              <h2 className="text-2xl sm:text-3xl md:text-[38px] lg:text-[38px] section-heading-title font-display font-semibold text-brand-heading tracking-tight leading-[1.15] max-w-4xl mx-auto">
+                {title}{' '}
+                {highlight && (
+                  <span className="text-brand-red">
+                    {highlight}
+                  </span>
+                )}
+              </h2>
 
-            {/* Headline */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-display font-semibold text-brand-heading tracking-tight leading-[1.15] max-w-4xl mx-auto">
-              {title}{' '}
-              {highlight && (
-                <span className="text-brand-red">
-                  {highlight}
-                </span>
+              {/* Sub-text Narrative */}
+              {description && (
+                <div className="mt-4 sm:mt-6 max-w-2xl mx-auto">
+                  <p className="text-sm sm:text-base lg:text-lg text-[#9CA3AF] font-sans leading-relaxed text-center">
+                    {description}
+                  </p>
+                </div>
               )}
-            </h2>
 
-            {/* Sub-text Narrative */}
-            {description && (
-              <div className="mt-4 sm:mt-6 max-w-2xl mx-auto">
-                <p className="text-sm sm:text-base lg:text-lg text-[#9CA3AF] font-sans leading-relaxed text-center">
-                  {description}
-                </p>
+              {/* Interactive Premium Fluid Glass CTA Button */}
+              <div className="mt-8 sm:mt-10">
+                <PremiumGlassButton
+                  onClick={onStartProject}
+                  size="md"
+                  baseColor="#000000"
+                  glassColor="#D9D9D9"
+                  hoverSpeed={0.7}
+                  textColor="#999999"
+                >
+                  {buttonText}
+                </PremiumGlassButton>
               </div>
-            )}
-
-            {/* Interactive Premium Fluid Glass CTA Button */}
-            <div className="mt-8 sm:mt-10">
-              <PremiumGlassButton
-                onClick={onStartProject}
-                size="md"
-                baseColor="#000000"
-                glassColor="#ffffff"
-                hoverSpeed={0.7}
-              >
-                {buttonText}
-              </PremiumGlassButton>
             </div>
           </div>
         </div>
-      </div>
-    </ScrollReveal>
-  </section>
+      </ScrollReveal>
+    </section>
   );
 }

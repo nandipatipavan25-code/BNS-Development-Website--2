@@ -31,18 +31,18 @@ export default function ProjectCard({ project, onSelect, theme = 'light' }) {
         {/* Ambient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity" />
 
-        {/* Top Badges */}
+        {/* Top Labels */}
         <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-          <span className="px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-xs font-mono text-white">
+          <span className="text-xs font-mono text-white/95 uppercase tracking-wider font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
             {project.category}
           </span>
           <span
-            className={`px-3 py-1 rounded-full text-xs font-mono font-semibold backdrop-blur-md ${
+            className={`text-xs font-mono font-semibold tracking-wider uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] ${
               project.status === 'Active Projects'
-                ? 'bg-brand-red/90 text-white shadow-[0_0_12px_rgba(215,25,32,0.5)]'
+                ? 'text-white'
                 : project.status === 'Upcoming Projects'
-                ? 'bg-amber-500/80 text-white'
-                : 'bg-white/20 text-white border border-white/20'
+                ? 'text-amber-400'
+                : 'text-white/80'
             }`}
           >
             {project.status.replace(' Projects', '')}
@@ -64,7 +64,7 @@ export default function ProjectCard({ project, onSelect, theme = 'light' }) {
           </div>
 
           <h3 className={`text-xl sm:text-2xl font-semibold font-display tracking-tight transition-colors duration-300 ${
-            isDark ? 'text-white group-hover:text-brand-red' : 'text-neutral-900 group-hover:text-brand-red'
+            isDark ? 'text-white group-hover:text-[#FFFFFF]' : 'text-neutral-900 group-hover:text-[#FFFFFF]'
           }`}>
             {project.title}
           </h3>
@@ -80,7 +80,7 @@ export default function ProjectCard({ project, onSelect, theme = 'light' }) {
         }`}>
           <div>
             <span className="block text-xs text-neutral-400">Delivery / Timeline</span>
-            <span className={`font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>{project.year}</span>
+            <span className={`font-semibold whitespace-nowrap ${isDark ? 'text-white' : 'text-neutral-900'}`}>{project.year}</span>
           </div>
           <div>
             <span className="block text-xs text-neutral-400">Valuation / Scope</span>

@@ -25,18 +25,19 @@ export default function ContactPage() {
 
   return (
     <div className="relative pt-24 sm:pt-32 pb-24 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* ========================================================
             HERO
             ======================================================== */}
         <section className="mb-8 sm:mb-12">
           <SectionHeading
             tag="Contact BNS Development"
-            title={<span className="block">Have a Project in Mind?</span>}
-            highlight={<span className="block">Let's Talk.</span>}
+            title="Have a Project in Mind?"
+            highlight="Let's Talk."
             description="Connect with BNS Development to explore your project, understand your needs, and identify the right path from planning to completion."
             theme="dark"
             scaleColor="red"
+            className="w-full max-w-none"
           />
         </section>
 
@@ -45,7 +46,7 @@ export default function ContactPage() {
             Centered, full-featured executive form
             ======================================================== */}
         {/* Note: 3D Geodesic Matrix is temporarily hidden as requested */}
-        <div className="max-w-4xl mx-auto mb-20">
+        <div className="mb-20">
           <div className="p-6 sm:p-10 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-2xl relative">
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
@@ -74,14 +75,14 @@ export default function ContactPage() {
                     <div className="flex items-center gap-4 text-xs font-sans text-neutral-400">
                       <a
                         href="tel:7863683009"
-                        className="hover:text-brand-red transition-colors flex items-center gap-1.5"
+                        className="hover:text-[#FFFFFF] transition-colors flex items-center gap-1.5"
                       >
                         <Phone className="w-3.5 h-3.5 text-brand-red" />
                         <span>(786) 368-3009</span>
                       </a>
                       <a
                         href="mailto:contact@bns-development.com"
-                        className="hover:text-brand-red transition-colors flex items-center gap-1.5"
+                        className="hover:text-[#FFFFFF] transition-colors flex items-center gap-1.5"
                       >
                         <Mail className="w-3.5 h-3.5 text-brand-red" />
                         <span>contact@bns-development.com</span>

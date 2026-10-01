@@ -66,9 +66,9 @@ export default function ProjectDetailModal({ project, onClose, onContactClick })
                 <span>•</span>
                 <span className="text-brand-red font-semibold">{project.status}</span>
                 <span>•</span>
-                <span>Completion: {project.year}</span>
+                <span className="whitespace-nowrap">Completion: {project.year}</span>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold text-white tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold text-[#E6E6E6] tracking-tight">
                 {project.title}
               </h1>
               <p className="mt-2 text-lg text-brand-steel font-sans">
@@ -106,7 +106,7 @@ export default function ProjectDetailModal({ project, onClose, onContactClick })
               </div>
               <div>
                 <span className="block text-brand-steel/60 ">Project Timeline</span>
-                <span className="text-base sm:text-lg font-bold text-brand-offwhite">{project.year}</span>
+                <span className="text-sm sm:text-base md:text-lg font-bold text-brand-offwhite whitespace-nowrap">{project.year}</span>
               </div>
             </div>
 
@@ -174,7 +174,7 @@ export default function ProjectDetailModal({ project, onClose, onContactClick })
                   Planning a Similar Development?
                 </h4>
                 <p className="text-xs text-brand-steel">
-                  Consult with BNS Managing Partners for pre-development modeling and constructability review.
+                  Consult with BNS Founders for pre-development modeling and constructability review.
                 </p>
               </div>
               <button

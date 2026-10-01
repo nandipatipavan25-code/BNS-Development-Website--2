@@ -1,9 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  Building2, Building, Sparkles, Layers, Home, Car, Store, Plane,
-  HardHat, Shield, Compass, MapPin
-} from 'lucide-react';
+
 import SectionHeading, { ConstructionScaleSVG } from '../components/SectionHeading';
 import ScrollWordReveal from '../components/ScrollWordReveal';
 import ScrollReveal from '../components/ScrollReveal';
@@ -46,21 +43,7 @@ export default function AboutPage({ setActivePage, fontPreset = 1 }) {
     },
   };
 
-  // 12 Proven Project Types
-  const projectTypes = [
-    { title: 'Multifamily', icon: Building2 },
-    { title: 'Commercial', icon: Building },
-    { title: 'Hospitality', icon: Sparkles },
-    { title: 'Mixed-Use', icon: Layers },
-    { title: 'Condominiums', icon: Home },
-    { title: 'Automotive Facilities', icon: Car },
-    { title: 'Retail', icon: Store },
-    { title: 'Aviation', icon: Plane },
-    { title: 'Ground-Up Development', icon: HardHat },
-    { title: 'Building Shells', icon: Shield },
-    { title: 'Renovations', icon: Compass },
-    { title: 'Land Development', icon: MapPin },
-  ];
+
 
   // 4 Relationship Values
   const relationshipValues = [
@@ -102,7 +85,10 @@ export default function AboutPage({ setActivePage, fontPreset = 1 }) {
                     The BNS Standard
                   </span>
                 </div>
-                <p className="text-xl sm:text-2xl lg:text-3xl font-semibold font-display leading-tight max-w-3xl text-brand-heading">
+                <p
+                  className="text-xl sm:text-2xl lg:text-3xl font-semibold font-display leading-tight max-w-3xl !text-[#B3B3B3] about-hero-quote"
+                  style={{ color: '#B3B3B3' }}
+                >
                   "Strong Projects. Stronger Partnership. More Than Your Average Partner."
                 </p>
               </div>
@@ -151,11 +137,6 @@ export default function AboutPage({ setActivePage, fontPreset = 1 }) {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-                  
-                  {/* Subtle Badge */}
-                  <div className="relative z-10 m-3.5 px-3 py-1.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/15 text-[14px] font-mono text-neutral-300 w-fit">
-                    <span className="text-brand-red font-semibold">Single-Source </span>Accountability
-                  </div>
                 </div>
               </div>
 
@@ -170,7 +151,7 @@ export default function AboutPage({ setActivePage, fontPreset = 1 }) {
                 />
 
                 <div className="space-y-4 text-sm sm:text-base text-brand-subtext font-sans leading-relaxed">
-                  <p className="text-white font-medium text-base sm:text-lg">
+                  <p className="!text-[#9CA3AF] font-medium text-base sm:text-lg" style={{ color: '#9CA3AF' }}>
                     Successful development requires more than managing a timeline. It requires coordination, communication and informed decision-making.
                   </p>
                   
@@ -195,46 +176,7 @@ export default function AboutPage({ setActivePage, fontPreset = 1 }) {
         </ScrollReveal>
       </div>
 
-      {/* ========================================================
-          4. EXPERIENCE ACROSS PROJECT TYPES (12 Sectors)
-          ======================================================== */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-24">
-        <SectionHeading
-          tag="Portfolio Expertise"
-          title={<span className="whitespace-nowrap">Experience Across</span>}
-          highlight={<span className="whitespace-nowrap">Project Types.</span>}
-          description="Our team's experience includes multifamily, commercial, hospitality, mixed-use, condominiums, automotive facilities, retail, aviation, ground-up development, building shells, renovations and land development."
-          theme="dark"
-          centered={true}
-          scaleColor="red"
-          className="!max-w-5xl"
-          titleClassName="md:whitespace-nowrap"
-          descriptionClassName="text-center"
-        />
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 mt-12">
-          {projectTypes.map((pt, idx) => {
-            const IconComp = pt.icon;
-            return (
-              <ScrollReveal key={idx} delay={idx * 0.04} direction="up">
-                <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-brand-red/40 backdrop-blur-xl shadow-lg transition-all duration-300 group hover:-translate-y-1 flex items-center gap-3.5">
-                  <div className="p-2.5 rounded-xl bg-white/[0.05] border border-white/10 text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all shrink-0">
-                    <IconComp className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h5 className="text-xs sm:text-sm font-semibold font-display text-brand-subheading group-hover:text-brand-red transition-colors line-clamp-1">
-                      {pt.title}
-                    </h5>
-                    <span className="text-[10px] font-mono text-brand-mutedText tracking-wider block mt-0.5">
-                      Expertise Focus
-                    </span>
-                  </div>
-                </div>
-              </ScrollReveal>
-            );
-          })}
-        </div>
-      </div>
 
       {/* ========================================================
           5. BUILT ON RELATIONSHIPS
@@ -254,7 +196,7 @@ export default function AboutPage({ setActivePage, fontPreset = 1 }) {
                 />
 
                 <div className="space-y-3.5 text-sm sm:text-base text-brand-subtext leading-relaxed font-sans mt-4">
-                  <p className="text-white font-medium font-sans text-base sm:text-lg">
+                  <p className="!text-[#9CA3AF] font-medium font-sans text-base sm:text-lg" style={{ color: '#9CA3AF' }}>
                     Development is a relationship business. We believe in communication, responsiveness, accountability and mutual respect—building partnerships that extend beyond a single project.
                   </p>
                 </div>
@@ -266,7 +208,7 @@ export default function AboutPage({ setActivePage, fontPreset = 1 }) {
                   <div key={idx} className="space-y-1">
                     <div className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-brand-red shrink-0" />
-                      <h4 className="text-sm font-semibold font-display text-white">
+                      <h4 className="text-sm font-semibold font-display text-[#9CA3AF] relationship-value-title">
                         {val.name}
                       </h4>
                     </div>
@@ -289,11 +231,6 @@ export default function AboutPage({ setActivePage, fontPreset = 1 }) {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-
-                  <div className="relative z-10 m-4 sm:m-5 p-3.5 rounded-2xl bg-black/60 backdrop-blur-md border border-white/10 text-xs text-neutral-300 font-sans">
-                    <span className="text-brand-red font-semibold font-mono">Enduring Partnerships: </span>
-                    Built on communication, responsiveness, and trust.
-                  </div>
                 </div>
               </ScrollReveal>
             </div>

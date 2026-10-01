@@ -75,12 +75,12 @@ export default function WorkDetailPage({
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             size="sm"
-            icon={<ArrowLeft className="w-3.5 h-3.5 text-neutral-300" />}
+            icon={<ArrowLeft className="w-3.5 h-3.5 text-brand-red" />}
           >
             Back to Portfolio
           </PremiumGlassButton>
 
-          <div className="hidden sm:flex items-center gap-2 font-sans text-xs text-neutral-400">
+          <div className="hidden sm:flex items-center gap-2 font-sans text-xs text-[#9CA3AF]">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-red" />
             <span>Project Case Study</span>
           </div>
@@ -117,31 +117,31 @@ export default function WorkDetailPage({
                     </div>
 
                     {activeProj.status && (
-                      <span className="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-white/90 font-mono text-[10px] sm:text-xs tracking-wider backdrop-blur-md">
-                        {activeProj.status}
+                      <span className="text-[#9CA3AF] font-mono text-xs sm:text-[13px] tracking-wider uppercase font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+                        • {activeProj.status}
                       </span>
                     )}
                   </div>
 
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-display font-semibold tracking-tight text-brand-heading leading-[1.12]">
+                  <h1 className="text-2xl sm:text-[30px] md:text-[30px] lg:text-[30px] font-display font-semibold tracking-tight text-[#E6E6E6] leading-[1.2]">
                     {activeProj.title}
                   </h1>
 
                   {activeProj.subtitle && (
-                    <p className="text-sm sm:text-base text-brand-subtext font-sans max-w-2xl">
+                    <p className="text-sm sm:text-base text-[#9CA3AF] font-sans max-w-2xl">
                       {activeProj.subtitle}
                     </p>
                   )}
 
-                  <div className="flex flex-wrap items-center gap-4 pt-1 text-xs sm:text-sm font-mono text-brand-mutedText">
-                    <span className="flex items-center gap-1.5 text-brand-subheading">
+                  <div className="flex flex-wrap items-center gap-4 pt-1 text-xs sm:text-sm font-mono text-[#9CA3AF]">
+                    <span className="flex items-center gap-1.5 text-[#B3B3B3]">
                       <MapPin className="w-4 h-4 text-brand-red shrink-0" />
                       {activeProj.location}
                     </span>
-                    <span className="text-white/30">•</span>
-                    <span>Completion: {activeProj.year}</span>
-                    <span className="text-white/30">•</span>
-                    <span>Gross Area: {activeProj.sqft}</span>
+                    <span className="text-[#9CA3AF]/40">•</span>
+                    <span className="whitespace-nowrap">Completion: <span className="text-[#B3B3B3] font-medium whitespace-nowrap">{activeProj.year}</span></span>
+                    <span className="text-[#9CA3AF]/40">•</span>
+                    <span>Gross Area: <span className="text-[#B3B3B3] font-medium">{activeProj.sqft}</span></span>
                   </div>
                 </div>
               </div>
@@ -160,7 +160,7 @@ export default function WorkDetailPage({
                 <span className="text-[14px] font-mono text-[#9CA3AF] tracking-widest block mb-1">
                   Gross Area
                 </span>
-                <div className="text-xl sm:text-2xl font-semibold font-display text-[#D4D4D0]">
+                <div className="text-[24px] font-sans font-bold text-[#B3B3B3]" style={{ fontFamily: "'Lato', sans-serif" }}>
                   {activeProj.sqft}
                 </div>
                 <span className="text-xs text-[#9CA3AF] font-sans mt-0.5 block">Conditioned Space</span>
@@ -170,7 +170,7 @@ export default function WorkDetailPage({
                 <span className="text-[14px] font-mono text-[#9CA3AF] tracking-widest block mb-1">
                   Capital Value
                 </span>
-                <div className="text-xl sm:text-2xl font-semibold font-display text-brand-red">
+                <div className="text-[24px] font-sans font-bold text-brand-red" style={{ fontFamily: "'Lato', sans-serif" }}>
                   {activeProj.value}
                 </div>
                 <span className="text-xs text-[#9CA3AF] font-sans mt-0.5 block">Delivered Budget</span>
@@ -180,7 +180,7 @@ export default function WorkDetailPage({
                 <span className="text-[14px] font-mono text-[#9CA3AF] tracking-widest block mb-1">
                   Year Delivered
                 </span>
-                <div className="text-xl sm:text-2xl font-semibold font-display text-[#D4D4D0]">
+                <div className="text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[22px] font-sans font-bold text-[#B3B3B3] whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontFamily: "'Lato', sans-serif" }}>
                   {activeProj.year}
                 </div>
                 <span className="text-xs text-[#9CA3AF] font-sans mt-0.5 block">On-Time Substantial</span>
@@ -190,7 +190,7 @@ export default function WorkDetailPage({
                 <span className="text-[14px] font-mono text-[#9CA3AF] tracking-widest block mb-1">
                   Licensure Status
                 </span>
-                <div className="text-xl sm:text-2xl font-semibold font-display text-[#D4D4D0]">
+                <div className="text-[24px] font-sans font-bold text-[#B3B3B3]" style={{ fontFamily: "'Lato', sans-serif" }}>
                   FL CGC 1505391
                 </div>
                 <span className="text-xs text-[#9CA3AF] font-sans mt-0.5 block">Self-Performed General Contracting</span>
@@ -209,10 +209,11 @@ export default function WorkDetailPage({
                   highlight="Execution."
                   scaleColor="red"
                   theme="dark"
+                  titleClassName="!text-2xl sm:!text-[30px] md:!text-[30px] lg:!text-[30px] !leading-[1.2]"
                 />
 
                 <div className="mt-4 space-y-4">
-                  <p className="text-base sm:text-lg text-brand-heading/85 leading-relaxed font-sans">
+                  <p className="text-base sm:text-lg text-[#9CA3AF] leading-relaxed font-sans">
                     {activeProj.overview}
                   </p>
 
@@ -221,19 +222,19 @@ export default function WorkDetailPage({
                       <span className="text-xs font-mono tracking-widest text-brand-red font-bold">
                         Delivered Contract Scope
                       </span>
-                      <span className="text-[10px] font-mono text-brand-mutedText ">
+                      <span className="text-[10px] font-mono text-[#9CA3AF]">
                         BNS Responsibility
                       </span>
                     </div>
-                    <p className="text-sm sm:text-base text-brand-body font-sans leading-relaxed">
+                    <p className="text-sm sm:text-base text-[#9CA3AF] font-sans leading-relaxed">
                       {activeProj.scope}
                     </p>
                   </div>
 
                   {activeProj.client && (
-                    <div className="flex items-center gap-3 text-xs font-mono text-brand-mutedText px-4 py-2.5 rounded-xl bg-white/[0.02] border border-white/5">
+                    <div className="flex items-center gap-3 text-xs font-mono text-[#9CA3AF] px-4 py-2.5 rounded-xl bg-white/[0.02] border border-white/5">
                       <span className="text-brand-red font-semibold">Project Client:</span>
-                      <span className="text-brand-subheading">{activeProj.client}</span>
+                      <span className="text-[#B3B3B3]">{activeProj.client}</span>
                     </div>
                   )}
                 </div>
@@ -245,7 +246,7 @@ export default function WorkDetailPage({
               <ScrollReveal direction="up" delay={0.12}>
                 <div className="p-6 sm:p-8 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-xl space-y-5 shadow-xl">
                   <div className="flex items-center justify-between pb-4 border-b border-white/10">
-                    <span className="font-mono text-xs tracking-widest text-brand-subheading font-bold">
+                    <span className="font-mono text-xs tracking-widest text-[#B3B3B3] font-bold">
                       Development Highlights
                     </span>
                     <ShieldCheck className="w-5 h-5 text-brand-red" />
@@ -254,14 +255,14 @@ export default function WorkDetailPage({
                   <div className="space-y-3.5">
                     {activeProj.highlights &&
                       activeProj.highlights.map((h, i) => (
-                        <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-brand-body font-sans">
+                        <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-[#9CA3AF] font-sans">
                           <CheckCircle2 className="w-4 h-4 text-brand-red shrink-0 mt-0.5" />
                           <span>{h}</span>
                         </div>
                       ))}
                   </div>
 
-                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-neutral-500 ">
+                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-[#9CA3AF]">
                     <span>Quality Audit</span>
                     <span className="text-brand-red font-semibold">OSHA-30 Compliant</span>
                   </div>
@@ -284,9 +285,10 @@ export default function WorkDetailPage({
                 description="Explore high-resolution architectural documentation, interior spaces, structural finishes, and spatial perspectives for this build."
                 theme="dark"
                 scaleColor="red"
+                titleClassName="!text-2xl sm:!text-[30px] md:!text-[30px] lg:!text-[30px] !leading-[1.2]"
               />
 
-              <div className="font-mono text-xs text-neutral-400 shrink-0 mb-4 sm:mb-8">
+              <div className="font-mono text-xs text-[#9CA3AF] shrink-0 mb-4 sm:mb-8">
                 <span>{galleryImages.length} {galleryImages.length === 1 ? 'Photograph' : 'Photographs'}</span>
               </div>
             </div>
@@ -314,8 +316,8 @@ export default function WorkDetailPage({
                     </div>
                   </div>
 
-                  {/* Corner Badge */}
-                  <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white/90">
+                  {/* Corner Label */}
+                  <div className="absolute bottom-3 left-3 text-[11px] font-mono font-medium text-[#9CA3AF] drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                     View {idx + 1}
                   </div>
                 </div>
@@ -402,8 +404,8 @@ export default function WorkDetailPage({
                 alt={`${activeProj.title} fullscreen view ${lightboxIndex + 1}`}
                 className="max-w-full max-h-[80vh] object-contain mx-auto"
               />
-              <div className="p-4 bg-black/80 backdrop-blur-md flex items-center justify-between text-xs font-mono text-neutral-300 border-t border-white/10">
-                <span className="text-white font-bold">{activeProj.title}</span>
+              <div className="p-4 bg-black/80 backdrop-blur-md flex items-center justify-between text-xs font-mono text-[#9CA3AF] border-t border-white/10">
+                <span className="text-[#E6E6E6] font-bold">{activeProj.title}</span>
                 <span>
                   {lightboxIndex + 1} of {galleryImages.length}
                 </span>

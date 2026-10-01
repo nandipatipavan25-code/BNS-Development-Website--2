@@ -1,10 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Phone,
-  Mail,
-  Globe,
-  ExternalLink,
   Search,
   MapPin,
   HardHat,
@@ -13,8 +9,7 @@ import {
   Building2,
   Wrench,
   Layers,
-  Sparkles,
-  ArrowUpRight
+  Sparkles
 } from 'lucide-react';
 import { ConstructionScaleSVG } from '../components/SectionHeading';
 import PremiumGlassButton from '../components/PremiumGlassButton';
@@ -28,9 +23,6 @@ const SUBCONTRACTORS = [
     trade: 'Structural Concrete & Post-Tensioned Slabs',
     category: 'Structural & Civil',
     region: 'Florida & Texas',
-    phone: '(305) 842-9100',
-    email: 'estimating@apexstructuralconcrete.com',
-    website: 'https://apexstructuralconcrete.com',
     verified: true,
     accent: '#D71920',
     specialties: ['Post-Tension Slabs', 'Cast-In-Place Walls', 'Foundation Pours'],
@@ -42,9 +34,6 @@ const SUBCONTRACTORS = [
     trade: 'Site Civil, Grading & Deep Excavation',
     category: 'Structural & Civil',
     region: 'Central Texas & Dallas',
-    phone: '(512) 693-4410',
-    email: 'bids@titancivilearth.com',
-    website: 'https://titancivilearth.com',
     verified: true,
     accent: '#E03131',
     specialties: ['Mass Excavation', 'Site Utilities', 'Laser Grade Profiling'],
@@ -56,9 +45,6 @@ const SUBCONTRACTORS = [
     trade: 'Structural Steel & Miscellaneous Metals',
     category: 'Structural & Civil',
     region: 'Florida & Texas',
-    phone: '(813) 472-8830',
-    email: 'commercial@vanguardsteel.com',
-    website: 'https://vanguardsteelerectors.com',
     verified: true,
     accent: '#D71920',
     specialties: ['Structural Frames', 'Architectural Trusses', 'Stair Towers'],
@@ -70,9 +56,6 @@ const SUBCONTRACTORS = [
     trade: 'Curtainwall, Storefronts & Impact Glazing',
     category: 'Envelope & Glazing',
     region: 'South Florida & Tampa',
-    phone: '(786) 524-1180',
-    email: 'contracts@horizonglazing.com',
-    website: 'https://horizonglazing.com',
     verified: true,
     accent: '#C92A2A',
     specialties: ['Unitized Curtainwall', 'Miami-Dade NOA Systems', 'Storefronts'],
@@ -84,9 +67,6 @@ const SUBCONTRACTORS = [
     trade: 'Commercial Electrical & Low-Voltage BIM',
     category: 'Mechanical & MEP',
     region: 'Florida & Texas',
-    phone: '(407) 318-7200',
-    email: 'projects@voltcorepower.com',
-    website: 'https://voltcorepower.com',
     verified: true,
     accent: '#D71920',
     specialties: ['Switchgear Integration', '3D BIM Rough-In', 'Life Safety Gen'],
@@ -98,9 +78,6 @@ const SUBCONTRACTORS = [
     trade: 'Heavy Commercial HVAC & Hydronic Piping',
     category: 'Mechanical & MEP',
     region: 'Central Florida & Austin',
-    phone: '(904) 580-3320',
-    email: 'operations@patriotmechanical.com',
-    website: 'https://patriotmechanicalhvac.com',
     verified: true,
     accent: '#E03131',
     specialties: ['VRF Central Systems', 'Chilled Water Loops', 'Rooftop AHUs'],
@@ -112,9 +89,6 @@ const SUBCONTRACTORS = [
     trade: 'Civil Underground & High-Rise Domestic Plumbing',
     category: 'Mechanical & MEP',
     region: 'Florida & Texas',
-    phone: '(214) 739-9050',
-    email: 'bidding@metroplumbingcorp.com',
-    website: 'https://metroplumbingcorp.com',
     verified: true,
     accent: '#D71920',
     specialties: ['Underground Mains', 'Booster Stations', 'Multi-Floor Sanitary'],
@@ -126,9 +100,6 @@ const SUBCONTRACTORS = [
     trade: 'Heavy Gauge Metal Framing & Drywall Systems',
     category: 'Interior & Finishes',
     region: 'South & Central Florida',
-    phone: '(305) 677-2240',
-    email: 'info@coastalframingacoustics.com',
-    website: 'https://coastalframingacoustics.com',
     verified: true,
     accent: '#C92A2A',
     specialties: ['Structural Light Gauge', 'Level-5 Finish', 'Acoustic Ceilings'],
@@ -140,9 +111,6 @@ const SUBCONTRACTORS = [
     trade: 'Commercial TPO Roofing & Waterproofing',
     category: 'Envelope & Glazing',
     region: 'Texas & Florida',
-    phone: '(512) 840-1920',
-    email: 'commercial@summitenvelope.com',
-    website: 'https://summitenvelope.com',
     verified: true,
     accent: '#D71920',
     specialties: ['TPO/EPDM Membranes', 'Vapor Barriers', 'Terrace Decks'],
@@ -154,9 +122,6 @@ const SUBCONTRACTORS = [
     trade: 'Commercial Sprinkler Networks & Fire Safety',
     category: 'Mechanical & MEP',
     region: 'Florida & Texas',
-    phone: '(813) 902-6110',
-    email: 'dispatch@shieldfireprotection.com',
-    website: 'https://shieldfireprotection.com',
     verified: true,
     accent: '#E03131',
     specialties: ['ESFR Systems', 'Pre-Action Wet/Dry', 'Fire Pump Mains'],
@@ -168,9 +133,6 @@ const SUBCONTRACTORS = [
     trade: 'Structural CMU, Architectural Stone & Brickwork',
     category: 'Structural & Civil',
     region: 'Texas Operations',
-    phone: '(214) 862-4400',
-    email: 'estimating@lonestarmasonry.com',
-    website: 'https://lonestarmasonry.com',
     verified: true,
     accent: '#D71920',
     specialties: ['Engineered CMU', 'Texas Native Limestone', 'Cast Stone Accents'],
@@ -182,9 +144,6 @@ const SUBCONTRACTORS = [
     trade: 'Large-Format Porcelain, Terrazzo & Hard Surfaces',
     category: 'Interior & Finishes',
     region: 'Florida & Texas',
-    phone: '(786) 410-8870',
-    email: 'projects@precisionfinishes.com',
-    website: 'https://precisionfinishes.com',
     verified: true,
     accent: '#C92A2A',
     specialties: ['Poured Terrazzo', 'Large-Format Slabs', 'Epoxy Resinous'],
@@ -221,7 +180,7 @@ export default function SubcontractorsPage({ setActivePage }) {
   }, [selectedCategory, searchQuery]);
 
   return (
-    <div className="relative pt-24 sm:pt-28 pb-24 overflow-hidden bg-transparent text-[#E6E6E6] min-h-screen">
+    <div className="relative pt-24 sm:pt-28 pb-24 overflow-hidden bg-transparent text-[#B3B3B3] min-h-screen">
       {/* Subtle Architectural Ambient Red Laser Sweep */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/40 to-transparent pointer-events-none" />
       <div className="absolute top-1/4 -right-40 w-96 h-96 rounded-full bg-brand-red/[0.04] blur-[150px] pointer-events-none" />
@@ -263,8 +222,8 @@ export default function SubcontractorsPage({ setActivePage }) {
                 </div>
 
                 {/* Main Heading: Our Subcontractors in GT Super font */}
-                <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-display font-semibold text-brand-heading tracking-tight leading-[1.12]">
-                  Our <span className="text-brand-red">Subcontractors</span>
+                <h1 className="text-3xl sm:text-4xl lg:text-[38px] font-display font-semibold tracking-tight leading-[1.12]">
+                  <span className="text-[#E6E6E6]">Our</span> <span className="text-brand-red">Subcontractors</span>
                 </h1>
 
                 {/* Supporting Text in Manrope #9CA3AF */}
@@ -280,28 +239,28 @@ export default function SubcontractorsPage({ setActivePage }) {
             <div className="p-4 sm:p-5 flex items-center gap-3">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse shrink-0" />
               <div>
-                <span className="block text-brand-heading font-semibold">Prompt Net-30</span>
+                <span className="block text-[#B3B3B3] font-semibold">Prompt Net-30</span>
                 <span className="text-[10px] text-white/60 ">Payment Discipline</span>
               </div>
             </div>
             <div className="p-4 sm:p-5 flex items-center gap-3">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-red shrink-0" />
               <div>
-                <span className="block text-brand-heading font-semibold">OSHA-30 Verified</span>
+                <span className="block text-[#B3B3B3] font-semibold">OSHA-30 Verified</span>
                 <span className="text-[10px] text-white/60 ">Strict Site Safety</span>
               </div>
             </div>
             <div className="p-4 sm:p-5 flex items-center gap-3">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-red shrink-0" />
               <div>
-                <span className="block text-brand-heading font-semibold">Primavera P6</span>
+                <span className="block text-[#B3B3B3] font-semibold">Primavera P6</span>
                 <span className="text-[10px] text-white/60 ">Coordinated Flow</span>
               </div>
             </div>
             <div className="p-4 sm:p-5 flex items-center gap-3">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-red shrink-0" />
               <div>
-                <span className="block text-brand-heading font-semibold">Vetted Trade Network</span>
+                <span className="block text-[#B3B3B3] font-semibold">Vetted Trade Network</span>
                 <span className="text-[10px] text-white/60 ">Florida &amp; Texas</span>
               </div>
             </div>
@@ -325,7 +284,7 @@ export default function SubcontractorsPage({ setActivePage }) {
                   className={`px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                     isActive
                       ? 'bg-brand-red text-white font-bold shadow-md shadow-brand-red/30'
-                      : 'bg-white/[0.04] text-neutral-400 hover:text-brand-heading hover:bg-white/[0.08] border border-white/10'
+                      : 'bg-white/[0.04] text-neutral-400 hover:text-white hover:bg-white/[0.08] border border-white/10'
                   }`}
                 >
                   {cat}
@@ -342,7 +301,7 @@ export default function SubcontractorsPage({ setActivePage }) {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search company, trade, or region..."
-              className="w-full pl-10 pr-4 py-2 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-brand-heading placeholder-neutral-500 focus:outline-none focus:border-brand-red transition-colors font-sans"
+              className="w-full pl-10 pr-4 py-2 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-[#B3B3B3] placeholder-neutral-500 focus:outline-none focus:border-brand-red transition-colors font-sans"
             />
           </div>
         </div>
@@ -350,7 +309,7 @@ export default function SubcontractorsPage({ setActivePage }) {
         {/* Directory Count Tag */}
         <div className="flex items-center justify-between mt-3 px-2 font-mono text-xs text-brand-mutedText">
           <span>
-            Showing <strong className="text-brand-heading font-semibold">{filteredSubcontractors.length}</strong> Verified Trade Partners
+            Showing <strong className="text-[#B3B3B3] font-semibold">{filteredSubcontractors.length}</strong> Verified Trade Partners
           </span>
           <span className="hidden sm:inline">All Listings Active • Direct Trade Engagement</span>
         </div>
@@ -363,7 +322,7 @@ export default function SubcontractorsPage({ setActivePage }) {
         {filteredSubcontractors.length === 0 ? (
           <div className="py-20 text-center rounded-3xl bg-white/[0.02] border border-white/10 p-8 space-y-4">
             <HardHat className="w-12 h-12 text-brand-red/50 mx-auto" />
-            <h3 className="text-xl font-semibold font-display text-brand-heading">
+            <h3 className="text-xl font-semibold font-display text-[#B3B3B3]">
               No Trade Partners Found
             </h3>
             <p className="text-sm text-brand-body max-w-md mx-auto font-sans">
@@ -374,7 +333,7 @@ export default function SubcontractorsPage({ setActivePage }) {
                 setSelectedCategory('All Trades');
                 setSearchQuery('');
               }}
-              className="px-5 py-2 rounded-full bg-white/[0.06] border border-white/15 text-xs tracking-wider text-brand-heading hover:bg-brand-red hover:border-brand-red transition-all cursor-pointer"
+              className="px-5 py-2 rounded-full bg-white/[0.06] border border-white/15 text-xs tracking-wider text-[#B3B3B3] hover:bg-brand-red hover:border-brand-red transition-all cursor-pointer"
             >
               Reset All Filters
             </button>
@@ -392,7 +351,7 @@ export default function SubcontractorsPage({ setActivePage }) {
                   transition={{ duration: 0.4, delay: idx * 0.04 }}
                   className="rounded-3xl bg-white/[0.03] border border-white/10 hover:border-brand-red/50 backdrop-blur-xl shadow-xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover-beam-card group hover:-translate-y-1"
                 >
-                  <div className="space-y-5">
+                  <div className="space-y-4">
                     {/* Top Header: Logo Emblem + Region Badge */}
                     <div className="flex items-center justify-between gap-3">
                       {/* Stylized Architectural Company Logo Badge */}
@@ -400,7 +359,7 @@ export default function SubcontractorsPage({ setActivePage }) {
                         {/* Inner Blueprint Hash Marks */}
                         <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-white to-transparent pointer-events-none" />
                         <div className="text-center font-mono font-black text-sm tracking-wider">
-                          <span className="text-brand-heading group-hover:text-white transition-colors">{sub.shortName}</span>
+                          <span className="text-[#B3B3B3] group-hover:text-white transition-colors">{sub.shortName}</span>
                         </div>
                         <span className="absolute bottom-1 right-1 w-1.5 h-1.5 rounded-full bg-brand-red" />
                       </div>
@@ -411,76 +370,27 @@ export default function SubcontractorsPage({ setActivePage }) {
                       </span>
                     </div>
 
-                    {/* Company Name (GT Super font, off-white) */}
+                    {/* Company Name */}
                     <div>
-                      <h3 className="text-xl sm:text-2xl font-semibold font-display text-brand-heading group-hover:text-brand-red transition-colors leading-tight">
+                      <h3 className="text-xl sm:text-2xl font-semibold font-display text-[#B3B3B3] group-hover:text-[#FFFFFF] transition-colors leading-tight">
                         {sub.name}
                       </h3>
                       <p className="mt-1.5 text-xs text-[#9CA3AF] font-sans leading-relaxed">
                         {sub.trade}
                       </p>
                     </div>
-
-                    {/* Specialty Scope Tags */}
-                    <div className="flex flex-wrap gap-1.5 pt-1">
-                      {sub.specialties.map((spec, sIdx) => (
-                        <span
-                          key={sIdx}
-                          className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/[0.03] border border-white/5 text-neutral-400 group-hover:text-brand-subheading transition-colors"
-                        >
-                          {spec}
-                        </span>
-                      ))}
-                    </div>
                   </div>
 
-                  {/* Contact Details Strip (Number, Website, Email) */}
-                  <div className="mt-6 pt-5 border-t border-white/10 space-y-2.5 text-xs font-mono">
-                    {/* Phone Number */}
-                    <div className="flex items-center justify-between">
-                      <span className="text-[11px] text-[#9CA3AF]/70 flex items-center gap-2">
-                        <Phone className="w-3.5 h-3.5 text-brand-red shrink-0" />
-                        <span>Phone:</span>
-                      </span>
-                      <a
-                        href={`tel:${sub.phone.replace(/[^0-9]/g, '')}`}
-                        className="text-[#9CA3AF] hover:text-brand-red font-medium transition-colors"
+                  {/* Specialty Scope Tags */}
+                  <div className="flex flex-wrap gap-1.5 pt-4 mt-auto">
+                    {sub.specialties.map((spec, sIdx) => (
+                      <span
+                        key={sIdx}
+                        className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/[0.03] border border-white/5 text-neutral-400 group-hover:text-brand-subheading transition-colors"
                       >
-                        {sub.phone}
-                      </a>
-                    </div>
-
-                    {/* Email */}
-                    <div className="flex items-center justify-between">
-                      <span className="text-[11px] text-[#9CA3AF]/70 flex items-center gap-2">
-                        <Mail className="w-3.5 h-3.5 text-brand-red shrink-0" />
-                        <span>Email:</span>
+                        {spec}
                       </span>
-                      <a
-                        href={`mailto:${sub.email}`}
-                        className="text-[#9CA3AF] hover:text-brand-red transition-colors truncate max-w-[190px] text-right"
-                        title={sub.email}
-                      >
-                        {sub.email}
-                      </a>
-                    </div>
-
-                    {/* Website */}
-                    <div className="flex items-center justify-between pt-1">
-                      <span className="text-[11px] text-[#9CA3AF]/70 flex items-center gap-2">
-                        <Globe className="w-3.5 h-3.5 text-brand-red shrink-0" />
-                        <span>Website:</span>
-                      </span>
-                      <a
-                        href={sub.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-[#9CA3AF] hover:text-brand-red font-medium transition-colors group/link"
-                      >
-                        <span>{sub.website.replace('https://', '')}</span>
-                        <ArrowUpRight className="w-3 h-3 text-[#9CA3AF]/60 group-hover/link:text-brand-red transition-colors" />
-                      </a>
-                    </div>
+                    ))}
                   </div>
                 </motion.div>
               ))}
@@ -505,7 +415,7 @@ export default function SubcontractorsPage({ setActivePage }) {
                   Trade Onboarding • Florida &amp; Texas
                 </span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-display font-semibold text-brand-heading leading-tight">
+              <h3 className="text-2xl sm:text-3xl font-display font-semibold text-[#CCCCCC] leading-tight">
                 Want to Join the BNS Trade Network?
               </h3>
               <p className="text-sm text-[#9CA3AF] font-sans leading-relaxed">

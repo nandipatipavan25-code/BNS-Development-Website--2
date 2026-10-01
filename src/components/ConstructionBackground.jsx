@@ -143,7 +143,7 @@ export default function ConstructionBackground({
             disablePictureInPicture
             disableRemotePlayback
             style={{
-              opacity: videoOpacity ?? (videoSrc.includes('contact') ? 0.20 : 0.75),
+              opacity: videoOpacity ?? (videoSrc.includes('contact') ? 0.20 : 0.38),
               transform: 'translate3d(0, 0, 0)',
               backfaceVisibility: 'hidden',
               willChange: 'transform'

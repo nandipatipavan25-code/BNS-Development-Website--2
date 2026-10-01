@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        white: "#E6E6E6", // Primary white: #E6E6E6 (rgb: 230, 230, 230, hsl: 0, 0%, 90%)
+        white: "#D9D9D9", // Pure white replaced with 85% white: #D9D9D9
         brand: {
           black: "#0A0A0A",
           dark: "#0F0F0F",
@@ -20,12 +20,12 @@ export default {
           redGlow: "rgba(215, 25, 32, 0.25)",
           
           // Systematic Soft Off-White Hierarchy (no piercing 100% white)
-          offwhite: "#E6E6E6",    // Primary white (#E6E6E6)
-          heading: "#E6E6E6",     // Primary headings (H1, H2, major titles) - #E6E6E6
+          offwhite: "#D9D9D9",    // 85% white (#D9D9D9)
+          heading: "#E6E6E6",     // Primary headings (H1, H2, major titles) - unchanged at #E6E6E6
           subheading: "#D8D8D2",  // Subheadings (H3, H4, card titles, tags, key stats) - Soft oyster
-          body: "#CCCCCC",        // General regular text - 80% soft refined white (#CCCCCC)
+          body: "#D9D9D9",        // General regular text - 85% white (#D9D9D9)
           subtext: "#9CA3AF",     // Subtext and text below section headings - #9CA3AF
-          statText: "rgba(255, 255, 255, 0.60)", // Supporting/stat text - 60% white
+          statText: "rgba(217, 217, 217, 0.60)", // Supporting/stat text - 60%
           statMuted: "#999999",   // Supporting/stat text hex - 60% white
           mutedText: "#8A8A82",   // Secondary meta, captions, breadcrumbs
           steel: "#8E8E93",
@@ -33,7 +33,7 @@ export default {
 
           // Refined light architectural surface palette
           lightBg: "#F7F7F5",
-          lightSurface: "#FFFFFF",
+          lightSurface: "#D9D9D9",
           lightBorder: "rgba(21, 21, 21, 0.1)",
           lightBorderSubtle: "rgba(21, 21, 21, 0.05)",
           lightText: "#111111",

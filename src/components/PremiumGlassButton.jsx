@@ -152,14 +152,15 @@ export default function PremiumGlassButton({
   onClick,
   type = 'button',
   baseColor = '#000000',
-  glassColor = '#ffffff',
+  glassColor = '#D9D9D9',
   hoverSpeed = 0.65,
   borderRadius = 999,
   className = '',
   size = 'md', // 'sm' | 'md' | 'lg'
   icon = null,
-  showEye = true,
+  showEye = false,
   hoverGlow = 'red', // 'red' | 'white' | 'none'
+  textColor = '#999999',
 }) {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
@@ -433,12 +434,12 @@ export default function PremiumGlassButton({
         style={{
           position: 'relative',
           zIndex: 1,
-          color: isHovered ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.75)',
+          color: isHovered ? '#FFFFFF' : textColor,
           pointerEvents: 'none',
           textAlign: 'center',
           textShadow: isHovered
-            ? '0px 2px 10px rgba(255, 255, 255, 0.25)'
-            : '0px 1px 6px rgba(255, 255, 255, 0.12)',
+            ? '0px 2px 10px rgba(255, 255, 255, 0.40)'
+            : '0px 1px 6px rgba(153, 153, 153, 0.15)',
         }}
         className="flex items-center justify-center gap-2.5 transition-transform duration-300 group-hover:scale-[1.02]"
       >
@@ -458,7 +459,7 @@ export default function PremiumGlassButton({
             {/* Left Eye */}
             <span
               style={{
-                backgroundColor: isHovered ? 'rgba(255, 255, 255, 0.88)' : 'rgba(255, 255, 255, 0.75)',
+                backgroundColor: isHovered ? 'rgba(217, 217, 217, 0.88)' : 'rgba(217, 217, 217, 0.75)',
               }}
               className="relative w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full flex items-center justify-center shadow-inner overflow-hidden shrink-0 border border-black/30 transition-colors duration-200"
             >
@@ -475,7 +476,7 @@ export default function PremiumGlassButton({
             {/* Right Eye */}
             <span
               style={{
-                backgroundColor: isHovered ? 'rgba(255, 255, 255, 0.88)' : 'rgba(255, 255, 255, 0.75)',
+                backgroundColor: isHovered ? 'rgba(217, 217, 217, 0.88)' : 'rgba(217, 217, 217, 0.75)',
               }}
               className="relative w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full flex items-center justify-center shadow-inner overflow-hidden shrink-0 border border-black/30 transition-colors duration-200"
             >

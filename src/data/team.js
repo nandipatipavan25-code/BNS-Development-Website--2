@@ -2,8 +2,8 @@ export const teamData = [
   {
     id: "brad-smith",
     name: "Bradford Smith",
-    role: "Managing Partner",
-    title: "Managing Partner",
+    role: "Founder",
+    title: "Founder",
     experience: "35+ Years Industry Experience",
     portfolioVolume: "$800M+ Delivered",
     image: "/team/brad-smith.png",
@@ -22,8 +22,8 @@ export const teamData = [
   {
     id: "aravind-vangala",
     name: "Aravind Vangala",
-    role: "Leadership",
-    title: "Leadership",
+    role: "Co-Founder",
+    title: "Co-Founder",
     experience: "Technology, Engineering & Real Estate Investment",
     portfolioVolume: "Strategic Growth Portfolio",
     image: "/team/aravind-vangala.jpg",

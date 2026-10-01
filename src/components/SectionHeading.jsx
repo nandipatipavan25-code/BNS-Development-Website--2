@@ -21,7 +21,7 @@ export default function SectionHeading({
   centered = false,
   theme = "dark", // 'dark' | 'light'
   scaleColor = "red", // 'red' | 'white'
-  showRedLine = null, // null | boolean (defaults to true if null, unless centered)
+  showRedLine = null, // null | boolean (defaults to true)
   tagColor = "light", // 'light' (#9CA3AF) | 'red' (#D71920)
   useWordReveal = true,
   className = "",
@@ -31,7 +31,7 @@ export default function SectionHeading({
   // Clean tag string by removing leading slashes
   const cleanTag = typeof tag === 'string' ? tag.replace(/^\/\/\s*/, '') : tag;
   const hasCustomMargin = /(^|\s)m[by]-/.test(className);
-  const useLine = showRedLine !== null ? showRedLine : !centered;
+  const useLine = showRedLine !== null ? showRedLine : true;
 
   return (
     <div className={`${hasCustomMargin ? '' : (description ? 'mb-6 sm:mb-8' : 'mb-3 sm:mb-4')} ${centered ? 'text-center max-w-3xl mx-auto' : 'max-w-3xl'} ${className}`}>
@@ -61,7 +61,7 @@ export default function SectionHeading({
 
       {/* Main Title */}
       <h2
-        className={`text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-display font-semibold tracking-tight leading-[1.15] text-brand-heading ${
+        className={`text-2xl sm:text-3xl md:text-[38px] lg:text-[38px] section-heading-title font-display font-semibold tracking-tight leading-[1.15] text-brand-heading ${
           centered ? 'text-center' : ''
         } ${titleClassName}`}
       >
