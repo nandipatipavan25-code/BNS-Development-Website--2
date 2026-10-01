@@ -257,22 +257,8 @@ export default function ProjectCarousel({ onSelectProject, onViewAll, bgClassNam
         </div>
       </div>
 
-      {/* ══════════════════════════════════════════
-          STATUS BAR
-      ══════════════════════════════════════════ */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 sm:mt-10 flex flex-wrap items-center justify-between gap-4 text-[10px] font-mono text-white/25 tracking-widest pb-4">
-        <div className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
-          <span>Drag or scroll to explore · Hover to pause</span>
-        </div>
-        <div className="hidden sm:flex items-center gap-3">
-          <HardHat className="w-3.5 h-3.5 text-brand-red/40" />
-          <span>Florida &amp; Texas Landmark Projects</span>
-        </div>
-      </div>
-
       {/* ── BOTTOM MARQUEE TICKER ── */}
-      <div className="relative z-10 py-2 mt-2">
+      <div className="relative z-10 py-2 mt-4">
         <MarqueeTicker items={TICKER_BOTTOM} speed={50} reverse={true} dark={true} />
       </div>
 
