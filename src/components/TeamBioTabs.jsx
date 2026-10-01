@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { RotateCw } from 'lucide-react';
 import { teamData } from '../data/team';
 import ScrollReveal from './ScrollReveal';
 
@@ -65,22 +64,22 @@ export default function TeamBioTabs({ onContactClick }) {
                   </div>
 
                   {/* ========================================================
-                      BACK OF CARD: Full Name, Bio & All Credentials
+                      BACK OF CARD: Full Name, Bio & All Credentials (Blurred Glass)
                       ======================================================== */}
-                  <div className="flip-card-back bg-[#08090C]/95 backdrop-blur-2xl border border-brand-red/50 p-5 sm:p-6 flex flex-col justify-between relative shadow-2xl text-left">
+                  <div className="flip-card-back bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-black/50 backdrop-blur-2xl border border-white/15 group-hover:border-brand-red/60 p-5 sm:p-6 flex flex-col justify-between relative shadow-2xl text-left">
                     {/* Atmospheric Portrait Watermark */}
                     <div className="absolute inset-0 pointer-events-none overflow-hidden">
                       <img
                         src={person.image}
                         alt=""
-                        className="w-full h-full object-cover object-top opacity-10 filter grayscale brightness-50"
+                        className="w-full h-full object-cover object-top opacity-10 filter grayscale brightness-100"
                         style={{ objectPosition: 'top center' }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-black/80" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20" />
                     </div>
 
                     {/* Scrollable / Full Content Body */}
-                    <div className="relative z-10 overflow-y-auto pr-1 space-y-4 max-h-[440px] sm:max-h-[460px] scrollbar-thin scrollbar-thumb-white/10">
+                    <div className="relative z-10 overflow-y-auto pr-1 space-y-4 max-h-[450px] sm:max-h-[470px] scrollbar-thin scrollbar-thumb-white/10">
                       {/* Top Header Information */}
                       <div className="space-y-1">
                         <div className="text-[11px] font-semibold text-brand-red tracking-wider font-sans uppercase">
@@ -100,7 +99,7 @@ export default function TeamBioTabs({ onContactClick }) {
 
                       {/* Full Biography */}
                       <div>
-                        <p className="text-[12px] text-[#D0D0D0] leading-relaxed font-sans">
+                        <p className="text-[12px] text-[#E0E0DC] leading-relaxed font-sans">
                           {person.bio}
                         </p>
                       </div>
@@ -124,34 +123,11 @@ export default function TeamBioTabs({ onContactClick }) {
                           </div>
                         </div>
                       )}
-
-                      {/* Key Sectors */}
-                      {person.sectors && person.sectors.length > 0 && (
-                        <div className="pt-2 border-t border-white/10">
-                          <div className="text-[10px] font-mono text-neutral-400 font-semibold tracking-wider uppercase mb-1.5">
-                            Expertise Focus
-                          </div>
-                          <div className="flex flex-wrap gap-1.5">
-                            {person.sectors.map((sec, sIdx) => (
-                              <span
-                                key={sIdx}
-                                className="px-2 py-0.5 rounded-md bg-white/[0.05] border border-white/10 text-[10px] text-neutral-300 font-sans"
-                              >
-                                {sec}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
                     </div>
 
-                    {/* Bottom Metadata & Flip Indicator */}
+                    {/* Bottom Metadata */}
                     <div className="relative z-10 pt-2.5 mt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-sans text-neutral-400">
                       <span className="text-[11px] text-neutral-400 font-sans">BNS Leadership</span>
-
-                      <span className="text-brand-red flex items-center hover:text-white transition-colors" title="Flip card">
-                        <RotateCw className="w-3.5 h-3.5" />
-                      </span>
                     </div>
                   </div>
                 </div>
