@@ -169,72 +169,101 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
     if (!video) return;
 
     let isMounted = true;
-    video.muted = isMuted;
+    video.muted = true;
     video.defaultMuted = true;
     video.loop = true;
     video.playsInline = true;
-    video.defaultPlaybackRate = 1.35;
-    video.playbackRate = 1.35;
+    video.defaultPlaybackRate = 1.0;
+    video.playbackRate = 1.0;
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', 'true');
+    video.setAttribute('loop', '');
+    video.setAttribute('autoplay', '');
 
-    const playVideo = () => {
+    const safePlay = () => {
       if (!video || !isMounted) return;
-      video.defaultPlaybackRate = 1.35;
-      video.playbackRate = 1.35;
+      video.muted = true;
+      video.playbackRate = 1.0;
       const promise = video.play();
       if (promise !== undefined) {
         promise.catch(() => {
-          setIsPlaying(false);
           const resumeOnInteraction = () => {
             if (video && isMounted && video.paused) {
               video.muted = true;
-              video.playbackRate = 1.35;
-              video.play().then(() => setIsPlaying(true)).catch(() => {});
+              video.playbackRate = 1.0;
+              video.play().catch(() => {});
             }
           };
           window.addEventListener('click', resumeOnInteraction, { once: true, passive: true });
           window.addEventListener('touchstart', resumeOnInteraction, { once: true, passive: true });
-          window.addEventListener('scroll', resumeOnInteraction, { once: true, passive: true });
         });
       }
     };
 
-    if (video.readyState >= 2) {
-      playVideo();
+    if (video.readyState >= 1) {
+      safePlay();
     } else {
-      video.addEventListener('canplay', playVideo, { once: true });
+      video.load();
+      video.addEventListener('loadedmetadata', safePlay, { once: true });
+      video.addEventListener('canplay', safePlay, { once: true });
     }
 
     const handleEnded = () => {
       if (video && isMounted) {
-        video.play().catch(() => {});
+        safePlay();
+      }
+    };
+
+    const handlePause = () => {
+      if (isMounted && video && video.paused) {
+        safePlay();
+      }
+    };
+
+    const handleVisibility = () => {
+      if (document.visibilityState === 'visible' && isMounted && video) {
+        safePlay();
       }
     };
 
     video.addEventListener('ended', handleEnded);
+    video.addEventListener('pause', handlePause);
+    document.addEventListener('visibilitychange', handleVisibility);
+    window.addEventListener('focus', safePlay);
+
+    const heartbeatTimer = setInterval(() => {
+      if (isMounted && video && video.paused) {
+        safePlay();
+      }
+    }, 1500);
+
+    safePlay();
 
     return () => {
       isMounted = false;
-      video.removeEventListener('canplay', playVideo);
+      clearInterval(heartbeatTimer);
       video.removeEventListener('ended', handleEnded);
+      video.removeEventListener('pause', handlePause);
+      document.removeEventListener('visibilitychange', handleVisibility);
+      window.removeEventListener('focus', safePlay);
     };
   }, []);
 
   const togglePlay = () => {
     if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-        setIsPlaying(false);
+      if (videoRef.current.paused) {
+        videoRef.current.play().catch(() => {});
       } else {
-        videoRef.current.play();
-        setIsPlaying(true);
+        videoRef.current.pause();
       }
     }
   };
 
   const toggleMute = () => {
     if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
     }
   };
 
@@ -284,13 +313,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                 backfaceVisibility: 'hidden',
                 willChange: 'transform'
               }}
-              className="w-full h-full object-cover select-none cursor-pointer opacity-90 transition-opacity duration-700"
-              onClick={togglePlay}
-              onPlay={() => setIsPlaying(true)}
-              onPause={() => setIsPlaying(false)}
-              onEnded={(e) => {
-                e.currentTarget.play().catch(() => {});
-              }}
+              className="w-full h-full object-cover select-none pointer-events-none opacity-90 transition-opacity duration-700"
             >
               <source src="/videos/hero-video.mp4" type="video/mp4" />
               <source src="/videos/home-page-hero-section-video.mp4" type="video/mp4" />
