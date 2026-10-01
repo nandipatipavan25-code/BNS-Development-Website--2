@@ -409,10 +409,10 @@ export default function DesignBuildPage({ setActivePage }) {
         {/* ========================================================
             6. PLANNING A DESIGN-BUILD PROJECT? (Closing CTA)
             ======================================================== */}
-        <section className="relative p-10 sm:p-14 lg:p-16 rounded-3xl border border-brand-red/30 hover:border-brand-red/70 shadow-[0_0_50px_-10px_rgba(215,25,32,0.35)] hover:shadow-[0_0_70px_-5px_rgba(215,25,32,0.6)] backdrop-blur-2xl text-center space-y-6 overflow-hidden group transition-all duration-700">
-          {/* Luminous Red Ambient Border Glow Effect */}
-          <div className="absolute -inset-[1.5px] rounded-3xl bg-gradient-to-r from-brand-red/60 via-brand-red/25 to-brand-red/60 opacity-60 group-hover:opacity-100 blur-[3px] transition-all duration-700 pointer-events-none" />
-          <div className="absolute -inset-[4px] rounded-3xl bg-brand-red/30 blur-2xl opacity-45 group-hover:opacity-85 transition-all duration-700 pointer-events-none" />
+        <section className="relative p-10 sm:p-14 lg:p-16 rounded-3xl border border-brand-red/20 hover:border-brand-red/45 shadow-[0_0_30px_-8px_rgba(215,25,32,0.20)] hover:shadow-[0_0_45px_-5px_rgba(215,25,32,0.35)] backdrop-blur-2xl text-center space-y-6 overflow-hidden group transition-all duration-700">
+          {/* Luminous Red Ambient Border Glow Effect - Refined */}
+          <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-r from-brand-red/35 via-brand-red/15 to-brand-red/35 opacity-40 group-hover:opacity-65 blur-[2px] transition-all duration-700 pointer-events-none" />
+          <div className="absolute -inset-[2px] rounded-3xl bg-brand-red/20 blur-xl opacity-25 group-hover:opacity-45 transition-all duration-700 pointer-events-none" />
 
           {/* Background Video (cta-bg.mp4) */}
           <div className="absolute inset-0 z-0 overflow-hidden bg-[#07080A]">
