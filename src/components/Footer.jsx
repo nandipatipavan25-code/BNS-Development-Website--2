@@ -19,8 +19,16 @@ export default function Footer({ setActivePage }) {
   return (
     <>
       <footer className="relative bg-[#07080A] pt-16 pb-12 overflow-hidden z-20 text-white">
-        <ArchitecturalFooterIllustration />
-        <div className="absolute inset-0 bg-[#07080A] pointer-events-none" />
+        {/* ── Footer Background: 40% Image with Blur Style ── */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
+          <img
+            src="/images/footer-bg.jpg"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-center opacity-40 blur-[3px] scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#07080A]/60 via-transparent to-[#07080A]/70" />
+        </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-14 border-b border-white/10">
