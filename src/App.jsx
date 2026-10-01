@@ -184,7 +184,7 @@ export default function App() {
         showVideo={true}
         videoSrc={
           activePage === 'home'
-            ? '/videos/Home page bg video -2.mp4'
+            ? '/videos/home-page-background-video-2.mp4'
             : activePage === 'contact'
             ? '/videos/contact-bg-video.mp4'
             : '/videos/bg-video.mp4'

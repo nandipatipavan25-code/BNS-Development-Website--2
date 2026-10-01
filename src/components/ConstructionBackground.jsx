@@ -9,7 +9,7 @@ import React, { useRef, useEffect } from 'react';
  */
 export default function ConstructionBackground({
   showVideo = true,
-  videoSrc = '/videos/Home page bg video -2.mp4',
+  videoSrc = '/videos/home-page-background-video-2.mp4',
   videoOpacity = null
 }) {
   const videoRef = useRef(null);
@@ -147,9 +147,9 @@ export default function ConstructionBackground({
             }}
           >
             <source src={videoSrc} type="video/mp4" />
-            <source src="/videos/Home page bg video -2.mp4" type="video/mp4" />
-            <source src="/videos/Home%20page%20bg%20video%20-2.mp4" type="video/mp4" />
-            <source src="/videos/home-page-bg-video-2.mp4" type="video/mp4" />
+            <source src="/videos/home-page-background-video-2.mp4" type="video/mp4" />
+            <source src="/videos/Home page background video -2.mp4" type="video/mp4" />
+            <source src="/videos/Home%20page%20background%20video%20-2.mp4" type="video/mp4" />
             <source src="/videos/bg-video.mp4" type="video/mp4" />
           </video>
           {/* Natural, balanced architectural dark vignette */}
