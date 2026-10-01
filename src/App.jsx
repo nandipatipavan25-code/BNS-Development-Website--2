@@ -187,7 +187,7 @@ export default function App() {
             ? '/videos/home-page-background-video-2.webm'
             : activePage === 'contact'
             ? '/videos/contact-bg-video.mp4'
-            : '/videos/bg-video.mp4'
+            : '/videos/bg-video.webm'
         }
         videoOpacity={activePage === 'contact' ? 0.20 : 0.75}
         playbackRate={activePage === 'home' ? 2.0 : 1.0}
