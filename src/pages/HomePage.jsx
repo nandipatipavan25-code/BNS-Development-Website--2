@@ -241,38 +241,62 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
   return (
     <div className="relative overflow-hidden text-white">
       {/* ========================================================
-          1. HERO SECTION (Full-Width Cinematic Video Hero)
+          1. HERO SECTION (Previous Hero Background + Previous Hero Video + Content)
           ======================================================== */}
       <section className="relative w-full pt-20 sm:pt-24 pb-0 bg-transparent">
-        <div className="relative w-full h-[72vh] min-h-[500px] sm:min-h-[600px] md:h-[82vh] overflow-hidden bg-[#0F1014] shadow-2xl flex items-center justify-center group">
-          <video
-            ref={videoRef}
-            src="/videos/home-page-background-video-2.mp4"
-            autoPlay
-            loop
-            muted={isMuted}
-            playsInline
-            webkit-playsinline="true"
-            preload="auto"
-            disablePictureInPicture
-            disableRemotePlayback
-            style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden', willChange: 'transform' }}
-            className="w-full h-full object-cover select-none cursor-pointer opacity-75"
-            onClick={togglePlay}
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-            onEnded={(e) => {
-              e.currentTarget.play().catch(() => {});
-            }}
-          >
-            <source src="/videos/home-page-background-video-2.mp4" type="video/mp4" />
-            <source src="/videos/Home page background video -2.mp4" type="video/mp4" />
-          </video>
+        <div className="relative w-full h-[72vh] min-h-[500px] sm:min-h-[600px] md:h-[82vh] overflow-hidden bg-[#0A0B0E] shadow-2xl flex items-center justify-center group">
+          
+          {/* ── LAYER 1: PREVIOUS HERO BACKGROUND TREATMENT (Atmospheric Red Glassmorphic Arcs & Ambient Depth) ── */}
+          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
+            {/* Deep Crimson Radial Center Glow */}
+            <div className="absolute top-1/2 -translate-y-1/2 right-0 sm:right-[5%] lg:right-[10%] w-[500px] sm:w-[700px] lg:w-[900px] h-[500px] sm:h-[700px] lg:h-[900px] bg-[radial-gradient(circle_at_center,rgba(215,25,32,0.38)_0%,rgba(140,15,20,0.22)_35%,rgba(10,11,14,0)_70%)] blur-[60px] opacity-95" />
+            
+            {/* Large Glassmorphism Architectural Red Curve / Arc (Primary Hero Arc) */}
+            <div className="absolute -top-[15%] -right-[10%] sm:-right-[5%] lg:right-0 w-[420px] sm:w-[620px] lg:w-[820px] h-[420px] sm:h-[620px] lg:h-[820px] rounded-full bg-gradient-to-br from-brand-red/35 via-brand-red/15 to-transparent border border-white/15 backdrop-blur-3xl shadow-[inset_0_1px_30px_rgba(255,255,255,0.12),0_20px_60px_rgba(215,25,32,0.25)] opacity-85 transform -rotate-12" />
 
-          {/* Cinematic Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0F1014] via-[#0F1014]/45 to-black/30 pointer-events-none" />
+            {/* Overlapping Secondary Glassmorphism Curved Shape (Back Accent Arc) */}
+            <div className="absolute top-[10%] right-[15%] sm:right-[22%] lg:right-[25%] w-[320px] sm:w-[480px] lg:w-[620px] h-[320px] sm:h-[480px] lg:h-[620px] rounded-full bg-gradient-to-tl from-brand-red/25 via-brand-red/10 to-transparent border border-white/10 backdrop-blur-2xl opacity-60 transform rotate-45" />
 
-          {/* Hero Video Content Overlay */}
+            {/* Subtle Blueprint Dot Grid Texture */}
+            <div className="absolute inset-0 blueprint-grid-dark opacity-20" />
+          </div>
+
+          {/* ── LAYER 2: PREVIOUS HERO VIDEO ── */}
+          <div className="absolute inset-0 z-[1] overflow-hidden">
+            <video
+              ref={videoRef}
+              src="/videos/hero-video.mp4"
+              autoPlay
+              loop
+              muted={isMuted}
+              playsInline
+              webkit-playsinline="true"
+              preload="auto"
+              disablePictureInPicture
+              disableRemotePlayback
+              style={{
+                transform: 'translate3d(0, 0, 0)',
+                backfaceVisibility: 'hidden',
+                willChange: 'transform'
+              }}
+              className="w-full h-full object-cover select-none cursor-pointer opacity-70 mix-blend-screen transition-opacity duration-700"
+              onClick={togglePlay}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+              onEnded={(e) => {
+                e.currentTarget.play().catch(() => {});
+              }}
+            >
+              <source src="/videos/hero-video.mp4" type="video/mp4" />
+              <source src="/videos/home page.mp4" type="video/mp4" />
+            </video>
+
+            {/* Cinematic Transparent Gradient Overlay for Clean Text Legibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0B0E] via-[#0A0B0E]/40 to-black/20 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0A0B0E]/80 via-transparent to-transparent pointer-events-none" />
+          </div>
+
+          {/* ── LAYER 3: EXISTING HERO CONTENT OVERLAY ── */}
           <div className="absolute inset-0 z-10 flex flex-col justify-end p-5 sm:p-8 md:p-12 lg:p-14 max-w-7xl mx-auto w-full pointer-events-none">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
