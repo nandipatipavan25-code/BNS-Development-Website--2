@@ -45,7 +45,6 @@ const TICKER_TOP = [
   { label: 'Pre-Development Planning', icon: Compass },
   { label: 'Design-Build Delivery', icon: Layers },
   { label: 'Tenant Improvements', icon: Ruler },
-  { label: 'CGC 1505391 Licensed', icon: Shield },
   { label: '35+ Years of Excellence', icon: Award },
   { label: '$800M+ Capital Delivered', icon: Zap },
   { label: 'Residential Development', icon: HardHat },
