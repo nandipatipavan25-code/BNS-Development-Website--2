@@ -126,7 +126,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
       id: '04',
       title: 'Pay attention to detail',
       image: '/images/careers/04-detail.jpg',
-      alt: 'Close-up quality inspection and technical precision review',
+      alt: 'Architectural blueprint drafting and precision construction detail inspection',
       category: 'Precision & Accuracy',
     },
     {
