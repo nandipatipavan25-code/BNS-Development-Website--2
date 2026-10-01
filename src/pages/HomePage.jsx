@@ -243,8 +243,8 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
       {/* ========================================================
           1. HERO SECTION (Previous Hero Background + Previous Hero Video + Content)
           ======================================================== */}
-      <section className="relative w-full pt-20 sm:pt-24 pb-0 bg-transparent">
-        <div className="relative w-full h-[72vh] min-h-[500px] sm:min-h-[600px] md:h-[82vh] overflow-hidden bg-[#0A0B0E] shadow-2xl flex items-center justify-center group">
+      <section className="relative w-full pt-0 pb-0 bg-transparent">
+        <div className="relative w-full h-[78vh] min-h-[540px] sm:min-h-[620px] md:h-[88vh] overflow-hidden bg-[#0A0B0E] shadow-2xl flex items-center justify-center group">
           
           {/* ── LAYER 1: PREVIOUS HERO BACKGROUND TREATMENT (Atmospheric Red Glassmorphic Arcs & Ambient Depth) ── */}
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
