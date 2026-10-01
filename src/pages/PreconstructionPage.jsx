@@ -9,6 +9,7 @@ import SectionHeading, { ConstructionScaleSVG } from '../components/SectionHeadi
 import ScrollReveal from '../components/ScrollReveal';
 import ScrollWordReveal from '../components/ScrollWordReveal';
 import EyeFollowButton from '../components/EyeFollowButton';
+import ServiceBreadcrumb from '../components/ServiceBreadcrumb';
 
 export default function PreconstructionPage({ setActivePage }) {
   useEffect(() => {
@@ -116,7 +117,8 @@ export default function PreconstructionPage({ setActivePage }) {
       <div className="absolute top-20 left-1/4 w-[600px] h-[600px] bg-brand-red/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20 sm:space-y-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12 sm:space-y-16">
+        <ServiceBreadcrumb currentTitle="Pre Development Services" setActivePage={setActivePage} />
 
         {/* ========================================================
             1. HERO SECTION (Plan With Confidence Before You Build)
@@ -170,7 +172,7 @@ export default function PreconstructionPage({ setActivePage }) {
                 <EyeFollowButton
                   onClick={handleContactNav}
                   size="md"
-                  icon="right"
+                  icon="none"
                 >
                   Start a Conversation
                 </EyeFollowButton>
@@ -469,7 +471,7 @@ export default function PreconstructionPage({ setActivePage }) {
               <EyeFollowButton
                 onClick={handleContactNav}
                 size="md"
-                icon="right"
+                icon="none"
               >
                 Let's Talk About Your Project
               </EyeFollowButton>
