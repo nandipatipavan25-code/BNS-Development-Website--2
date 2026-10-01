@@ -280,22 +280,13 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
       <section className="relative w-full h-screen min-h-[100dvh] pt-0 pb-0 bg-transparent">
         <div className="relative w-full h-full min-h-screen min-h-[100dvh] overflow-hidden bg-[#0A0B0E] shadow-2xl flex items-center justify-center group">
           
-          {/* ── LAYER 1: PREVIOUS HERO BACKGROUND TREATMENT (Atmospheric Red Glassmorphic Arcs & Ambient Depth) ── */}
-          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
-            {/* Deep Crimson Radial Center Glow */}
-            <div className="absolute top-1/2 -translate-y-1/2 right-0 sm:right-[5%] lg:right-[10%] w-[500px] sm:w-[700px] lg:w-[900px] h-[500px] sm:h-[700px] lg:h-[900px] bg-[radial-gradient(circle_at_center,rgba(215,25,32,0.38)_0%,rgba(140,15,20,0.22)_35%,rgba(10,11,14,0)_70%)] blur-[60px] opacity-95" />
-            
-            {/* Large Glassmorphism Architectural Red Curve / Arc (Primary Hero Arc) */}
-            <div className="absolute -top-[15%] -right-[10%] sm:-right-[5%] lg:right-0 w-[420px] sm:w-[620px] lg:w-[820px] h-[420px] sm:h-[620px] lg:h-[820px] rounded-full bg-gradient-to-br from-brand-red/35 via-brand-red/15 to-transparent border border-white/15 backdrop-blur-3xl shadow-[inset_0_1px_30px_rgba(255,255,255,0.12),0_20px_60px_rgba(215,25,32,0.25)] opacity-85 transform -rotate-12" />
-
-            {/* Overlapping Secondary Glassmorphism Curved Shape (Back Accent Arc) */}
-            <div className="absolute top-[10%] right-[15%] sm:right-[22%] lg:right-[25%] w-[320px] sm:w-[480px] lg:w-[620px] h-[320px] sm:h-[480px] lg:h-[620px] rounded-full bg-gradient-to-tl from-brand-red/25 via-brand-red/10 to-transparent border border-white/10 backdrop-blur-2xl opacity-60 transform rotate-45" />
-
+          {/* ── LAYER 1: HERO BACKGROUND (Clean Architectural Blueprint Canvas) ── */}
+          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none bg-[#07080A]">
             {/* Subtle Blueprint Dot Grid Texture */}
-            <div className="absolute inset-0 blueprint-grid-dark opacity-20" />
+            <div className="absolute inset-0 blueprint-grid-dark opacity-15" />
           </div>
 
-          {/* ── LAYER 2: PREVIOUS HERO VIDEO ── */}
+          {/* ── LAYER 2: HERO VIDEO ── */}
           <div className="absolute inset-0 z-[1] overflow-hidden">
             <video
               ref={videoRef}
@@ -313,7 +304,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
                 backfaceVisibility: 'hidden',
                 willChange: 'transform'
               }}
-              className="w-full h-full object-cover select-none pointer-events-none opacity-90 transition-opacity duration-700"
+              className="w-full h-full object-cover select-none pointer-events-none opacity-100 transition-opacity duration-700"
             >
               <source src="/videos/hero-video.webm" type="video/webm" />
               <source src="/videos/home-page-hero-section-video.webm" type="video/webm" />
