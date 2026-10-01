@@ -179,29 +179,6 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
             theme="dark"
             scaleColor="red"
           />
-
-          <div className="pt-2 flex flex-wrap items-center gap-3">
-            <PremiumGlassButton
-              onClick={() => {
-                const el = document.getElementById('open-positions');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }}
-              size="md"
-              baseColor="#000000"
-              glassColor="#ffffff"
-              hoverSpeed={0.7}
-            >
-              View Open Positions
-            </PremiumGlassButton>
-
-            <button
-              onClick={handleGeneralApply}
-              className="px-6 py-3 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-brand-red/50 text-xs sm:text-sm font-semibold text-white/80 hover:text-white transition-all cursor-pointer flex items-center gap-2"
-            >
-              <Send className="w-4 h-4 text-brand-red" />
-              <span>Send Resume &amp; Introduction</span>
-            </button>
-          </div>
         </section>
 
         {/* ========================================================
