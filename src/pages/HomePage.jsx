@@ -302,7 +302,7 @@ export default function HomePage({ setActivePage, setSelectedProject, setSelecte
               src="/videos/hero-video.mp4"
               autoPlay
               loop
-              muted={isMuted}
+              muted={true}
               playsInline
               webkit-playsinline="true"
               preload="auto"
