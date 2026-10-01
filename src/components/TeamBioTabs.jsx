@@ -149,9 +149,8 @@ export default function TeamBioTabs({ onContactClick }) {
                     <div className="relative z-10 pt-2.5 mt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-sans text-neutral-400">
                       <span className="text-[11px] text-neutral-400 font-sans">BNS Leadership</span>
 
-                      <span className="text-[10px] font-mono text-brand-red flex items-center gap-1 font-medium hover:text-white transition-colors">
-                        <RotateCw className="w-3 h-3" />
-                        <span>Flip Back</span>
+                      <span className="text-brand-red flex items-center hover:text-white transition-colors" title="Flip card">
+                        <RotateCw className="w-3.5 h-3.5" />
                       </span>
                     </div>
                   </div>
