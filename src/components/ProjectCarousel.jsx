@@ -67,7 +67,7 @@ const TICKER_BOTTOM = [
 const CAROUSEL_PROJECTS = [
   {
     id: "district-36",
-    title: "District 36 (The Eve at the District)",
+    title: "Project District 36",
     category: "Multifamily & Retail Mixed-Use",
     location: "Miami, FL",
     year: "2016",
@@ -75,43 +75,11 @@ const CAROUSEL_PROJECTS = [
   },
   {
     id: "marriott-residents",
-    title: "Marriott Residents",
+    title: "Project Marriott Residents",
     category: "Hospitality & Residential",
     location: "Sunny Isles Beach, FL",
     year: "Completed",
     image: "/images/projects/marriott-residents-cover.png",
-  },
-  {
-    id: "district-36",
-    title: "District 36 Structural Shell",
-    category: "Ground-Up Construction",
-    location: "Miami, FL",
-    year: "2016",
-    image: "/images/projects/district-36-image-1.png",
-  },
-  {
-    id: "marriott-residents",
-    title: "Marriott Residents Tower",
-    category: "Hospitality Development",
-    location: "Sunny Isles Beach, FL",
-    year: "Completed",
-    image: "/images/projects/marriott-residents-image-1.png",
-  },
-  {
-    id: "district-36",
-    title: "District 36 Aerial Perspectives",
-    category: "High-Rise Development",
-    location: "Miami, FL",
-    year: "2016",
-    image: "/images/projects/district-36-image-2.png",
-  },
-  {
-    id: "marriott-residents",
-    title: "Marriott Residents Ground-Up",
-    category: "Site Logistics & Shell",
-    location: "Sunny Isles Beach, FL",
-    year: "Completed",
-    image: "/images/projects/marriott-residents-image-2.png",
   },
 ];
 
@@ -119,7 +87,15 @@ export default function ProjectCarousel({ onSelectProject, onViewAll, bgClassNam
   const scrollRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  const displayProjects = [...CAROUSEL_PROJECTS, ...CAROUSEL_PROJECTS, ...CAROUSEL_PROJECTS];
+  // Repeat the two projects across a seamless infinite loop
+  const displayProjects = [
+    ...CAROUSEL_PROJECTS,
+    ...CAROUSEL_PROJECTS,
+    ...CAROUSEL_PROJECTS,
+    ...CAROUSEL_PROJECTS,
+    ...CAROUSEL_PROJECTS,
+    ...CAROUSEL_PROJECTS,
+  ];
 
   /* Auto-scroll */
   useEffect(() => {
@@ -135,8 +111,8 @@ export default function ProjectCarousel({ onSelectProject, onViewAll, bgClassNam
       lastTime = time;
       if (!isHovered && el) {
         el.scrollLeft += speed * (delta / 16.67);
-        const singleSetWidth = el.scrollWidth / 3;
-        if (el.scrollLeft >= singleSetWidth * 2) el.scrollLeft -= singleSetWidth;
+        const halfWidth = el.scrollWidth / 2;
+        if (el.scrollLeft >= halfWidth) el.scrollLeft -= halfWidth;
       }
       rafId = requestAnimationFrame(step);
     };
