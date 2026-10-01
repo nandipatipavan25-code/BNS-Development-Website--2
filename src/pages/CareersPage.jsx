@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   MapPin,
-  DollarSign,
   CheckCircle2,
   ArrowRight,
   X,
@@ -10,6 +9,12 @@ import {
   Heart,
   Award,
   Sparkles,
+  Building2,
+  Users,
+  TrendingUp,
+  Briefcase,
+  Check,
+  Send,
 } from 'lucide-react';
 import SectionHeading, { ConstructionScaleSVG } from '../components/SectionHeading';
 import ScrollReveal from '../components/ScrollReveal';
@@ -26,6 +31,16 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
     setActivePage('career-detail', `id=${job.id}`);
   };
 
+  const handleGeneralApply = () => {
+    setSelectedJob({
+      id: 'general-inquiry',
+      title: 'General Career Application',
+      department: 'Development & Construction',
+      location: 'Florida & Texas',
+    });
+    setIsApplying(true);
+  };
+
   // Application Form State
   const [formData, setFormData] = useState({
     fullName: '',
@@ -36,27 +51,37 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
     coverNote: '',
   });
 
-  const perks = [
+  const whyBnsCards = [
     {
-      icon: <DollarSign className="w-5 h-5 text-brand-red" />,
-      title: 'Top-Tier Compensation',
-      desc: 'Competitive base salaries benchmarked above industry medians, accompanied by generous milestone completion bonuses.',
-    },
-    {
-      icon: <Heart className="w-5 h-5 text-brand-red" />,
-      title: 'Comprehensive Healthcare',
-      desc: '100% premium coverage for medical, dental, and vision health plans for all full-time employees and family options.',
+      icon: <Building2 className="w-5 h-5 text-brand-red" />,
+      title: 'Work on Diverse Projects',
+      desc: 'Gain experience across residential, multifamily, hospitality, commercial and mixed-use development.',
     },
     {
       icon: <Award className="w-5 h-5 text-brand-red" />,
-      title: 'Professional Licensure & Education',
-      desc: 'Full company sponsorship for Florida GC CEUs, OSHA 30 certifications, LEED AP credentials, and advanced PM training.',
+      title: 'Learn From Experience',
+      desc: 'Work alongside professionals with extensive experience across development, project management and construction.',
     },
     {
-      icon: <Sparkles className="w-5 h-5 text-brand-red" />,
-      title: 'Executive Autonomy',
-      desc: 'Direct access to Managing Partners with the autonomy to lead field operations without bureaucratic paralysis.',
+      icon: <Users className="w-5 h-5 text-brand-red" />,
+      title: 'Be Part of the Team',
+      desc: 'We believe successful projects depend on people working together, communicating clearly and taking ownership of their responsibilities.',
     },
+    {
+      icon: <TrendingUp className="w-5 h-5 text-brand-red" />,
+      title: 'Grow With Us',
+      desc: 'We value people who are ready to learn, take on responsibility and contribute to the continued growth of BNS Development.',
+    },
+  ];
+
+  const candidateTraits = [
+    'Take ownership of their work',
+    'Communicate clearly',
+    'Work well with others',
+    'Pay attention to detail',
+    'Approach challenges with a problem-solving mindset',
+    'Value quality and accountability',
+    'Want to grow professionally',
   ];
 
   // Pure Visual Culture Gallery (Images Only)
@@ -100,6 +125,14 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
       setSubmitted(false);
       setIsApplying(false);
       setSelectedJob(null);
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        portfolio: '',
+        yearsExp: '',
+        coverNote: '',
+      });
     }, 2800);
   };
 
@@ -107,14 +140,14 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
     <div className="relative pt-24 sm:pt-32 pb-24 overflow-hidden bg-transparent text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20 sm:space-y-24">
         {/* ========================================================
-            1. HERO SECTION (Clean SectionHeading Hero with Open Positions CTA)
+            1. HERO SECTION
             ======================================================== */}
         <section className="space-y-6">
           <SectionHeading
-            tag="Careers & Culture"
-            title={<span className="block">Build Structures.</span>}
-            highlight={<span className="block">Elevate Your Career.</span>}
-            description="At BNS Development, we hold ourselves to the standard of 'Build It Right'. We are seeking ambitious Project Managers, Superintendents, and Estimators who take immense pride in precision craftsmanship and collaborative growth across Florida and Texas."
+            tag="Build Your Career With BNS Development"
+            title={<span className="block">Build Your Career With BNS Development</span>}
+            highlight={<span className="block">Be Part of What's Next.</span>}
+            description="At BNS Development, we believe great projects are built by people who bring experience, accountability, collaboration and a commitment to doing things right. We're always interested in connecting with talented professionals who want to contribute to meaningful development projects and grow with a team that values strong relationships and practical problem-solving."
             theme="dark"
             scaleColor="red"
           />
@@ -132,17 +165,92 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
             >
               View Open Positions
             </PremiumGlassButton>
+
+            <button
+              onClick={handleGeneralApply}
+              className="px-6 py-3 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-brand-red/50 text-xs sm:text-sm font-semibold text-white/80 hover:text-white transition-all cursor-pointer flex items-center gap-2"
+            >
+              <Send className="w-4 h-4 text-brand-red" />
+              <span>Send Resume &amp; Introduction</span>
+            </button>
           </div>
         </section>
 
         {/* ========================================================
-            2. OUR CULTURE: Visual Showcase (Images Only)
+            2. WHY BNS DEVELOPMENT?
+            ======================================================== */}
+        <section className="space-y-10">
+          <ScrollReveal direction="up" delay={0.06}>
+            <SectionHeading
+              tag="Why BNS Development?"
+              title="Why BNS "
+              highlight="Development?"
+              description="We provide an environment where experience, collaboration, and practical problem-solving drive meaningful development projects."
+              theme="dark"
+              scaleColor="red"
+            />
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {whyBnsCards.map((card, idx) => (
+              <ScrollReveal key={idx} direction="up" delay={idx * 0.08}>
+                <div className="p-7 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-brand-red/40 backdrop-blur-xl shadow-xl flex flex-col justify-between h-full transition-all duration-300 group hover:-translate-y-1 hover-beam-card">
+                  <div className="space-y-4">
+                    <div className="w-12 h-12 rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center text-brand-red group-hover:border-brand-red/60 group-hover:bg-brand-red/10 transition-colors">
+                      {card.icon}
+                    </div>
+                    <h3 className="text-lg font-semibold font-display text-brand-subheading group-hover:text-brand-red transition-colors">
+                      {card.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-brand-body leading-relaxed font-sans">
+                      {card.desc}
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </section>
+
+        {/* ========================================================
+            3. WE LOOK FOR PEOPLE WHO
+            ======================================================== */}
+        <section className="space-y-8 sm:space-y-10">
+          <ScrollReveal direction="up" delay={0.06}>
+            <SectionHeading
+              tag="Who We Look For"
+              title="We Look for "
+              highlight="People Who"
+              description="Our standard of excellence is built on dedication, clear communication, and collaborative problem-solving."
+              theme="dark"
+              scaleColor="red"
+            />
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+            {candidateTraits.map((trait, idx) => (
+              <ScrollReveal key={idx} direction="up" delay={idx * 0.05}>
+                <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-brand-red/40 backdrop-blur-md transition-all duration-300 flex items-center gap-4 group hover:-translate-y-0.5">
+                  <div className="w-9 h-9 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center shrink-0 text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all">
+                    <Check className="w-4 h-4" />
+                  </div>
+                  <span className="text-sm sm:text-[15px] font-medium text-brand-subheading group-hover:text-white transition-colors">
+                    {trait}
+                  </span>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </section>
+
+        {/* ========================================================
+            4. OUR CULTURE: Visual Showcase (Images Only)
             ======================================================== */}
         <section className="space-y-8 sm:space-y-10">
           <ScrollReveal direction="up" delay={0.06}>
             <SectionHeading
               tag="Life at BNS"
-              title="Our"
+              title="Our "
               highlight="Culture."
               description="A culture defined by field leadership, accountability, and the shared pride of delivering monumental structures."
               theme="dark"
@@ -150,7 +258,6 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
             />
           </ScrollReveal>
 
-          {/* Pure Visual Photographic Mosaic — No text overlays, images only */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {cultureGallery.map((item, idx) => (
               <ScrollReveal key={item.id} direction="up" delay={idx * 0.06}>
@@ -173,52 +280,56 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
         </section>
 
         {/* ========================================================
-            3. PERKS & BENEFITS: The BNS Standard
+            5. JOIN OUR TEAM (Call to Action)
             ======================================================== */}
-        <section className="space-y-10">
+        <section id="join-our-team">
           <ScrollReveal direction="up" delay={0.06}>
-            <SectionHeading
-              tag="The BNS Standard"
-              title={<span className="whitespace-nowrap">Why Premier Builders</span>}
-              highlight={<span className="whitespace-nowrap">Choose BNS.</span>}
-              description="We provide the resources, backing, and executive autonomy necessary for elite builders to perform at their highest caliber."
-              theme="dark"
-              scaleColor="red"
-              className="!max-w-5xl"
-              titleClassName="md:whitespace-nowrap"
-            />
-          </ScrollReveal>
+            <div className="relative rounded-3xl p-8 sm:p-12 bg-white/[0.03] border border-white/10 hover:border-brand-red/40 backdrop-blur-xl shadow-2xl overflow-hidden group">
+              <div className="relative z-10 max-w-3xl space-y-6">
+                <SectionHeading
+                  tag="Join Our Team"
+                  title="Join Our "
+                  highlight="Team."
+                  description="We'd like to hear from professionals who are interested in being part of BNS Development. If you believe your experience and skills could be a good fit, send us your resume and a brief introduction."
+                  theme="dark"
+                  scaleColor="red"
+                />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {perks.map((perk, idx) => (
-              <ScrollReveal key={idx} direction="up" delay={idx * 0.08}>
-                <div className="p-7 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-brand-red/40 backdrop-blur-xl shadow-xl flex flex-col justify-between h-full transition-all duration-300 group hover:-translate-y-1 hover-beam-card">
-                  <div className="space-y-4">
-                    <div className="w-12 h-12 rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center text-brand-red group-hover:border-brand-red/60 group-hover:bg-brand-red/10 transition-colors">
-                      {perk.icon}
-                    </div>
-                    <h3 className="text-lg font-semibold font-display text-brand-subheading group-hover:text-brand-red transition-colors">
-                      {perk.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-brand-body leading-relaxed font-sans">
-                      {perk.desc}
-                    </p>
-                  </div>
+                <div className="pt-2 flex flex-wrap items-center gap-4">
+                  <button
+                    onClick={handleGeneralApply}
+                    className="px-6 py-3.5 rounded-full bg-brand-red hover:bg-brand-redDark border border-brand-red text-xs sm:text-sm font-bold text-white/90 hover:text-white transition-all cursor-pointer shadow-lg shadow-brand-red/30 flex items-center gap-2"
+                  >
+                    <Send className="w-4 h-4" />
+                    <span>Send Resume &amp; Introduction</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById('open-positions');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="px-6 py-3.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-white/30 text-xs sm:text-sm font-semibold text-white/80 hover:text-white transition-all cursor-pointer"
+                  >
+                    Browse Active Positions ({jobsData.length})
+                  </button>
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
+              </div>
+
+              {/* Decorative background glow */}
+              <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-red/10 rounded-full blur-3xl pointer-events-none group-hover:bg-brand-red/15 transition-all duration-700" />
+            </div>
+          </ScrollReveal>
         </section>
 
         {/* ========================================================
-            4. Open Positions: Active Opportunities
+            6. OPEN POSITIONS: Active Opportunities
             ======================================================== */}
         <section id="open-positions" className="space-y-10">
           <ScrollReveal direction="up" delay={0.06}>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <SectionHeading
                 tag="Open Positions"
-                title="Active Job"
+                title="Active Job "
                 highlight="Opportunities."
                 description="Explore open field and executive positions across our Florida and Texas operations."
                 theme="dark"
@@ -323,7 +434,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                 </div>
                 <button
                   onClick={() => setIsApplying(false)}
-                  className="p-1.5 rounded-full hover:bg-white/10 text-neutral-400 hover:text-white transition-colors"
+                  className="p-1.5 rounded-full hover:bg-white/10 text-neutral-400 hover:text-white transition-colors cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -338,7 +449,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                     Application Received
                   </h4>
                   <p className="text-sm text-brand-body max-w-md mx-auto font-sans leading-relaxed">
-                    Thank you for applying for the {selectedJob.title} role. Our executive team will review your qualifications and contact you directly.
+                    Thank you for your submission for {selectedJob.title}. Our team will review your qualifications and contact you directly.
                   </p>
                 </div>
               ) : (
@@ -352,7 +463,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                       required
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      placeholder="e.g. Marcus Vance"
+                      placeholder="e.g. Alex Morgan"
                       className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors"
                     />
                   </div>
@@ -396,7 +507,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                         required
                         value={formData.yearsExp}
                         onChange={(e) => setFormData({ ...formData, yearsExp: e.target.value })}
-                        placeholder="e.g. 8 Years"
+                        placeholder="e.g. 5+ Years"
                         className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors"
                       />
                     </div>
@@ -432,7 +543,7 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                       rows={3}
                       value={formData.coverNote}
                       onChange={(e) => setFormData({ ...formData, coverNote: e.target.value })}
-                      placeholder="Highlight relevant ground-up or commercial projects you've managed..."
+                      placeholder="Share a brief introduction about your background, projects, or goals..."
                       className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-brand-red transition-colors resize-none font-sans"
                     />
                   </div>
@@ -441,13 +552,13 @@ export default function CareersPage({ setActivePage, setSelectedJob: setSelected
                     <button
                       type="button"
                       onClick={() => setIsApplying(false)}
-                      className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-neutral-300 text-xs font-bold transition-colors"
+                      className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-neutral-300 text-xs font-bold transition-colors cursor-pointer"
                     >
                       Cancel
                     </button>
                     <button
                       type="submit"
-                      className="px-6 py-2.5 rounded-full bg-brand-red text-white/80 text-xs font-bold tracking-wider hover:bg-brand-redDark hover:text-white transition-colors shadow-lg shadow-brand-red/30"
+                      className="px-6 py-2.5 rounded-full bg-brand-red text-white/80 text-xs font-bold tracking-wider hover:bg-brand-redDark hover:text-white transition-colors shadow-lg shadow-brand-red/30 cursor-pointer"
                     >
                       Submit Application
                     </button>

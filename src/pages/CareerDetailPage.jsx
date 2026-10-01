@@ -82,24 +82,24 @@ export default function CareerDetailPage({
 
   const perks = [
     {
-      icon: <DollarSign className="w-5 h-5 text-brand-red" />,
-      title: 'Top-Tier Compensation',
-      desc: 'Base salaries benchmarked above industry medians + milestone completion bonuses.',
-    },
-    {
-      icon: <Heart className="w-5 h-5 text-brand-red" />,
-      title: '100% Healthcare Coverage',
-      desc: 'Full medical, dental, and vision health plans for all full-time team members.',
+      icon: <Building2 className="w-5 h-5 text-brand-red" />,
+      title: 'Work on Diverse Projects',
+      desc: 'Gain experience across residential, multifamily, hospitality, commercial and mixed-use development.',
     },
     {
       icon: <Award className="w-5 h-5 text-brand-red" />,
-      title: 'Licensure & CEUs',
-      desc: 'Full company sponsorship for Florida GC, OSHA 30, and LEED AP certifications.',
+      title: 'Learn From Experience',
+      desc: 'Work alongside professionals with extensive experience across development, project management and construction.',
+    },
+    {
+      icon: <Users className="w-5 h-5 text-brand-red" />,
+      title: 'Be Part of the Team',
+      desc: 'We believe successful projects depend on people working together, communicating clearly and taking ownership of their responsibilities.',
     },
     {
       icon: <Sparkles className="w-5 h-5 text-brand-red" />,
-      title: 'Executive Autonomy',
-      desc: 'Direct access to Managing Partners with autonomy to lead operations without red tape.',
+      title: 'Grow With Us',
+      desc: 'We value people who are ready to learn, take on responsibility and contribute to the continued growth of BNS Development.',
     },
   ];
 
@@ -258,10 +258,10 @@ export default function CareerDetailPage({
             ======================================================== */}
         <section className="space-y-8">
           <SectionHeading
-            tag="The BNS Standard"
-            title="Benefits &"
-            highlight="Total Rewards."
-            description="Our leadership structure rewards top-caliber builders with industry-leading packages and career longevity."
+            tag="Why BNS Development?"
+            title="Why BNS "
+            highlight="Development?"
+            description="We provide an environment where experience, collaboration, and practical problem-solving drive lasting project success."
             theme="dark"
             scaleColor="red"
           />
